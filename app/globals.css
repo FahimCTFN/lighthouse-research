@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body {
+  @apply bg-paper text-ink;
+  /* Crisper rendering on both Mac and Windows; also takes slight edge off
+     text-on-cream contrast that would otherwise look too stark. */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Editorial prose for free preview + background + commentary. Bumped to 16px
+   and given slightly desaturated ink so long-form reading is comfortable. */
+.prose-editorial p {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 16px;
+  line-height: 1.75;
+  color: #1f2937;
+  margin-bottom: 18px;
+}
+.prose-editorial p:last-child {
+  margin-bottom: 0;
+}
+.prose-editorial h3 {
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #6b7280;
+  margin: 28px 0 10px;
+  border-bottom: 0.5px solid rgb(229 231 235);
+  padding-bottom: 6px;
+}
+.prose-editorial h4 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  font-weight: 500;
+  color: #0c2d48;
+  margin: 24px 0 8px;
+}
+.prose-editorial ul,
+.prose-editorial ol {
+  padding-left: 1.35rem;
+  margin-bottom: 18px;
+}
+.prose-editorial ul { list-style: disc; }
+.prose-editorial ol { list-style: decimal; }
+.prose-editorial li {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 16px;
+  line-height: 1.75;
+  color: #1f2937;
+  margin-bottom: 4px;
+}
+.prose-editorial strong { font-weight: 600; color: #0c2d48; }
+.prose-editorial em { font-style: italic; }
+.prose-editorial code {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 0.9em;
+  background: #f3f0e8;
+  padding: 1px 5px;
+  border-radius: 3px;
+}
+.prose-editorial blockquote {
+  border-left: 3px solid #d4860a;
+  padding: 4px 14px;
+  margin: 20px 0;
+  color: #4a5568;
+  font-style: italic;
+}
+.prose-editorial a {
+  color: #0c2d48;
+  text-decoration: underline;
+  text-decoration-color: #d4860a;
+  text-underline-offset: 3px;
+}
+.prose-editorial a:hover {
+  text-decoration-thickness: 2px;
+}
+
+/* Visible focus ring for keyboard users. */
+:focus-visible {
+  outline: 2px solid #d4860a;
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+/* Respect users who ask for reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
