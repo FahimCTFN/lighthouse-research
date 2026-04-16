@@ -30,6 +30,9 @@ export function DealHeader({
         <ActiveSituationTag />
         <SectorTag sector={deal.sector} />
         <StageBadge status={deal.status} />
+        {followControl && (
+          <span className="ml-auto hidden sm:block">{followControl}</span>
+        )}
         {deal._updatedAt && (
           <>
             <span className="text-gray-300">·</span>
@@ -46,10 +49,9 @@ export function DealHeader({
             </span>
           </>
         )}
-        {followControl && <span className="ml-auto">{followControl}</span>}
       </div>
 
-      <h1 className="font-serif text-[28px] font-normal leading-[1.25] tracking-tight text-brand-navy">
+      <h1 className="font-serif text-[22px] font-normal leading-[1.25] tracking-tight text-brand-navy sm:text-[28px]">
         {deal.acquirer} / {deal.target}
         {deal.equity_value ? (
           <span className="text-gray-500">
@@ -75,7 +77,11 @@ export function DealHeader({
         </p>
       )}
 
-      <div className="mt-6 flex items-center gap-3 border-t border-gray-200 pt-3.5">
+      {followControl && (
+        <div className="mt-4 sm:hidden">{followControl}</div>
+      )}
+
+      <div className="mt-6 flex flex-wrap items-center gap-3 border-t border-gray-200 pt-3.5">
         <div className="flex h-8 w-8 items-center justify-center rounded-full bg-brand-navy text-[11px] font-medium text-brand-gold">
           CT
         </div>
@@ -88,7 +94,7 @@ export function DealHeader({
           </div>
         </div>
         {showPulse && deal.next_key_event_label && (
-          <div className="ml-auto flex items-center gap-1.5 rounded border border-brand-gold/60 bg-brand-gold-light px-2.5 py-1 text-[11px] font-medium text-brand-gold-ink">
+          <div className="mt-2 flex w-full items-center gap-1.5 rounded border border-brand-gold/60 bg-brand-gold-light px-2.5 py-1 text-[11px] font-medium text-brand-gold-ink sm:mt-0 sm:ml-auto sm:w-auto">
             <span className="block h-1.5 w-1.5 animate-pulse-dot rounded-full bg-[#e8a020]" />
             Next event: {deal.next_key_event_label} {formatDate(deal.next_key_event_date)}
           </div>

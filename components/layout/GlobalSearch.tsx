@@ -158,7 +158,7 @@ export function GlobalSearch() {
       </div>
 
       {open && (
-        <div className="absolute left-0 right-0 top-[calc(100%+6px)] z-50 overflow-hidden rounded-md border border-gray-200 bg-white shadow-lg sm:left-auto sm:right-0 sm:w-96">
+        <div className="fixed left-3 right-3 top-[60px] z-50 overflow-hidden rounded-md border border-gray-200 bg-white shadow-lg sm:absolute sm:left-auto sm:right-0 sm:top-[calc(100%+6px)] sm:w-96">
           {results.length === 0 ? (
             <div className="px-4 py-5 text-center text-xs text-gray-500">
               {deals.length === 0

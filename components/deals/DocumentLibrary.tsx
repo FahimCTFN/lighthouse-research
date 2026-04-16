@@ -15,7 +15,7 @@ export function DocumentLibrary({ docs }: { docs?: DealDocument[] }) {
             key={d._key ?? i}
             className="flex items-center justify-between gap-4 px-5 py-3"
           >
-            <span className="text-[14px] font-medium text-brand-navy">
+            <span className="min-w-0 flex-1 truncate text-[14px] font-medium text-brand-navy">
               {d.title || "Untitled"}
             </span>
             {d.url && (

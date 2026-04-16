@@ -52,7 +52,7 @@ export default function SubscribePage() {
         <div className="text-[11px] font-medium uppercase tracking-label text-brand-gold-ink">
           Pricing
         </div>
-        <h1 className="mt-2 font-serif text-[34px] leading-[1.2] tracking-tight text-brand-navy">
+        <h1 className="mt-2 font-serif text-[26px] leading-[1.2] tracking-tight text-brand-navy sm:text-[34px]">
           M&amp;A intelligence built for professionals
         </h1>
         <p className="mx-auto mt-3 max-w-xl text-[15px] leading-[1.6] text-gray-600">

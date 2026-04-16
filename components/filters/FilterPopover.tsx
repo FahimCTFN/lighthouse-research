@@ -70,7 +70,7 @@ export function FilterPopover({
       </button>
       {open && (
         <div
-          className={`absolute top-[calc(100%+6px)] z-30 w-64 overflow-hidden rounded-md border border-gray-200 bg-white shadow-lg ${
+          className={`absolute top-[calc(100%+6px)] z-30 w-[calc(100vw-48px)] overflow-hidden rounded-md border border-gray-200 bg-white shadow-lg sm:w-64 ${
             align === "right" ? "right-0" : "left-0"
           }`}
           role="dialog"

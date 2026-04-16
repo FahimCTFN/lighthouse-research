@@ -58,7 +58,7 @@ export function ShareholderActivism({ entries }: { entries?: ActivismEntry[] }) 
                 >
                   {STANCE_LABEL[stance]}
                 </span>
-                <span className="ml-auto text-[11px] tabular-nums text-gray-500">
+                <span className="text-[11px] tabular-nums text-gray-500 sm:ml-auto">
                   {formatDate(e.date)}
                 </span>
               </div>
