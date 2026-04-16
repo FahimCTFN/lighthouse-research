@@ -29,7 +29,8 @@ export function Nav() {
               </div>
             </div>
           </Link>
-          <nav className="flex items-center gap-4 text-xs">
+
+          <nav className="flex items-center gap-3 text-xs sm:gap-4">
             <GlobalSearch />
             <Link
               href="/archive"
@@ -39,10 +40,11 @@ export function Nav() {
             </Link>
             <Link
               href="/subscribe"
-              className="tracking-wide text-white/60 hover:text-white"
+              className="hidden tracking-wide text-white/60 hover:text-white sm:inline"
             >
               Pricing
             </Link>
+
             <SignedIn>
               <Link
                 href="/account"
@@ -52,19 +54,22 @@ export function Nav() {
               </Link>
               <UserButton afterSignOutUrl="/" />
             </SignedIn>
+
             <SignedOut>
-              <Link
-                href="/sign-in"
-                className="tracking-wide text-white/60 hover:text-white"
-              >
-                Sign in
-              </Link>
-              <Link
-                href="/subscribe"
-                className="rounded bg-brand-gold px-3.5 py-1.5 text-[11px] font-medium uppercase tracking-label text-white"
-              >
-                Subscribe
-              </Link>
+              <div className="flex items-center">
+                <Link
+                  href="/sign-in"
+                  className="rounded-l-full border border-white/20 bg-white/10 px-3.5 py-1.5 text-[11px] font-medium tracking-wide text-white transition hover:bg-white/20"
+                >
+                  Sign in
+                </Link>
+                <Link
+                  href="/sign-up"
+                  className="rounded-r-full border border-brand-gold bg-brand-gold px-3.5 py-1.5 text-[11px] font-medium tracking-wide text-white transition hover:brightness-110"
+                >
+                  Get started
+                </Link>
+              </div>
             </SignedOut>
           </nav>
         </div>
