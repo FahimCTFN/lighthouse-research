@@ -74,7 +74,7 @@ export function PaywallGate({
                 "Full analysis for this deal",
                 "Regulatory filings + activism",
                 "Documents + key facts",
-                "Access until next material update",
+                "Point-in-time snapshot access",
               ].map((f) => (
                 <li
                   key={f}
