@@ -9,7 +9,9 @@ import { clerkClient } from "@clerk/nextjs/server";
 import {
   getCurrentUserContext,
   getUserWatchlist,
+  getUserPurchases,
   isPaidStatus,
+  hasDealAccess,
 } from "@/lib/clerk/helpers";
 import type { UserMetadata } from "@/lib/clerk/helpers";
 import { DealHeader } from "@/components/deals/DealHeader";
@@ -35,31 +37,48 @@ export default async function DealPage({
 }) {
   const ctx = await getCurrentUserContext();
 
-  // Read fresh metadata so content unlocks immediately after payment
-  // (JWT session claims can lag by up to 60s).
-  let paid = ctx.isPaid;
-  if (ctx.userId && !paid) {
+  // Read fresh metadata so content unlocks immediately after payment.
+  let isSubscriber = ctx.isPaid;
+  let freshMeta: UserMetadata | undefined;
+  if (ctx.userId && !isSubscriber) {
     const freshUser = await clerkClient.users.getUser(ctx.userId);
-    const freshMeta = (freshUser.publicMetadata ?? {}) as UserMetadata;
-    paid = isPaidStatus(freshMeta);
+    freshMeta = (freshUser.publicMetadata ?? {}) as UserMetadata;
+    isSubscriber = isPaidStatus(freshMeta);
   }
 
-  // Layer-3 gating: only fetch paid fields if user is paid
-  const deal = paid
+  // Check if user bought this specific deal (single-report purchase)
+  const purchases = ctx.userId
+    ? freshMeta?.purchased_deals ??
+      (await getUserPurchases(ctx.userId))
+    : [];
+
+  // Fetch the public deal first to get purchase/gating fields
+  const publicDeal = await sanityClient.fetch<PublicDeal>(PUBLIC_DEAL_QUERY, {
+    slug: params.slug,
+  });
+  if (!publicDeal) notFound();
+
+  const ownsDeal = hasDealAccess(
+    purchases,
+    params.slug,
+    publicDeal.last_material_update,
+  );
+  const purchaseExpired =
+    purchases.some((p) => p.slug === params.slug) && !ownsDeal;
+  const canView = isSubscriber || ownsDeal;
+
+  // Layer-3 gating: only fetch paid fields if user has access
+  const deal = canView
     ? await sanityServerClient.fetch<PaidDeal>(PAID_DEAL_QUERY, {
         slug: params.slug,
       })
-    : await sanityClient.fetch<PublicDeal>(PUBLIC_DEAL_QUERY, {
-        slug: params.slug,
-      });
-
-  if (!deal) notFound();
+    : publicDeal;
 
   const watchlist =
-    ctx.userId && paid ? await getUserWatchlist(ctx.userId) : [];
+    ctx.userId && isSubscriber ? await getUserWatchlist(ctx.userId) : [];
   const isFollowing = watchlist.includes(params.slug);
   const followControl =
-    paid && ctx.userId ? (
+    isSubscriber && ctx.userId ? (
       <FollowButton slug={params.slug} initialFollowing={isFollowing} />
     ) : null;
 
@@ -69,11 +88,11 @@ export default async function DealPage({
       <DealHeader deal={deal} followControl={followControl} />
 
       <div className="mt-7 space-y-6">
-        <SnapshotCard deal={deal} isPaid={paid} />
+        <SnapshotCard deal={deal} isPaid={canView} />
 
         {deal.key_risk_summary && <KeyRiskPull text={deal.key_risk_summary} />}
 
-        {paid ? (
+        {canView ? (
           <>
             <KeyFactsTable deal={deal as PaidDeal} />
 
@@ -105,7 +124,13 @@ export default async function DealPage({
             <DocumentLibrary docs={(deal as PaidDeal).documents} />
           </>
         ) : (
-          <PaywallGate isSignedIn={!!ctx.userId} />
+          <PaywallGate
+            isSignedIn={!!ctx.userId}
+            allowSinglePurchase={publicDeal.allow_single_purchase}
+            singlePurchasePrice={publicDeal.single_purchase_price}
+            slug={params.slug}
+            purchaseExpired={purchaseExpired}
+          />
         )}
       </div>
 

@@ -59,6 +59,9 @@ export interface PublicDeal extends DealListItem {
   outside_date_notes?: string;
   closing_guidance?: string;
   key_risk_summary?: string;
+  allow_single_purchase?: boolean;
+  single_purchase_price?: number;
+  last_material_update?: string;
   free_preview?: PortableTextBlock[];
 }
 

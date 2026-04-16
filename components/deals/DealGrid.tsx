@@ -7,9 +7,11 @@ import type { DealListItem } from "@/lib/sanity/types";
 export function DealGrid({
   deals,
   isPaid,
+  purchasedSlugs = [],
 }: {
   deals: DealListItem[];
   isPaid: boolean;
+  purchasedSlugs?: string[];
 }) {
   const { filters } = useFilters();
   const visible = applyFilters(deals, filters);
@@ -28,7 +30,11 @@ export function DealGrid({
       ) : (
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {visible.map((d) => (
-            <DealCard key={d._id} deal={d} locked={!isPaid} />
+            <DealCard
+              key={d._id}
+              deal={d}
+              locked={!isPaid && !purchasedSlugs.includes(d.slug)}
+            />
           ))}
         </div>
       )}

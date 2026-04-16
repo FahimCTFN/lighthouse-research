@@ -60,6 +60,9 @@ export const PUBLIC_DEAL_QUERY = groq`
     closing_guidance,
     deck,
     key_risk_summary,
+    allow_single_purchase,
+    single_purchase_price,
+    last_material_update,
     free_preview
   }
 `;
@@ -102,6 +105,9 @@ export const PAID_DEAL_QUERY = groq`
     closing_guidance,
     deck,
     key_risk_summary,
+    allow_single_purchase,
+    single_purchase_price,
+    last_material_update,
     free_preview,
     background,
     commentary,

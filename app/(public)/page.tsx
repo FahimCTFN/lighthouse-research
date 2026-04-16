@@ -6,7 +6,7 @@ import { FilterBar } from "@/components/filters/FilterBar";
 import { DealGrid } from "@/components/deals/DealGrid";
 import { SubscriptionBanner } from "@/components/layout/SubscriptionBanner";
 import { getCurrentUserContext, isPaidStatus } from "@/lib/clerk/helpers";
-import type { UserMetadata } from "@/lib/clerk/helpers";
+import type { UserMetadata, DealPurchase } from "@/lib/clerk/helpers";
 
 export const revalidate = 60;
 
@@ -16,13 +16,16 @@ export default async function IndexPage() {
     sanityClient.fetch<DealListItem[]>(ACTIVE_DEALS_QUERY),
   ]);
 
-  // Read fresh metadata from Clerk API (not stale JWT) so the lock
-  // badges disappear immediately after payment.
+  // Read fresh metadata so lock badges + purchased deals are up-to-date.
   let paid = ctx.isPaid;
-  if (ctx.userId && !paid) {
+  let purchasedSlugs: string[] = [];
+  if (ctx.userId) {
     const freshUser = await clerkClient.users.getUser(ctx.userId);
     const freshMeta = (freshUser.publicMetadata ?? {}) as UserMetadata;
-    paid = isPaidStatus(freshMeta);
+    if (!paid) paid = isPaidStatus(freshMeta);
+    purchasedSlugs = (freshMeta.purchased_deals ?? []).map(
+      (p: DealPurchase) => p.slug,
+    );
   }
 
   return (
@@ -44,7 +47,7 @@ export default async function IndexPage() {
       <FilterBar />
 
       <div className="mx-auto max-w-7xl">
-        <DealGrid deals={deals} isPaid={paid} />
+        <DealGrid deals={deals} isPaid={paid} purchasedSlugs={purchasedSlugs} />
       </div>
     </main>
   );

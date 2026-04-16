@@ -3,6 +3,11 @@ import { auth, clerkClient } from "@clerk/nextjs/server";
 export type Role = "admin" | "editor" | "viewer";
 export type SubStatus = "active" | "past_due" | "cancelled" | "none";
 
+export interface DealPurchase {
+  slug: string;
+  purchased_at: string;
+}
+
 export interface UserMetadata {
   role?: Role;
   stripeSubscriptionStatus?: SubStatus;
@@ -11,6 +16,7 @@ export interface UserMetadata {
   manualAccessGrant?: boolean;
   manualAccessExpiry?: string;
   watchlist?: string[];
+  purchased_deals?: DealPurchase[];
 }
 
 export async function getCurrentUserContext() {
@@ -61,4 +67,39 @@ export async function getUserWatchlist(userId: string): Promise<string[]> {
   const user = await clerkClient.users.getUser(userId);
   const meta = (user.publicMetadata ?? {}) as UserMetadata;
   return meta.watchlist ?? [];
+}
+
+export async function getUserPurchases(
+  userId: string,
+): Promise<DealPurchase[]> {
+  const user = await clerkClient.users.getUser(userId);
+  const meta = (user.publicMetadata ?? {}) as UserMetadata;
+  return meta.purchased_deals ?? [];
+}
+
+export async function addDealPurchase(
+  userId: string,
+  slug: string,
+): Promise<void> {
+  const purchases = await getUserPurchases(userId);
+  if (purchases.some((p) => p.slug === slug)) return; // already owns it
+  await setUserMetadata(userId, {
+    purchased_deals: [
+      ...purchases,
+      { slug, purchased_at: new Date().toISOString() },
+    ],
+  });
+}
+
+// Check if user has valid access to a specific deal via single purchase.
+// Returns false if the deal has had a material update since the purchase.
+export function hasDealAccess(
+  purchases: DealPurchase[],
+  slug: string,
+  lastMaterialUpdate?: string,
+): boolean {
+  const purchase = purchases.find((p) => p.slug === slug);
+  if (!purchase) return false;
+  if (!lastMaterialUpdate) return true; // no material update → access valid
+  return new Date(purchase.purchased_at) >= new Date(lastMaterialUpdate);
 }

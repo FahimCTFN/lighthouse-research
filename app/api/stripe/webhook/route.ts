@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import type Stripe from "stripe";
 import { getStripe } from "@/lib/stripe/client";
-import { setUserMetadata } from "@/lib/clerk/helpers";
+import { setUserMetadata, addDealPurchase } from "@/lib/clerk/helpers";
 import type { SubStatus } from "@/lib/clerk/helpers";
 
 export const runtime = "nodejs";
@@ -80,7 +80,18 @@ export async function POST(req: Request) {
           (session.metadata?.clerkUserId as string) ||
           (session.client_reference_id as string) ||
           "";
-        if (clerkUserId && session.customer) {
+        if (!clerkUserId) break;
+
+        const sessionType = session.metadata?.type;
+
+        if (sessionType === "single_report") {
+          // One-time deal purchase
+          const dealSlug = session.metadata?.dealSlug;
+          if (dealSlug) {
+            await addDealPurchase(clerkUserId, dealSlug);
+          }
+        } else if (session.customer) {
+          // Subscription checkout
           await setUserMetadata(clerkUserId, {
             stripeCustomerId: session.customer as string,
             stripeSubscriptionStatus: "active",

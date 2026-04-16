@@ -639,6 +639,35 @@ export const deal = defineType({
       ],
     }),
 
+    // ── Single-report purchase ────────────────────────────────
+    defineField({
+      name: "allow_single_purchase",
+      title: "Available for single-report purchase",
+      type: "boolean",
+      group: "alerts",
+      initialValue: false,
+      description:
+        "When enabled, readers can buy access to this deal for a one-time fee instead of subscribing.",
+    }),
+    defineField({
+      name: "single_purchase_price",
+      title: "Single report price (USD)",
+      type: "number",
+      group: "alerts",
+      initialValue: 89,
+      description: "Default is $89. Change per deal if needed.",
+      hidden: ({ parent }) => !parent?.allow_single_purchase,
+    }),
+    defineField({
+      name: "last_material_update",
+      title: "Last material update",
+      type: "datetime",
+      group: "alerts",
+      description:
+        "Auto-set when you publish with 'Send Watchlist Alert' ticked. Single-report buyers who purchased before this timestamp will be re-locked until they subscribe.",
+      readOnly: true,
+    }),
+
     // ── Alert controls ──────────────────────────────────────────
     defineField({
       name: "trigger_alert",

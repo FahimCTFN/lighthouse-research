@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { auth, clerkClient } from "@clerk/nextjs/server";
 import type { UserMetadata } from "@/lib/clerk/helpers";
-import { isPaidStatus, setUserMetadata } from "@/lib/clerk/helpers";
+import { isPaidStatus, setUserMetadata, addDealPurchase } from "@/lib/clerk/helpers";
 import { getStripe } from "@/lib/stripe/client";
 
 export async function GET(req: Request) {
@@ -23,6 +23,7 @@ export async function GET(req: Request) {
   // This handles the case where the webhook hasn't arrived yet (or never will).
   const url = new URL(req.url);
   const sessionId = url.searchParams.get("session_id");
+  const purchaseSlug = url.searchParams.get("purchase");
 
   if (sessionId) {
     try {
@@ -34,20 +35,33 @@ export async function GET(req: Request) {
         (session.client_reference_id === userId ||
           session.metadata?.clerkUserId === userId)
       ) {
-        // Activate directly — don't wait for the webhook.
-        await setUserMetadata(userId, {
-          stripeSubscriptionStatus: "active",
-          stripeCustomerId: (session.customer as string) ?? undefined,
-          stripeSubscriptionId:
-            (typeof session.subscription === "string"
-              ? session.subscription
-              : session.subscription?.id) ?? undefined,
-        });
-        return NextResponse.json({ isPaid: true });
+        if (session.metadata?.type === "single_report" && session.metadata?.dealSlug) {
+          // One-time deal purchase — add to purchased_deals
+          await addDealPurchase(userId, session.metadata.dealSlug);
+          return NextResponse.json({ isPaid: true, purchased: session.metadata.dealSlug });
+        } else {
+          // Subscription — activate fully
+          await setUserMetadata(userId, {
+            stripeSubscriptionStatus: "active",
+            stripeCustomerId: (session.customer as string) ?? undefined,
+            stripeSubscriptionId:
+              (typeof session.subscription === "string"
+                ? session.subscription
+                : session.subscription?.id) ?? undefined,
+          });
+          return NextResponse.json({ isPaid: true });
+        }
       }
     } catch (err) {
       console.error("[auth/check] Stripe session verification failed:", err);
     }
+  }
+
+  // Check if user has purchased this specific deal
+  if (purchaseSlug) {
+    const purchases = (meta.purchased_deals ?? []);
+    const owns = purchases.some((p: { slug: string }) => p.slug === purchaseSlug);
+    if (owns) return NextResponse.json({ isPaid: true, purchased: purchaseSlug });
   }
 
   return NextResponse.json({ isPaid: false });
