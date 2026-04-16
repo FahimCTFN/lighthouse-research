@@ -3,18 +3,9 @@ import {
   formatPercent,
   formatUSDM,
   formatDate,
-  STAGE_BUCKET,
-  BUCKET_ORDER,
-  type StageBucket,
+  STAGE_LABEL,
 } from "@/lib/format";
 import type { PublicDeal } from "@/lib/sanity/types";
-
-const BUCKET_LABEL: Record<StageBucket, string> = {
-  announced: "Announced",
-  regulatory: "Regulatory",
-  vote: "Shareholder vote",
-  closing: "Closing",
-};
 
 export function SnapshotCard({
   deal,
@@ -23,9 +14,6 @@ export function SnapshotCard({
   deal: PublicDeal;
   isPaid: boolean;
 }) {
-  const activeBucket = STAGE_BUCKET[deal.status];
-  const activeIdx = BUCKET_ORDER.indexOf(activeBucket);
-
   const metrics: {
     label: string;
     value: string;
@@ -43,7 +31,11 @@ export function SnapshotCard({
       value:
         deal.offer_terms ||
         (deal.offer_price != null ? formatPrice(deal.offer_price) : "—"),
-      sub: deal.offer_terms ? undefined : deal.offer_price ? "per share" : undefined,
+      sub: deal.offer_terms
+        ? undefined
+        : deal.offer_price
+          ? "per share"
+          : undefined,
     },
     {
       label: "Premium to unaffected",
@@ -60,6 +52,8 @@ export function SnapshotCard({
           : undefined,
     },
   ];
+
+  const prob = deal.ctfn_closing_probability;
 
   return (
     <section className="overflow-hidden rounded-lg border border-gray-200 bg-white">
@@ -95,60 +89,47 @@ export function SnapshotCard({
         ))}
       </dl>
 
-      {/* Stage progress bar */}
-      <div className="px-4 py-3">
-        <div className="flex">
-          {BUCKET_ORDER.map((bucket, i) => {
-            const done = i < activeIdx;
-            const active = i === activeIdx;
-            return (
+      {/* Probability gauge + deal status — replaces the old sequential progress
+          bar which falsely implied a linear stage order. Real deals have parallel
+          workstreams (regulatory, vote, litigation) that don't follow a single
+          track. The per-regulator filing cards below handle that complexity. */}
+      <div className="flex flex-col gap-3 px-4 py-3 sm:flex-row sm:items-center sm:justify-between">
+        {prob != null && (
+          <div className="flex-1">
+            <div className="mb-1.5 flex items-baseline justify-between">
+              <span className="text-[10px] font-medium uppercase tracking-label text-gray-500">
+                CTFN closing probability
+              </span>
+              <span className="text-[18px] font-semibold tabular-nums text-brand-navy">
+                {prob}%
+              </span>
+            </div>
+            <div
+              className="h-2 w-full overflow-hidden rounded-full bg-gray-100"
+              role="progressbar"
+              aria-valuenow={prob}
+              aria-valuemin={0}
+              aria-valuemax={100}
+            >
               <div
-                key={bucket}
-                className="relative flex-1 pt-2.5 text-center"
-              >
-                {/* left track */}
-                {i > 0 && (
-                  <span
-                    className={`absolute left-0 top-[3px] h-[1.5px] w-1/2 ${
-                      i <= activeIdx ? "bg-brand-navy" : "bg-gray-200"
-                    }`}
-                  />
-                )}
-                {/* right track */}
-                {i < BUCKET_ORDER.length - 1 && (
-                  <span
-                    className={`absolute left-1/2 top-[3px] h-[1.5px] w-1/2 ${
-                      done
-                        ? "bg-brand-navy"
-                        : active
-                          ? "bg-brand-gold"
-                          : "bg-gray-200"
-                    }`}
-                  />
-                )}
-                <span
-                  className={`relative z-10 mx-auto mb-1.5 block h-2 w-2 rounded-full ${
-                    done
-                      ? "bg-brand-navy"
-                      : active
-                        ? "bg-brand-gold"
-                        : "bg-gray-300"
-                  }`}
-                />
-                <span
-                  className={`text-[10px] font-medium uppercase tracking-label ${
-                    done
-                      ? "text-brand-navy"
-                      : active
-                        ? "text-brand-gold"
-                        : "text-gray-500"
-                  }`}
-                >
-                  {BUCKET_LABEL[bucket]}
-                </span>
-              </div>
-            );
-          })}
+                className="h-full rounded-full transition-[width] duration-500"
+                style={{
+                  width: `${prob}%`,
+                  backgroundColor: probColor(prob),
+                }}
+              />
+            </div>
+          </div>
+        )}
+        <div
+          className={`flex items-center gap-2 ${prob != null ? "sm:ml-6 sm:shrink-0" : ""}`}
+        >
+          <span className="text-[10px] font-medium uppercase tracking-label text-gray-500">
+            Status
+          </span>
+          <span className="rounded border border-gray-200 bg-gray-50 px-2 py-0.5 text-[11px] font-medium text-brand-navy">
+            {STAGE_LABEL[deal.status]}
+          </span>
         </div>
       </div>
 
@@ -175,4 +156,11 @@ function formatTermFees(deal: PublicDeal): string {
   );
   if (t && r) return `${t} / ${r}`;
   return t || "—";
+}
+
+function probColor(p: number): string {
+  if (p >= 75) return "#16a34a"; // green-600
+  if (p >= 50) return "#d4860a"; // brand gold
+  if (p >= 25) return "#ea580c"; // orange-600
+  return "#dc2626"; // red-600
 }

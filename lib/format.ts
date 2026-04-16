@@ -27,29 +27,6 @@ export const STAGE_LABEL: Record<DealStatus, string> = {
   archived: "Archived",
 };
 
-// Which bucket (Announced, Regulatory, Vote, Closing) does a status fall in
-// for the 4-step progress bar.
-export type StageBucket = "announced" | "regulatory" | "vote" | "closing";
-
-export const STAGE_BUCKET: Record<DealStatus, StageBucket> = {
-  announced: "announced",
-  regulatory_review: "regulatory",
-  hsr_waiting: "regulatory",
-  proxy_filed: "vote",
-  vote_scheduled: "vote",
-  closing_imminent: "closing",
-  closed: "closing",
-  terminated: "closing",
-  archived: "closing",
-};
-
-export const BUCKET_ORDER: StageBucket[] = [
-  "announced",
-  "regulatory",
-  "vote",
-  "closing",
-];
-
 export function formatUSDM(value?: number): string {
   if (value == null) return "—";
   if (value >= 1000) return `$${(value / 1000).toFixed(1)}bn`;
