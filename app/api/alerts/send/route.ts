@@ -102,5 +102,12 @@ export async function POST(req: Request) {
   const sent = results.filter((r) => r.status === "fulfilled").length;
   const failed = results.length - sent;
 
+  // Auto-reset trigger_alert to false so the next save/mutation
+  // doesn't re-send emails. Editor must explicitly tick it again.
+  await sanityServerClient
+    .patch(`deal-${slug}`)
+    .set({ trigger_alert: false })
+    .commit();
+
   return NextResponse.json({ ok: true, alerted: sent, failed });
 }
