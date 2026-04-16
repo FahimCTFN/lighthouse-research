@@ -102,15 +102,24 @@ export async function addDealPurchase(
   }
 }
 
-// Check if user has valid access to a specific deal via single purchase.
-// Returns false if the deal has had a material update since the purchase.
+// Check if user owns a specific deal via single purchase.
+// A purchase grants permanent access — never re-locked.
 export function hasDealAccess(
+  purchases: DealPurchase[],
+  slug: string,
+): boolean {
+  return purchases.some((p) => p.slug === slug);
+}
+
+// Check if the deal has been materially updated since the user's purchase.
+// Used to show a non-blocking upgrade banner (not to revoke access).
+export function hasMaterialUpdateSincePurchase(
   purchases: DealPurchase[],
   slug: string,
   lastMaterialUpdate?: string,
 ): boolean {
+  if (!lastMaterialUpdate) return false;
   const purchase = purchases.find((p) => p.slug === slug);
   if (!purchase) return false;
-  if (!lastMaterialUpdate) return true; // no material update → access valid
-  return new Date(purchase.purchased_at) >= new Date(lastMaterialUpdate);
+  return new Date(purchase.purchased_at) < new Date(lastMaterialUpdate);
 }

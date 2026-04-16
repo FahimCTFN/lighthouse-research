@@ -3,12 +3,9 @@ import { BuyReportButton } from "./BuyReportButton";
 
 interface PaywallGateProps {
   isSignedIn?: boolean;
-  // Single-purchase fields (from deal)
   allowSinglePurchase?: boolean;
   singlePurchasePrice?: number;
   slug?: string;
-  // If user previously bought this deal but content was updated since
-  purchaseExpired?: boolean;
 }
 
 export function PaywallGate({
@@ -16,68 +13,7 @@ export function PaywallGate({
   allowSinglePurchase = false,
   singlePurchasePrice = 89,
   slug,
-  purchaseExpired = false,
 }: PaywallGateProps) {
-  // Variant 3: user bought this deal but content was materially updated
-  if (purchaseExpired && slug) {
-    return (
-      <section className="rounded-lg border border-brand-gold/40 bg-brand-gold-light/30 px-7 py-8 text-center">
-        <div className="mb-2 text-[10px] font-medium uppercase tracking-label text-brand-gold-ink">
-          Updated content
-        </div>
-        <h3 className="font-serif text-[20px] font-normal text-brand-navy">
-          This situation has been updated
-        </h3>
-        <p className="mx-auto mt-2 max-w-[420px] text-[13px] leading-[1.6] text-gray-600">
-          Your single-report access covers the content at the time of
-          purchase. The editorial team has published a material update
-          since then.
-        </p>
-
-        <div className="mx-auto mt-6 grid max-w-[420px] grid-cols-1 gap-3 sm:grid-cols-2">
-          <div className="flex flex-col items-center rounded-lg border border-gray-200 bg-white p-4">
-            <div className="text-[10px] font-medium uppercase tracking-label text-gray-500">
-              Updated report
-            </div>
-            <div className="mt-1 text-[22px] font-semibold tabular-nums text-brand-navy">
-              ${singlePurchasePrice}
-            </div>
-            <div className="text-[11px] text-gray-500">one-time</div>
-            <div className="mt-3 w-full">
-              {isSignedIn ? (
-                <BuyReportButton slug={slug} price={singlePurchasePrice} />
-              ) : (
-                <Link
-                  href="/sign-in"
-                  className="block w-full rounded border border-brand-navy bg-white px-4 py-2 text-center text-[13px] font-medium text-brand-navy hover:bg-brand-navy hover:text-white"
-                >
-                  Sign in to buy
-                </Link>
-              )}
-            </div>
-          </div>
-          <div className="flex flex-col items-center rounded-lg border-[1.5px] border-brand-gold bg-white p-4">
-            <div className="text-[10px] font-medium uppercase tracking-label text-brand-gold-ink">
-              Full access
-            </div>
-            <div className="mt-1 text-[22px] font-semibold tabular-nums text-brand-navy">
-              $499
-            </div>
-            <div className="text-[11px] text-gray-500">per month</div>
-            <div className="mt-3 w-full">
-              <Link
-                href="/subscribe"
-                className="block w-full rounded bg-brand-navy px-4 py-2 text-center text-[13px] font-medium text-white hover:bg-brand-navy-dark"
-              >
-                Subscribe
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-    );
-  }
-
   // Variant 2: deal allows single purchase — show two options
   if (allowSinglePurchase && slug) {
     return (

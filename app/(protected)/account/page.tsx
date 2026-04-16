@@ -5,7 +5,7 @@ import { groq } from "next-sanity";
 import {
   getCurrentUserContext,
   getUserWatchlist,
-  hasDealAccess,
+  hasMaterialUpdateSincePurchase,
 } from "@/lib/clerk/helpers";
 import type { UserMetadata, DealPurchase } from "@/lib/clerk/helpers";
 import { StageBadge, SectorTag } from "@/components/ui/Badge";
@@ -171,7 +171,7 @@ export default async function AccountPage() {
           <ul className="divide-y divide-gray-100">
             {purchases.map((p) => {
               const deal = purchasedDeals.find((d) => d.slug === p.slug);
-              const stillValid = hasDealAccess(
+              const hasUpdate = hasMaterialUpdateSincePurchase(
                 purchases,
                 p.slug,
                 deal?.last_material_update,
@@ -193,15 +193,14 @@ export default async function AccountPage() {
                           {tickers}
                         </span>
                       )}
-                      <span
-                        className={`inline-flex rounded border px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-label ${
-                          stillValid
-                            ? "border-green-200 bg-green-50 text-green-800"
-                            : "border-amber-200 bg-amber-50 text-amber-800"
-                        }`}
-                      >
-                        {stillValid ? "Active" : "Update available"}
+                      <span className="inline-flex rounded border border-green-200 bg-green-50 px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-label text-green-800">
+                        Purchased
                       </span>
+                      {hasUpdate && (
+                        <span className="inline-flex rounded border border-amber-200 bg-amber-50 px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-label text-amber-800">
+                          New update available
+                        </span>
+                      )}
                     </div>
                     <Link
                       href={`/deals/${p.slug}`}
@@ -216,12 +215,12 @@ export default async function AccountPage() {
                     </div>
                   </div>
                   <div className="shrink-0">
-                    {!stillValid && (
+                    {hasUpdate && (
                       <Link
                         href="/subscribe"
                         className="rounded border border-brand-gold bg-brand-gold-light px-3 py-1.5 text-[11px] font-medium text-brand-gold-ink hover:brightness-95"
                       >
-                        Upgrade for latest
+                        Subscribe for updates
                       </Link>
                     )}
                   </div>
