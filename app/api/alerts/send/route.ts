@@ -3,7 +3,7 @@ import { revalidatePath } from "next/cache";
 import { clerkClient } from "@clerk/nextjs/server";
 import { sanityServerClient } from "@/lib/sanity/client";
 import { DEAL_BY_SLUG_LIGHT_QUERY } from "@/lib/sanity/queries";
-import { sendWatchlistAlert } from "@/lib/mailchimp/sendAlert";
+import { sendWatchlistAlert } from "@/lib/email/sendAlert";
 import type { UserMetadata } from "@/lib/clerk/helpers";
 import { isPaidStatus } from "@/lib/clerk/helpers";
 
