@@ -12,7 +12,6 @@ import {
   getUserPurchases,
   isPaidStatus,
   hasDealAccess,
-  hasMaterialUpdateSincePurchase,
 } from "@/lib/clerk/helpers";
 import type { UserMetadata } from "@/lib/clerk/helpers";
 import { DealHeader } from "@/components/deals/DealHeader";
@@ -62,11 +61,6 @@ export default async function DealPage({
   if (!publicDeal) notFound();
 
   const ownsDeal = hasDealAccess(purchases, params.slug);
-  const hasUpdate = hasMaterialUpdateSincePurchase(
-    purchases,
-    params.slug,
-    publicDeal.last_material_update,
-  );
   const canView = isSubscriber || ownsDeal;
 
   // Layer-3 gating: only fetch paid fields if user has access
@@ -96,9 +90,8 @@ export default async function DealPage({
 
         {canView ? (
           <>
-            {ownsDeal && !isSubscriber && hasUpdate && (
+            {ownsDeal && !isSubscriber && (
               <UpdateBanner
-                lastUpdate={publicDeal.last_material_update!}
                 purchaseDate={
                   purchases.find((p) => p.slug === params.slug)!.purchased_at
                 }

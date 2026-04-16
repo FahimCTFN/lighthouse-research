@@ -654,7 +654,7 @@ export const deal = defineType({
       title: "Single report price (USD)",
       type: "number",
       group: "alerts",
-      initialValue: 89,
+      initialValue: 99,
       description: "Default is $89. Change per deal if needed.",
       hidden: ({ parent }) => !parent?.allow_single_purchase,
     }),

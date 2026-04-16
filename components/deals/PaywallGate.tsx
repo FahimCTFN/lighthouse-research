@@ -11,7 +11,7 @@ interface PaywallGateProps {
 export function PaywallGate({
   isSignedIn = false,
   allowSinglePurchase = false,
-  singlePurchasePrice = 89,
+  singlePurchasePrice = 99,
   slug,
 }: PaywallGateProps) {
   // Variant 2: deal allows single purchase — show two options
