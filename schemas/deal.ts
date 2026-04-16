@@ -664,8 +664,7 @@ export const deal = defineType({
       type: "datetime",
       group: "alerts",
       description:
-        "Auto-set when you publish with 'Send Watchlist Alert' ticked. Single-report buyers who purchased before this timestamp will be re-locked until they subscribe.",
-      readOnly: true,
+        "Set this to now when publishing a material update. Single-report buyers who purchased before this timestamp will be re-locked and prompted to subscribe. Auto-set by the alerts webhook when 'Send Watchlist Alert' is ticked.",
     }),
 
     // ── Alert controls ──────────────────────────────────────────
