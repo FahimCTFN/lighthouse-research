@@ -82,13 +82,24 @@ export async function addDealPurchase(
   slug: string,
 ): Promise<void> {
   const purchases = await getUserPurchases(userId);
-  if (purchases.some((p) => p.slug === slug)) return; // already owns it
-  await setUserMetadata(userId, {
-    purchased_deals: [
-      ...purchases,
-      { slug, purchased_at: new Date().toISOString() },
-    ],
-  });
+  const existing = purchases.find((p) => p.slug === slug);
+  if (existing) {
+    // Re-purchase after a material update — refresh the timestamp
+    // so their access is valid against the latest last_material_update.
+    const updated = purchases.map((p) =>
+      p.slug === slug
+        ? { ...p, purchased_at: new Date().toISOString() }
+        : p,
+    );
+    await setUserMetadata(userId, { purchased_deals: updated });
+  } else {
+    await setUserMetadata(userId, {
+      purchased_deals: [
+        ...purchases,
+        { slug, purchased_at: new Date().toISOString() },
+      ],
+    });
+  }
 }
 
 // Check if user has valid access to a specific deal via single purchase.

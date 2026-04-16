@@ -52,8 +52,9 @@ export default async function DealPage({
       (await getUserPurchases(ctx.userId))
     : [];
 
-  // Fetch the public deal first to get purchase/gating fields
-  const publicDeal = await sanityClient.fetch<PublicDeal>(PUBLIC_DEAL_QUERY, {
+  // Fetch with server client (no CDN cache) so last_material_update
+  // reflects the latest Studio publish immediately.
+  const publicDeal = await sanityServerClient.fetch<PublicDeal>(PUBLIC_DEAL_QUERY, {
     slug: params.slug,
   });
   if (!publicDeal) notFound();
