@@ -45,6 +45,12 @@ export async function GET(req: Request) {
         manualExpiry: meta.manualAccessExpiry ?? null,
         stripeCustomerId: meta.stripeCustomerId ?? null,
         watchlistCount: meta.watchlist?.length ?? 0,
+        purchasedDeals: (meta.purchased_deals ?? []).map(
+          (p: { slug: string; purchased_at: string }) => ({
+            slug: p.slug,
+            purchased_at: p.purchased_at,
+          }),
+        ),
       };
     })
     .filter((u) => {

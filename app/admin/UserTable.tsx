@@ -2,6 +2,11 @@
 
 import { useCallback, useEffect, useState } from "react";
 
+interface PurchasedDeal {
+  slug: string;
+  purchased_at: string;
+}
+
 interface Row {
   id: string;
   email: string;
@@ -15,6 +20,7 @@ interface Row {
   manualExpiry: string | null;
   stripeCustomerId: string | null;
   watchlistCount: number;
+  purchasedDeals: PurchasedDeal[];
 }
 
 type Filter = "all" | "paid" | "free" | "admin" | "editor" | "manual";
@@ -134,6 +140,7 @@ export function UserTable() {
               <th className="px-4 py-2">Tier</th>
               <th className="px-4 py-2">Role</th>
               <th className="px-4 py-2">Joined</th>
+              <th className="px-4 py-2">Purchases</th>
               <th className="px-4 py-2">Watchlist</th>
               <th className="px-4 py-2">Actions</th>
             </tr>
@@ -142,7 +149,7 @@ export function UserTable() {
             {!rows.length && !loading && (
               <tr>
                 <td
-                  colSpan={6}
+                  colSpan={7}
                   className="px-4 py-8 text-center text-sm text-gray-500"
                 >
                   No users match.
@@ -182,6 +189,32 @@ export function UserTable() {
                 </td>
                 <td className="px-4 py-3 text-[11px] text-gray-600 tabular-nums">
                   {new Date(u.createdAt).toLocaleDateString()}
+                </td>
+                <td className="px-4 py-3">
+                  {u.purchasedDeals.length === 0 ? (
+                    <span className="text-[11px] text-gray-400">—</span>
+                  ) : (
+                    <div>
+                      <span className="text-[11px] font-medium tabular-nums text-brand-navy">
+                        {u.purchasedDeals.length}{" "}
+                        {u.purchasedDeals.length === 1 ? "report" : "reports"}
+                      </span>
+                      <div className="mt-1 space-y-0.5">
+                        {u.purchasedDeals.map((p) => (
+                          <div
+                            key={p.slug}
+                            className="text-[10px] text-gray-500"
+                          >
+                            {p.slug.replace(/-/g, " ").slice(0, 30)}
+                            {p.slug.length > 30 ? "…" : ""}
+                            <span className="ml-1 tabular-nums text-gray-400">
+                              {new Date(p.purchased_at).toLocaleDateString()}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </td>
                 <td className="px-4 py-3 text-[11px] text-gray-600 tabular-nums">
                   {u.watchlistCount}
