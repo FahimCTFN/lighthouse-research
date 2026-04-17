@@ -3,6 +3,7 @@ import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import { GlobalSearch } from "./GlobalSearch";
 import { SubBadge } from "./SubBadge";
 import { MobileMenu } from "./MobileMenu";
+import { NavLinks } from "./NavLinks";
 
 export function Nav() {
   return (
@@ -31,32 +32,7 @@ export function Nav() {
               </div>
             </div>
           </Link>
-          <nav className="hidden items-center gap-1 sm:flex">
-            <Link
-              href="/"
-              className="rounded-full bg-white/10 px-3 py-1.5 text-[11px] font-medium text-white/90 transition hover:bg-white/15"
-            >
-              Active Situations
-            </Link>
-            <Link
-              href="/calendar"
-              className="rounded-full px-3 py-1.5 text-[11px] font-medium text-white/50 transition hover:bg-white/10 hover:text-white/80"
-            >
-              Calendar
-            </Link>
-            <Link
-              href="/archive"
-              className="rounded-full px-3 py-1.5 text-[11px] font-medium text-white/50 transition hover:bg-white/10 hover:text-white/80"
-            >
-              Archive
-            </Link>
-            <Link
-              href="/subscribe"
-              className="rounded-full px-3 py-1.5 text-[11px] font-medium text-white/50 transition hover:bg-white/10 hover:text-white/80"
-            >
-              Pricing
-            </Link>
-          </nav>
+          <NavLinks />
         </div>
 
         <div className="flex items-center gap-2 sm:gap-3">
