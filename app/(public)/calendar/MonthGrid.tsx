@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import type { CalendarEvent } from "@/lib/calendar";
+import { generateICS } from "@/lib/calendar";
+import { AddToCalendarMenu } from "./AddToCalendarMenu";
 
 const DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 const MONTHS = [
@@ -86,6 +88,17 @@ export function MonthGrid({ events }: { events: CalendarEvent[] }) {
   }
 
   const selectedEvents = selectedDate ? byDate.get(selectedDate) ?? [] : [];
+
+  function downloadICS(event: CalendarEvent) {
+    const content = generateICS(event);
+    const blob = new Blob([content], { type: "text/calendar;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `${event.dealSlug}-${event.date}-${event.regulator}.ics`;
+    a.click();
+    URL.revokeObjectURL(url);
+  }
 
   return (
     <div className="mt-6">
@@ -241,12 +254,20 @@ export function MonthGrid({ events }: { events: CalendarEvent[] }) {
                   <span className="min-w-0 flex-1 text-[13px] text-ink">
                     {ev.label}
                   </span>
-                  <Link
-                    href={`/deals/${ev.dealSlug}`}
-                    className="shrink-0 text-[11px] font-medium text-brand-navy hover:underline"
-                  >
-                    View →
-                  </Link>
+                  <div className="flex shrink-0 items-center gap-1.5">
+                    {!ev.isDone && (
+                      <AddToCalendarMenu
+                        event={ev}
+                        onDownloadICS={() => downloadICS(ev)}
+                      />
+                    )}
+                    <Link
+                      href={`/deals/${ev.dealSlug}`}
+                      className="text-[11px] font-medium text-brand-navy hover:underline"
+                    >
+                      View →
+                    </Link>
+                  </div>
                 </li>
               ))}
             </ul>
