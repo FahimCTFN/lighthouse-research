@@ -1807,6 +1807,95 @@ const deals = [
     trigger_alert: false,
     alert_summary: "HSR waiting period expires April 20. Shareholder vote approved April 30.",
   },
+
+  // 11 ── SKYT / IONQ — quantum computing + semiconductor fab
+  {
+    acquirer: "IonQ",
+    target: "SkyWater Technology",
+    acquirer_ticker: "IONQ",
+    target_ticker: "SKYT",
+    status: "hsr_waiting",
+    sector: "technology",
+    target_jurisdiction: "Delaware",
+    deck: "HSR pulled and refiled March 25; waiting period now expires April 24. Shareholder vote May 8. Cash-and-stock deal with collar mechanism on IonQ shares.",
+    key_risk_summary:
+      "HSR waiting period expires April 24 following a pull-and-refile on March 25. The transaction combines a quantum computing company with a semiconductor foundry — a novel combination that may draw scrutiny on national security grounds given SkyWater's defense and intelligence community contracts.",
+    equity_value: 1450,
+    shares_outstanding: 49,
+    offer_price: 35,
+    offer_terms: "$15 in cash and $20 in shares of IonQ common stock, subject to a collar. SkyWater shareholders receive exactly $20 worth of IonQ stock per share as long as IonQ trades between $37.99 and $60.13, but will receive a fixed number of shares if the price falls outside that range.",
+    premium: 38,
+    premium_reference: "vs 30-day VWAP of SkyWater shares as of January 23",
+    termination_fee: 51.6,
+    termination_fee_pct: 3.6,
+    financing:
+      "Cash and stock. The cash component is funded from IonQ's balance sheet and the stock component is subject to a collar mechanism protecting SkyWater shareholders within the $37.99–$60.13 IonQ price range.",
+    ctfn_closing_probability: 75,
+    ctfn_estimated_close: "2026-08-15",
+    ctfn_probability_notes:
+      "Relatively straightforward HSR given limited direct product overlap. Collar mechanism adds deal-certainty. 20% voting agreement from SkyWater shareholders provides committed support.",
+    announcement_date: "2026-01-26",
+    published_date: "2026-01-27",
+    next_key_event_date: "2026-04-24",
+    next_key_event_label: "HSR expiration",
+    outside_date: "2027-01-25",
+    outside_date_final: "2027-07-24",
+    outside_date_notes:
+      "Subject to two automatic 90-day extensions, to April 25, 2027 and July 24, 2027.",
+    closing_guidance: "Q2 or Q3 2026",
+    best_efforts:
+      "The parties shall divest assets and defend the transaction in court if needed to get regulatory clearance.",
+    target_advisors:
+      "Goldman Sachs is serving as exclusive financial advisor. Foley & Lardner is serving as legal counsel. FGS Global is running PR.",
+    acquirer_advisors:
+      "Cantor Fitzgerald and BofA are serving as financial advisors. Paul, Weiss, Rifkind, Wharton & Garrison are serving as legal counsel. Joele Frank, Wilkinson Brimmer Katcher is running PR.",
+    free_preview: [
+      p("IonQ is acquiring SkyWater Technology for $15 in cash and $20 in IonQ shares per SkyWater share, implying a $1.45bn equity value and a 38% premium to SkyWater's 30-day VWAP. The stock component is subject to a collar — SkyWater shareholders receive exactly $20 worth of IonQ stock as long as IonQ trades between $37.99 and $60.13, with a fixed share count if the price falls outside that range."),
+      p("HSR was filed February 20 and subsequently pulled and refiled on March 25, with the waiting period now scheduled to expire on April 24. The shareholder vote is set for May 8, 2026."),
+    ],
+    background: [],
+    commentary: [
+      p("SkyWater shareholders will own between 4.4% and 6.7% of the combined company. Shareholders representing about 20% of SkyWater's voting power have signed a binding agreement to vote in favor of the merger."),
+    ],
+    filings: [
+      {
+        _key: k(),
+        jurisdiction: "HSR",
+        outcome: "pending",
+        outcome_summary: "HSR filed February 20. Parties pulled and refiled on March 25. Waiting period now scheduled to expire April 24.",
+        steps: [
+          { _key: k(), label: "HSR filed", actual_date: "2026-02-20" },
+          { _key: k(), label: "HSR pulled and refiled", actual_date: "2026-03-25" },
+          { _key: k(), label: "HSR waiting period expires", expected_date: "2026-04-24" },
+          { _key: k(), label: "Second request (if issued)", note: "Would extend timeline significantly" },
+        ],
+      },
+    ],
+    shareholder_vote: {
+      outcome: "pending",
+      label: "Target shareholders — May 8, 2026",
+      committed_pct: 20,
+      committed_notes: "SkyWater shareholders representing ~20% of voting power signed binding agreement",
+      steps: [
+        { _key: k(), label: "Proxy statement filed", actual_date: "2026-03-15" },
+        { _key: k(), label: "Shareholder vote", expected_date: "2026-05-08" },
+      ],
+    },
+    ctfn_analysis: [],
+    risk_factors: [
+      p("HSR pull-and-refile suggests potential regulatory friction — parties may have needed additional time or pre-clearance discussions with the FTC/DOJ."),
+      p("SkyWater's defense and intelligence community contracts could raise national security considerations beyond standard antitrust review."),
+      p("IonQ stock price volatility affects the effective consideration — collar mechanism provides partial protection but breaks outside $37.99–$60.13 range."),
+    ],
+    documents: [
+      { _key: k(), title: "Press Release", url: "https://www.sec.gov/" },
+      { _key: k(), title: "Investor Presentation", url: "https://www.sec.gov/" },
+      { _key: k(), title: "Definitive Merger Agreement", url: "https://www.sec.gov/Archives/edgar/data/1824920/000119312526021616/d10479dex21.htm" },
+      { _key: k(), title: "Definitive Proxy Statement", url: "https://www.sec.gov/Archives/edgar/data/1819974/000119312526134924/d134181ddefm14a.htm" },
+    ],
+    trigger_alert: false,
+    alert_summary: "HSR waiting period expires April 24; shareholder vote May 8.",
+  },
 ];
 
 async function run() {
