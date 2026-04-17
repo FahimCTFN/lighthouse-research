@@ -1309,6 +1309,186 @@ const deals = [
     trigger_alert: false,
     alert_summary: "CMA opens formal investigation; EC formal filing expected May.",
   },
+
+  // 8 ── TXNM / BX — New Mexico utility take-private
+  {
+    acquirer: "Blackstone",
+    target: "TXNM Energy",
+    acquirer_ticker: "BX",
+    target_ticker: "TXNM",
+    status: "regulatory_review",
+    sector: "energy",
+    target_jurisdiction: "New Mexico",
+    deck: "NMPRC hearing examiner investigation into Blackstone's $400mn PIPE paused the procedural schedule. Public hearing on PIPE set for April 30. PUCT approved February 6; FERC authorized February 20.",
+    key_risk_summary:
+      "New Mexico PRC hearing examiners opened an investigation into Blackstone's $400mn PIPE purchase of TXNM shares, alleging it illegally bypassed state approval. The procedural schedule has been paused. NM AG Raúl Torrez and a local nonprofit are also challenging the PIPE transaction.",
+    equity_value: 5700,
+    shares_outstanding: 93,
+    offer_price: 61.25,
+    offer_terms: "$61.25 per share in cash",
+    premium: 28,
+    premium_reference: "vs TXNM unaffected close on March 10, prior to media reports of a possible deal",
+    termination_fee: 210,
+    termination_fee_pct: 3.7,
+    reverse_termination_fee: 350,
+    reverse_termination_fee_pct: 6.1,
+    termination_fee_notes:
+      "$100mn (1%) additional if regulators block the deal.",
+    financing:
+      "The transaction is funded through equity and assumption of existing debt. Blackstone is also investing $400mn through a purchase of 8mn newly issued TXNM shares at $50 per share via private placement (PIPE). The $400mn PIPE closed on June 2, 2025.",
+    ctfn_closing_probability: 70,
+    ctfn_estimated_close: "2026-09-30",
+    ctfn_probability_notes:
+      "CTFN enforceability rating: STRONG (favors seller). PUCT and FERC cleared. NMPRC is the primary remaining risk — PIPE investigation + AG challenge create procedural uncertainty.",
+    announcement_date: "2025-05-19",
+    published_date: "2025-05-20",
+    next_key_event_date: "2026-04-30",
+    next_key_event_label: "NMPRC public hearing on PIPE",
+    outside_date: "2026-08-18",
+    outside_date_final: "2026-12-31",
+    outside_date_notes:
+      "Subject to an automatic extension to December 31, 2026.",
+    closing_guidance: "H2 2026",
+    best_efforts:
+      "If necessary, the parties shall divest assets and defend the transaction through litigation.",
+    target_advisors:
+      "Wells Fargo is serving as lead financial advisor. Citi is also serving as a financial advisor. Troutman Pepper Locke is serving as legal counsel.",
+    acquirer_advisors:
+      "RBC is serving as lead financial advisor. JP Morgan is also serving as a financial advisor. Kirkland & Ellis is serving as legal counsel.",
+    free_preview: [
+      p("Blackstone Infrastructure is acquiring TXNM Energy (formerly PNM Resources) for $61.25 per share in cash, implying a $5.7bn equity value. The 28% premium is measured against the unaffected close on March 10, 2025, prior to media reports of a possible deal."),
+      p("The Texas Public Utility Commission (PUCT) approved on February 6, 2026. FERC authorized on February 20. The New Mexico Public Regulation Commission (NMPRC) remains the primary regulatory hurdle — hearing examiners opened an investigation into Blackstone's $400mn PIPE purchase and paused the procedural schedule."),
+    ],
+    background: [
+      p("TXNM (then trading as PNM Resources) entered into a merger agreement with Avangrid in October 2020, which Avangrid terminated in January 2024 after regulatory pushback from the NMPRC. Following this, TXNM's board renamed the company and resumed a strategic review."),
+      p("Between January 9 and January 29, 2025, TXNM executed NDAs with Blackstone Infrastructure, Party A, Party B, Party C and Party D, providing dataroom access and requesting bids by February 18."),
+      p("On February 18, Blackstone, Party A, and Party D submitted initial bids for $58, $60.25 and $55 per share, respectively. Party B and Party C did not participate. All three bidders offered interim financing via a $400mn PIPE. Party D declined to increase its bid and was dropped on February 21. TXNM's board chose to advance with Blackstone and Party A."),
+      p("On February 28, Party E submitted an unsolicited $60-per-share offer with a direct equity investment and sought exclusivity. After preliminary talks, TXNM sent an NDA to Party E on March 7, which was executed on March 12. Dataroom access was granted the same day."),
+      p("On March 10 and March 11, news reports revealed TXNM was exploring a sale, pushing the company's stock price from $47.87 to $51.18. Despite inbound enquiries from strategic and financial investors after these reports, TXNM concluded on March 19 that none were actionable or competitive and that the process should stay focused on the existing bidders."),
+      p("On March 28, Party E indicated it would be unable to meet the April 14 deadline. On April 4, Party A also signaled it could not submit a bid by the deadline, citing regulatory concerns, which it confirmed again on April 10 after its largest passive equity backer dropped out. TXNM explored potential consortium options involving Party E, but neither Party A nor Blackstone engaged further with Party E."),
+      p("On April 14, Blackstone submitted a second-round bid at $61 per share and a PIPE purchase price of $48.50. On April 18, Blackstone increased its bid to $61.25 per share and the PIPE price to $50 per share, in addition to a $350mn termination fee for regulatory failure or breach. From April 24 to early May, TXNM and Blackstone negotiated final terms."),
+      p("On May 16, TXNM's board reviewed the merger documents, financing plans and Wells Fargo's fairness analysis. Having considered the $61.25 offer, at a 22.5% premium to the target's 30-day VWAP of $49.78 as of March 5, it found it provided value and certainty to shareholders."),
+      p("On May 18, the board unanimously approved the transaction. Wells Fargo delivered its final fairness opinion, and TXNM and Blackstone executed the merger agreement, PIPE agreement and financing documents. Blackstone also delivered commitment letters on the same day. On May 19, the parties announced the transaction. On June 2, the $400mn PIPE closed, with TXNM issuing stock to an affiliate of Blackstone Infrastructure."),
+    ],
+    commentary: [
+      p("TXNM dividends will continue through closing of the transaction. Blackstone is also investing $400mn through a purchase of 8mn newly issued TXNM shares at $50 per share by way of a private-placement agreement."),
+      p("On February 19, New Mexico attorney general Raúl Torrez and a local nonprofit challenged the $400mn stock sale from TXNM Energy to Blackstone, alleging it illegally bypassed state approval."),
+      p("On March 11, the NMPRC hearing examiners opened an investigation into Blackstone's $400mn PIPE purchase and paused the procedural schedule for the merger case. A public hearing on the PIPE matter is scheduled for April 30."),
+    ],
+    filings: [
+      {
+        _key: k(),
+        jurisdiction: "HSR",
+        outcome: "cleared",
+        outcome_summary: "HSR approval and clearance received. FCC also authorized.",
+        steps: [
+          { _key: k(), label: "HSR clearance received", actual_date: "2025-09-15" },
+          { _key: k(), label: "FCC clearance", actual_date: "2025-09-15" },
+        ],
+      },
+      {
+        _key: k(),
+        jurisdiction: "Other",
+        display_name: "FERC (Federal Energy Regulatory Commission)",
+        outcome: "cleared",
+        steps: [
+          { _key: k(), label: "FERC authorized", actual_date: "2026-02-20" },
+        ],
+      },
+      {
+        _key: k(),
+        jurisdiction: "Other",
+        display_name: "PUCT (Texas Public Utility Commission)",
+        outcome: "cleared",
+        outcome_summary: "180-day review period. PUCT approved the transaction.",
+        steps: [
+          { _key: k(), label: "Application filed", actual_date: "2025-08-25" },
+          { _key: k(), label: "PUCT approved", actual_date: "2026-02-06" },
+        ],
+      },
+      {
+        _key: k(),
+        jurisdiction: "Other",
+        display_name: "NMPRC (New Mexico Public Regulation Commission)",
+        outcome: "conditional",
+        outcome_summary: "Primary remaining regulatory risk. Application filed August 25, 2025. Hearing examiners opened investigation into the $400mn PIPE on March 11 and paused the procedural schedule. NM AG Raúl Torrez challenging the PIPE. Public hearing on PIPE set for April 30.",
+        steps: [
+          { _key: k(), label: "Application filed", actual_date: "2025-08-25" },
+          { _key: k(), label: "Intervention deadline", actual_date: "2025-12-05" },
+          { _key: k(), label: "Staff/Intervenor direct testimony", actual_date: "2026-03-06" },
+          { _key: k(), label: "PIPE investigation opened + schedule paused", actual_date: "2026-03-11" },
+          { _key: k(), label: "Stipulation deadline", actual_date: "2026-03-20" },
+          { _key: k(), label: "Rebuttal testimony", actual_date: "2026-04-03" },
+          { _key: k(), label: "Prehearing conference", actual_date: "2026-04-28" },
+          { _key: k(), label: "Public hearing on PIPE", expected_date: "2026-04-30" },
+          { _key: k(), label: "Revised procedural schedule hearing", expected_date: "2026-05-06", note: "Parties to meet via video link" },
+          { _key: k(), label: "Merger hearing (May 4-15)", expected_date: "2026-05-04", note: "If schedule resumes" },
+          { _key: k(), label: "NMPRC decision", expected_date: "2026-08-15", note: "Estimated — no statutory deadline" },
+        ],
+      },
+      {
+        _key: k(),
+        jurisdiction: "Other",
+        display_name: "NRC (Nuclear Regulatory Commission)",
+        outcome: "pending",
+        outcome_summary: "Approval required for transfer of nuclear facility licenses.",
+        steps: [
+          { _key: k(), label: "NRC approval", expected_date: "2026-06-30" },
+        ],
+      },
+    ],
+    shareholder_vote: {
+      outcome: "approved",
+      label: "Target shareholders — approved August 28, 2025",
+      steps: [
+        { _key: k(), label: "Definitive proxy filed", actual_date: "2025-07-17" },
+        { _key: k(), label: "Shareholder vote — approved", actual_date: "2025-08-28" },
+      ],
+    },
+    ctfn_analysis: [
+      p("Our 70% probability reflects CTFN's STRONG enforceability rating (favors seller) offset by the NMPRC's unpredictable procedural posture. The PIPE investigation is a novel complication — hearing examiners pausing the merger schedule over a pre-closing equity investment is unusual and creates timeline risk."),
+      p("PUCT and FERC cleared without conditions. The NMPRC is the sole remaining US gating authority. New Mexico's regulatory history with this asset is difficult — the prior Avangrid merger was terminated after years of NMPRC opposition. Blackstone's approach (equity-funded, no leverage) is designed to address the commission's historic concerns about financial buyers."),
+      p("The NM AG's challenge to the PIPE adds political dimension. If the AG succeeds in unwinding the PIPE, it doesn't necessarily kill the merger — but it signals the political environment Blackstone faces at the NMPRC."),
+    ],
+    risk_factors: [
+      p("NMPRC PIPE investigation: hearing examiners paused the merger procedural schedule to investigate the $400mn private placement, alleging it may have bypassed state approval."),
+      p("NM AG Raúl Torrez challenging the PIPE transaction — political risk layered on top of regulatory risk."),
+      p("New Mexico regulatory history: prior Avangrid merger was terminated in January 2024 after years of NMPRC pushback."),
+      p("NRC approval required for nuclear facility license transfers — secondary timeline risk."),
+      p("Outside date August 18, 2026 with extension to December 31 — tight if NMPRC hearing schedule slips."),
+    ],
+    shareholder_activism: [
+      {
+        _key: k(),
+        date: "2025-11-19",
+        actor: "NM Attorney General Raúl Torrez",
+        stance: "opposed",
+        description:
+          "AG Torrez published an op-ed opposing the transaction and raising concerns about private equity ownership of a regulated utility. Subsequently, on February 19, 2026, Torrez and a local nonprofit formally challenged the $400mn PIPE stock sale, alleging it illegally bypassed state regulatory approval.",
+        source_url: "https://www.sec.gov/",
+      },
+      {
+        _key: k(),
+        date: "2026-03-11",
+        actor: "NMPRC Hearing Examiners",
+        stance: "critical",
+        description:
+          "Hearing examiners opened a formal investigation into Blackstone's $400mn PIPE purchase of TXNM shares and paused the merger procedural schedule pending resolution. A public hearing on the PIPE matter is set for April 30.",
+      },
+    ],
+    documents: [
+      { _key: k(), title: "Press Release", url: "https://www.sec.gov/" },
+      { _key: k(), title: "Definitive Merger Agreement", url: "https://www.sec.gov/" },
+      { _key: k(), title: "Definitive Proxy", url: "https://www.sec.gov/" },
+      { _key: k(), title: "TXNM Energy Files Regulatory Applications (8/25/25)", url: "https://www.sec.gov/" },
+      { _key: k(), title: "Raúl Torrez Op-ed on Transaction (11/19/25)", url: "https://www.sec.gov/" },
+      { _key: k(), title: "PUCT Approval (2/6/26)", url: "https://www.sec.gov/" },
+      { _key: k(), title: "NEE Press Release on $400mn Blackstone Stock Purchase (2/6/26)", url: "https://www.sec.gov/" },
+      { _key: k(), title: "FERC Approval (2/20/26)", url: "https://www.sec.gov/" },
+    ],
+    trigger_alert: false,
+    alert_summary: "NMPRC public hearing on PIPE set for April 30; merger hearing schedule under review.",
+  },
 ];
 
 async function run() {
