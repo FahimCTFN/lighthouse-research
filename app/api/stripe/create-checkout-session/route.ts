@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { auth, currentUser } from "@clerk/nextjs/server";
 import { createCheckoutSession } from "@/lib/stripe/helpers";
+import { validateReturnUrl } from "@/lib/security";
 
 export async function POST(req: Request) {
   const { userId } = auth();
@@ -17,11 +18,12 @@ export async function POST(req: Request) {
     returnUrl?: string;
   };
   const fallback = `${process.env.NEXT_PUBLIC_APP_URL}/account`;
+  const safeUrl = validateReturnUrl(returnUrl, fallback);
 
   const session = await createCheckoutSession({
     clerkUserId: userId,
     email,
-    returnUrl: returnUrl || fallback,
+    returnUrl: safeUrl,
   });
 
   return NextResponse.json({ url: session.url });

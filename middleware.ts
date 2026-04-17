@@ -5,6 +5,7 @@ import { isPaidStatus } from "@/lib/clerk/helpers";
 
 const isAccountRoute = createRouteMatcher(["/account(.*)"]);
 const isAdminRoute = createRouteMatcher(["/admin(.*)"]);
+const isAdminApiRoute = createRouteMatcher(["/api/admin/(.*)"]);
 const isStudioRoute = createRouteMatcher(["/studio(.*)"]);
 const isPaidApiRoute = createRouteMatcher([
   "/api/watchlist/(.*)",
@@ -21,10 +22,18 @@ export default clerkMiddleware((auth, req) => {
     return redirectToSignIn({ returnBackUrl: req.url });
   }
 
-  // /admin requires admin role
-  if (isAdminRoute(req)) {
-    if (!userId) return redirectToSignIn({ returnBackUrl: req.url });
-    if (role !== "admin") return NextResponse.redirect(new URL("/", url));
+  // /admin + /api/admin/* requires admin role
+  if (isAdminRoute(req) || isAdminApiRoute(req)) {
+    if (!userId) {
+      return isAdminApiRoute(req)
+        ? NextResponse.json({ error: "unauthorized" }, { status: 401 })
+        : redirectToSignIn({ returnBackUrl: req.url });
+    }
+    if (role !== "admin") {
+      return isAdminApiRoute(req)
+        ? NextResponse.json({ error: "forbidden" }, { status: 403 })
+        : NextResponse.redirect(new URL("/", url));
+    }
   }
 
   // /studio requires editor or admin

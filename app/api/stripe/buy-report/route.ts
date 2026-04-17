@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { auth, currentUser } from "@clerk/nextjs/server";
 import { getStripe } from "@/lib/stripe/client";
 import { sanityClient } from "@/lib/sanity/client";
+import { validateReturnUrl } from "@/lib/security";
 import { groq } from "next-sanity";
 
 const DEAL_PURCHASE_QUERY = groq`
@@ -47,8 +48,9 @@ export async function POST(req: Request) {
     );
   }
 
-  const price = deal.single_purchase_price ?? 89;
+  const price = deal.single_purchase_price ?? 99;
   const fallback = `${process.env.NEXT_PUBLIC_APP_URL}/deals/${slug}`;
+  const safeUrl = validateReturnUrl(returnUrl, fallback);
 
   const session = await getStripe().checkout.sessions.create({
     mode: "payment",
@@ -67,8 +69,8 @@ export async function POST(req: Request) {
         quantity: 1,
       },
     ],
-    success_url: `${returnUrl || fallback}?checkout=success&session_id={CHECKOUT_SESSION_ID}&purchase=${slug}`,
-    cancel_url: `${returnUrl || fallback}?checkout=cancelled`,
+    success_url: `${safeUrl}?checkout=success&session_id={CHECKOUT_SESSION_ID}&purchase=${slug}`,
+    cancel_url: `${safeUrl}?checkout=cancelled`,
     client_reference_id: userId,
     metadata: { clerkUserId: userId, dealSlug: slug, type: "single_report" },
   });

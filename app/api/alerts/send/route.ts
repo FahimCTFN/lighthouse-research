@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { revalidatePath } from "next/cache";
 import { clerkClient } from "@clerk/nextjs/server";
 import { sanityServerClient } from "@/lib/sanity/client";
+import { safeCompare } from "@/lib/security";
 import { DEAL_BY_SLUG_LIGHT_QUERY } from "@/lib/sanity/queries";
 import { sendWatchlistAlert } from "@/lib/email/sendAlert";
 import type { UserMetadata } from "@/lib/clerk/helpers";
@@ -20,7 +21,8 @@ export async function POST(req: Request) {
   const secret =
     req.headers.get("sanity-webhook-secret") ||
     req.headers.get("x-sanity-webhook-secret");
-  if (!secret || secret !== process.env.SANITY_WEBHOOK_SECRET) {
+  const expected = process.env.SANITY_WEBHOOK_SECRET ?? "";
+  if (!secret || !expected || !safeCompare(secret, expected)) {
     return NextResponse.json({ error: "invalid secret" }, { status: 401 });
   }
 
