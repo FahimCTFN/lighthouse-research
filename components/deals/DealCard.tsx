@@ -35,11 +35,11 @@ export function DealCard({
 
       <div>
         <h3 className="font-serif text-[18px] leading-[1.3] tracking-tight text-brand-navy">
-          {deal.acquirer} <span className="text-gray-400">/</span>{" "}
-          {deal.target}
+          {deal.target} <span className="text-gray-400">/</span>{" "}
+          {deal.acquirer}
         </h3>
         {(() => {
-          const t = formatTickers(deal.acquirer_ticker, deal.target_ticker);
+          const t = formatTickers(deal.target_ticker, deal.acquirer_ticker);
           return t ? (
             <p className="mt-1 font-mono text-[11px] tracking-wide text-gray-600">
               {t}

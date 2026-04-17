@@ -113,7 +113,7 @@ export default async function AdminPage() {
                     href={`/deals/${d.slug}`}
                     className="hover:underline"
                   >
-                    {d.acquirer} → {d.target}
+                    {d.target} / {d.acquirer}
                   </Link>{" "}
                   <span className="text-gray-400">
                     (updated {new Date(d._updatedAt).toLocaleDateString()})

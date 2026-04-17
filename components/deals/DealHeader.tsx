@@ -52,7 +52,7 @@ export function DealHeader({
       </div>
 
       <h1 className="font-serif text-[22px] font-normal leading-[1.25] tracking-tight text-brand-navy sm:text-[28px]">
-        {deal.acquirer} / {deal.target}
+        {deal.target} / {deal.acquirer}
         {deal.equity_value ? (
           <span className="text-gray-500">
             {" "}
@@ -63,7 +63,7 @@ export function DealHeader({
       </h1>
 
       {(() => {
-        const t = formatTickers(deal.acquirer_ticker, deal.target_ticker);
+        const t = formatTickers(deal.target_ticker, deal.acquirer_ticker);
         return t ? (
           <div className="mt-1.5 font-mono text-[12px] tracking-wide text-gray-600">
             {t}

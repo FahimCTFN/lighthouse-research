@@ -9,14 +9,14 @@ interface AlertEmailInput {
 export async function sendWatchlistAlert(input: AlertEmailInput) {
   const dealUrl = `${process.env.NEXT_PUBLIC_APP_URL}/deals/${input.slug}`;
   const unfollowUrl = `${process.env.NEXT_PUBLIC_APP_URL}/account?unfollow=${input.slug}`;
-  const subject = `Update: ${input.acquirer} / ${input.target}`;
+  const subject = `Update: ${input.target} / ${input.acquirer}`;
 
   const html = `
     <div style="font-family: -apple-system, system-ui, sans-serif; max-width: 560px; margin: 0 auto; padding: 24px; color: #0c2d48;">
       <div style="margin-bottom: 20px;">
         <span style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #6b7280;">Lighthouse by CTFN</span>
       </div>
-      <h2 style="margin: 0 0 8px; font-size: 18px; font-weight: 600;">${escapeHtml(input.acquirer)} / ${escapeHtml(input.target)}</h2>
+      <h2 style="margin: 0 0 8px; font-size: 18px; font-weight: 600;">${escapeHtml(input.target)} / ${escapeHtml(input.acquirer)}</h2>
       <p style="margin: 0 0 16px; color: #4b5563; font-size: 14px;">A deal in your watchlist has been updated.</p>
       <div style="border-left: 3px solid #d4860a; padding: 12px 16px; margin: 20px 0; background: #fdf0d5; border-radius: 0 4px 4px 0;">
         <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #7a4a00;">${escapeHtml(input.summary)}</p>

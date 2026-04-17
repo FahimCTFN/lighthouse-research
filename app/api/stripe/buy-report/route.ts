@@ -60,7 +60,7 @@ export async function POST(req: Request) {
           currency: "usd",
           unit_amount: price * 100,
           product_data: {
-            name: `${deal.acquirer} / ${deal.target} — Situation Report`,
+            name: `${deal.target} / ${deal.acquirer} — Situation Report`,
             description: "One-time access to this deal's full intelligence report.",
           },
         },

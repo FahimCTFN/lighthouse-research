@@ -168,7 +168,7 @@ export function GlobalSearch() {
           ) : (
             <ul>
               {results.map((d, i) => {
-                const tickers = [d.acquirer_ticker, d.target_ticker]
+                const tickers = [d.target_ticker, d.acquirer_ticker]
                   .filter(Boolean)
                   .join(" / ");
                 const active = i === activeIndex;
@@ -187,8 +187,8 @@ export function GlobalSearch() {
                     >
                       <span className="min-w-0">
                         <span className="block truncate font-medium text-brand-navy">
-                          {d.acquirer} <span className="text-gray-400">/</span>{" "}
-                          {d.target}
+                          {d.target} <span className="text-gray-400">/</span>{" "}
+                          {d.acquirer}
                         </span>
                         <span className="block text-[10px] uppercase tracking-label text-gray-500">
                           {tickers ? `${tickers} · ` : ""}

@@ -505,12 +505,14 @@ const deals = [
       p("HSR expired February 9, 2026. Shareholders approved on December 22. The remaining variables are CFIUS mitigation timing and European Commission reviews, including the FSR filing."),
     ],
     background: [
-      p("Since 2020, EA's board periodically evaluated strategic options — partnerships, combinations and sale. During this period, PIF disclosed 5% ownership in February 2022 and 9.2% in February 2024."),
-      p("On March 2, 2025, Silver Lake sent CEO Andrew Wilson a presentation, suggesting PIF as co-investor. By May, EA management and a PIF/Silver Lake/Affinity consortium held informal talks. In early July, all three signed NDAs."),
-      p("On September 12, 2025, the consortium proposed $200 per share. Board directed management to seek $210–$212. The consortium agreed to $210 on September 26. On September 28, the board unanimously approved; Goldman delivered its fairness opinion; announced September 29."),
+      p("Since 2020, EA's board and senior management periodically evaluated strategic options — including potential partnerships, business combinations and a sale. During this period, Saudi Arabia's Public Investment Fund (PIF) steadily increased its stake, disclosing 5% ownership in February 2022 and 9.2% in February 2024."),
+      p("On March 2, 2025, Silver Lake sent CEO Andrew Wilson a presentation, noting it had been shared with Affinity and suggesting PIF as a potential co-investor. By May, EA management and a consortium of PIF, Silver Lake and Affinity held informal talks. In early July, all three signed NDAs."),
+      p("On September 12, the consortium proposed acquiring EA for $200 per share; the board directed management to seek $210–$212. After back-and-forth, the consortium agreed to $210 on September 26. On September 28, the board unanimously approved the deal; Goldman Sachs delivered its fairness opinion."),
     ],
     commentary: [
-      p("The transaction included a 45-day window-shop period which ended on November 12, 2025 with no superior proposal surfacing."),
+      p("The transaction includes a 45-day window-shop period which ended on November 12. If a superior proposal had been received, the window shop would have been extended by another 30 days. No superior proposal surfaced."),
+      p("Electronic Arts is a global interactive entertainment company. Key franchises include EA Sports FC, Madden NFL, The Sims, Battlefield, and Apex Legends."),
+      p("Oak-Eagle AcquireCo completed its high-yield debt offering, placing $2.875bn of 7.250% senior secured notes due 2033, €1.08bn of 6.250% senior secured euro notes due 2033, and $2.5bn of 8.750% senior notes due 2034 into escrow pending deal completion."),
     ],
     filings: [
       {
@@ -675,19 +677,19 @@ const deals = [
     target_advisors: "Perella Weinberg (exclusive financial). Davis Polk & Wardwell (legal).",
     acquirer_advisors: "Allen Overy Shearman & Sterling and Arnold & Porter Kaye Scholer (legal).",
     free_preview: [
-      p("Boston Scientific's $14.6bn acquisition of Penumbra adds scaled mechanical thrombectomy capabilities to BSX's vascular portfolio. Consideration is $374 cash or 3.8721 BSX shares per PEN share, subject to a transaction-wide cap of 73% cash and 27% stock."),
-      p("HSR was filed on February 13, 2026; the FTC issued a second request on March 16. The target shareholder vote is May 6. EC approval is also required. The 19% premium reflects PEN's trading strength into the deal."),
+      p("Boston Scientific's $14.6bn acquisition of Penumbra adds scaled mechanical thrombectomy capabilities to BSX's vascular portfolio. Target shareholders can choose either stock ($374 cash) or shares (3.8721 BSX common shares per PEN share), subject to a transaction-wide cap of 73% in cash and 27% in Boston Scientific common stock."),
+      p("HSR was filed on February 13, 2026; the FTC issued a second request on March 16. The target shareholder vote is May 6. EC approval is also required. Boston Scientific expects to finance the $11bn cash portion with a combination of cash on hand and new debt."),
     ],
     background: [
-      p("On January 14, 2025, Penumbra CEO Adam Elsesser and BSX CEO Michael Mahoney attended a dinner at the JP Morgan Healthcare Conference. In late October 2025, following landmark STORM-PE data, Elsesser spoke informally with BSX executive Joseph Fitzgerald about strategic fit."),
-      p("On December 15, Mahoney expressed interest in exploring an acquisition. On December 19 the parties executed a mutual NDA. On December 29, BSX delivered a preliminary proposal at $365 per share (75% cash / 25% stock). On December 31 BSX raised to $370. On January 3, BSX indicated $374 as best and final."),
-      p("On January 14, 2026, Penumbra's board received PWP's fairness opinion and unanimously recommended the agreement. The parties executed that day and announced on January 15."),
+      p("On January 14, 2025, Penumbra CEO Adam Elsesser and Boston Scientific CEO Michael Mahoney attended a dinner at the JP Morgan Healthcare Conference. In late October 2025, following landmark STORM-PE data, Elsesser spoke informally with BSX executive Joseph Fitzgerald about strategic fit."),
+      p("On December 15, Mahoney expressed interest in exploring an acquisition. On December 19, the parties executed a mutual NDA. On December 29, BSX delivered a preliminary proposal at $365 per share (75% cash / 25% stock). On December 31, BSX raised to $370."),
+      p("On January 3, BSX indicated $374 as 'best and final.' On January 14, 2026, Penumbra's board received PWP's fairness opinion and unanimously recommended the merger agreement. The parties executed the agreement that day and announced on January 15."),
     ],
     commentary: [
-      p("Penumbra is a global healthcare company specializing in mechanical thrombectomy (CAVT) for pulmonary embolism, DVT, acute limb ischemia, and ischemic stroke. Key products: Lightning Bolt, Lightning Flash, Lightning 12."),
-      p("Boston Scientific is a global medtech leader in cardiovascular, respiratory, digestive, oncological, neurological, and urological solutions. Key innovations: FARAPULSE PFA System and WATCHMAN."),
-      p("Overlap is concentrated in mechanical thrombectomy for venous thromboembolism (VTE). Expected $0.06–$0.08 dilutive to adjusted EPS in year one, neutral to slightly accretive in year two."),
-      p("Notable competitors include Inari Medical, Medtronic, Stryker, and Terumo."),
+      p("Penumbra is a global healthcare company specializing in mechanical thrombectomy technologies (CAVT) for treating pulmonary embolism, DVT, acute limb ischemia, and ischemic stroke. Key products include Lightning Bolt, Lightning Flash, and Lightning 12 systems."),
+      p("Boston Scientific is a global medical technology leader in cardiovascular, respiratory, digestive, oncological, neurological, and urological solutions. Key innovations include the FARAPULSE PFA System and WATCHMAN device."),
+      p("Significant overlap exists in Vascular Intervention and Peripheral Vascular markets, particularly in thrombectomy systems for treating venous thromboembolism (VTE). The transaction provides BSX with scaled entry into the high-growth mechanical thrombectomy market."),
+      p("Expected $0.06–$0.08 dilutive to adjusted EPS in year one, neutral to slightly accretive in year two. Notable competitors include Inari Medical, Medtronic, Stryker, and Terumo."),
     ],
     filings: [
       {
@@ -733,9 +735,9 @@ const deals = [
       p("EC parallel review producing inconsistent remedies."),
     ],
     documents: [
-      { _key: k(), title: "Press Release", url: "https://www.sec.gov/" },
-      { _key: k(), title: "Definitive Merger Agreement", url: "https://www.sec.gov/" },
-      { _key: k(), title: "Definitive Proxy Statement", url: "https://www.sec.gov/" },
+      { _key: k(), title: "Press Release (1/15/26)", url: "https://www.sec.gov/" },
+      { _key: k(), title: "Definitive Merger Agreement (PEN/BSX)", url: "https://www.sec.gov/" },
+      { _key: k(), title: "Definitive Proxy Statement (PEN/BSX)", url: "https://www.sec.gov/" },
     ],
     trigger_alert: false,
     alert_summary: "FTC issues a second request; we now expect a divestiture remedy.",

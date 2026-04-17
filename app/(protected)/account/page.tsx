@@ -171,7 +171,7 @@ export default async function AccountPage() {
             {purchases.map((p) => {
               const deal = purchasedDeals.find((d) => d.slug === p.slug);
               const tickers = deal
-                ? formatTickers(deal.acquirer_ticker, deal.target_ticker)
+                ? formatTickers(deal.target_ticker, deal.acquirer_ticker)
                 : undefined;
 
               return (
@@ -196,7 +196,7 @@ export default async function AccountPage() {
                       className="mt-1 block text-[14px] font-medium text-brand-navy hover:underline"
                     >
                       {deal
-                        ? `${deal.acquirer} / ${deal.target}`
+                        ? `${deal.target} / ${deal.acquirer}`
                         : p.slug.replace(/-/g, " ")}
                     </Link>
                     <div className="mt-0.5 text-[11px] text-gray-500">
@@ -248,8 +248,8 @@ export default async function AccountPage() {
           <ul className="divide-y divide-gray-100">
             {watched.map((d) => {
               const tickers = formatTickers(
-                d.acquirer_ticker,
                 d.target_ticker,
+                d.acquirer_ticker,
               );
               return (
                 <li
@@ -270,8 +270,8 @@ export default async function AccountPage() {
                       )}
                     </div>
                     <div className="mt-1 text-[14px] font-medium text-brand-navy group-hover:underline">
-                      {d.acquirer} <span className="text-gray-400">/</span>{" "}
-                      {d.target}
+                      {d.target} <span className="text-gray-400">/</span>{" "}
+                      {d.acquirer}
                     </div>
                   </Link>
                   <div className="shrink-0 text-right">

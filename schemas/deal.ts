@@ -695,7 +695,7 @@ export const deal = defineType({
       status?: string;
     }) {
       return {
-        title: `${title ?? ""} → ${subtitle ?? ""}`,
+        title: `${subtitle ?? ""} / ${title ?? ""}`,
         subtitle: status ?? "",
       };
     },
