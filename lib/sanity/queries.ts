@@ -189,6 +189,29 @@ export const ARCHIVED_DEALS_QUERY = groq`
   }
 `;
 
+// Calendar — all deals with filings + votes for the regulatory calendar
+export const CALENDAR_DEALS_QUERY = groq`
+  *[_type == "deal" && status in ["pre_event", "ongoing"]] | order(coalesce(next_key_event_date, _updatedAt) asc) {
+    _id,
+    acquirer,
+    target,
+    target_ticker,
+    acquirer_ticker,
+    "slug": slug.current,
+    status,
+    sector,
+    filings[]{
+      jurisdiction,
+      display_name,
+      steps[]{ label, expected_date, actual_date, note }
+    },
+    shareholder_votes[]{
+      party,
+      steps[]{ label, expected_date, actual_date, note }
+    }
+  }
+`;
+
 export const STALE_DEALS_QUERY = groq`
   *[_type == "deal" && status != "archived" && _updatedAt < $cutoff] {
     _id, acquirer, target, "slug": slug.current, _updatedAt

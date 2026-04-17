@@ -39,6 +39,12 @@ export function Nav() {
               Active Situations
             </Link>
             <Link
+              href="/calendar"
+              className="rounded-full px-3 py-1.5 text-[11px] font-medium text-white/50 transition hover:bg-white/10 hover:text-white/80"
+            >
+              Calendar
+            </Link>
+            <Link
               href="/archive"
               className="rounded-full px-3 py-1.5 text-[11px] font-medium text-white/50 transition hover:bg-white/10 hover:text-white/80"
             >

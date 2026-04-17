@@ -43,6 +43,13 @@ export function MobileMenu() {
               Active Situations
             </Link>
             <Link
+              href="/calendar"
+              onClick={() => setOpen(false)}
+              className="px-4 py-3 text-[13px] text-white/60 hover:bg-white/10 hover:text-white/90"
+            >
+              Calendar
+            </Link>
+            <Link
               href="/archive"
               onClick={() => setOpen(false)}
               className="px-4 py-3 text-[13px] text-white/60 hover:bg-white/10 hover:text-white/90"
