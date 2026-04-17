@@ -189,7 +189,7 @@ export const ARCHIVED_DEALS_QUERY = groq`
   }
 `;
 
-// Calendar — all deals with filings + votes for the regulatory calendar
+// Event Calendar — deals with filings, votes, and key deal-level dates
 export const CALENDAR_DEALS_QUERY = groq`
   *[_type == "deal" && status in ["pre_event", "ongoing"]] | order(coalesce(next_key_event_date, _updatedAt) asc) {
     _id,
@@ -200,6 +200,12 @@ export const CALENDAR_DEALS_QUERY = groq`
     "slug": slug.current,
     status,
     sector,
+    outside_date,
+    outside_date_final,
+    ctfn_estimated_close,
+    announcement_date,
+    next_key_event_date,
+    next_key_event_label,
     filings[]{
       jurisdiction,
       display_name,

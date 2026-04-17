@@ -8,7 +8,7 @@ export interface CalendarEvent {
   dealAcquirer: string;
   targetTicker?: string;
   sector: string;
-  source: "filing" | "vote";
+  source: "filing" | "vote" | "deal";
   regulator: string; // short label
   regulatorFull: string;
   label: string;
@@ -35,27 +35,37 @@ const REGULATOR_SHORT: Record<string, string> = {
   Other: "Other",
 };
 
-export function aggregateEvents(
-  deals: (DealListItem & {
-    filings?: Filing[];
-    shareholder_votes?: ShareholderVote[];
-  })[],
-): CalendarEvent[] {
+interface DealWithEvents extends DealListItem {
+  filings?: Filing[];
+  shareholder_votes?: ShareholderVote[];
+  outside_date?: string;
+  outside_date_final?: string;
+  ctfn_estimated_close?: string;
+  announcement_date?: string;
+  next_key_event_date?: string;
+  next_key_event_label?: string;
+}
+
+export function aggregateEvents(deals: DealWithEvents[]): CalendarEvent[] {
   const events: CalendarEvent[] = [];
 
   for (const deal of deals) {
+    const base = {
+      dealSlug: deal.slug,
+      dealTarget: deal.target,
+      dealAcquirer: deal.acquirer,
+      targetTicker: deal.target_ticker,
+      sector: deal.sector,
+    };
+
     // Filing steps
     for (const filing of deal.filings ?? []) {
       for (const step of filing.steps ?? []) {
         const date = step.actual_date || step.expected_date;
         if (!date) continue;
         events.push({
+          ...base,
           date,
-          dealSlug: deal.slug,
-          dealTarget: deal.target,
-          dealAcquirer: deal.acquirer,
-          targetTicker: deal.target_ticker,
-          sector: deal.sector,
           source: "filing",
           regulator:
             REGULATOR_SHORT[filing.jurisdiction] || filing.jurisdiction,
@@ -82,12 +92,8 @@ export function aggregateEvents(
               ? "Both"
               : "Target";
         events.push({
+          ...base,
           date,
-          dealSlug: deal.slug,
-          dealTarget: deal.target,
-          dealAcquirer: deal.acquirer,
-          targetTicker: deal.target_ticker,
-          sector: deal.sector,
           source: "vote",
           regulator: "Vote",
           regulatorFull: `${party} shareholder vote`,
@@ -96,6 +102,52 @@ export function aggregateEvents(
           note: step.note,
         });
       }
+    }
+
+    // Deal-level dates
+    if (deal.outside_date) {
+      events.push({
+        ...base,
+        date: deal.outside_date,
+        source: "deal",
+        regulator: "Deadline",
+        regulatorFull: "Outside date",
+        label: "Outside date (initial)",
+        isDone: false,
+      });
+    }
+    if (deal.outside_date_final && deal.outside_date_final !== deal.outside_date) {
+      events.push({
+        ...base,
+        date: deal.outside_date_final,
+        source: "deal",
+        regulator: "Deadline",
+        regulatorFull: "Outside date (final extension)",
+        label: "Outside date (final extension)",
+        isDone: false,
+      });
+    }
+    if (deal.ctfn_estimated_close) {
+      events.push({
+        ...base,
+        date: deal.ctfn_estimated_close,
+        source: "deal",
+        regulator: "CTFN",
+        regulatorFull: "CTFN closing estimate",
+        label: "CTFN estimated close",
+        isDone: false,
+      });
+    }
+    if (deal.next_key_event_date) {
+      events.push({
+        ...base,
+        date: deal.next_key_event_date,
+        source: "deal",
+        regulator: "Key event",
+        regulatorFull: "Next key event",
+        label: deal.next_key_event_label || "Key event",
+        isDone: false,
+      });
     }
   }
 
