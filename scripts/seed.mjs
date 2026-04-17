@@ -2048,6 +2048,195 @@ const deals = [
     trigger_alert: false,
     alert_summary: "Pennsylvania PUC docket hearings begin June; parties targeting Q3 2026 conclusion.",
   },
+
+  // 13 ── CWAN / Permira + Warburg Pincus — fintech take-private
+  {
+    acquirer: "Permira / Warburg Pincus",
+    target: "Clearwater Analytics",
+    target_ticker: "CWAN",
+    status: "vote_scheduled",
+    sector: "technology",
+    target_jurisdiction: "Delaware",
+    deck: "Shareholder vote May 6; EC Phase I clearance expected same day. Go-shop contacted 44 bidders — none submitted competing bid. Multiple plaintiff firms investigating conflicts of interest given buyers' insider status.",
+    key_risk_summary:
+      "SAMR timing; FIRB timing (given Temasek involvement). Multiple plaintiff law firms allege conflicts of interest — Permira and Warburg Pincus are existing insider stockholders with board representation who possessed material non-public information about CWAN's growth trajectory. The buyout was agreed less than two weeks after Starboard Value disclosed a 5% activist stake.",
+    equity_value: 7000,
+    shares_outstanding: 289,
+    offer_price: 24.55,
+    offer_terms: "$24.55 cash per share",
+    premium: 47,
+    premium_reference: "vs CWAN unaffected close on November 10",
+    termination_fee: 242,
+    termination_fee_pct: 3.5,
+    reverse_termination_fee: 521.1,
+    reverse_termination_fee_pct: 7.4,
+    termination_fee_notes:
+      "$111.7mn during go-shop period, $242mn otherwise. Reverse termination fee: $521.1mn.",
+    financing:
+      "Not conditioned on financing. Debt commitments total $3.525 billion (senior secured term loan + DDTL + revolver), provided by Goldman Sachs Asset Management and others via an amended and restated commitment letter dated January 21, 2026.",
+    ctfn_closing_probability: 78,
+    ctfn_estimated_close: "2026-06-30",
+    ctfn_probability_notes:
+      "HSR cleared. EC super-simplified Phase I. Go-shop confirmed no competing bid. SAMR and FIRB are the remaining timing variables. Strong base case for Q2 close in line with management guidance.",
+    announcement_date: "2025-12-21",
+    published_date: "2025-12-27",
+    next_key_event_date: "2026-05-06",
+    next_key_event_label: "Shareholder vote + EC Phase I clearance",
+    outside_date: "2026-09-20",
+    outside_date_final: "2026-12-20",
+    outside_date_notes:
+      "Subject to a three month extension to December 20, 2026.",
+    closing_guidance: "Q2 2026",
+    best_efforts:
+      "The parties shall divest and defend the transaction if required.",
+    target_advisors:
+      "PJT Partners is serving as the exclusive financial advisor, and Cravath, Swaine & Moore is serving as legal counsel to the special committee of the CWAN board. JP Morgan is serving as the exclusive financial advisor, and Kirkland & Ellis is serving as legal counsel to CWAN.",
+    acquirer_advisors:
+      "Goldman Sachs is acting as financial advisor to the Investor Group. Private Credit at Goldman Sachs Alternatives provided 100% committed debt financing to the Investor Group. Latham and Watkins is serving as M&A counsel to the Investor Group. Paul, Weiss, Rifkind, Wharton & Garrison is serving as finance counsel to the Investor Group.",
+    free_preview: [
+      p("Clearwater Analytics is being taken private by a consortium led by Permira and Warburg Pincus, supported by Francisco Partners and with participation from Temasek, for $24.55 per share in cash — implying a $7bn equity value ($8.4bn including debt) and a 47% premium to the unaffected close on November 10."),
+      p("HSR early termination was granted February 13. The EC notified the deal as a super-simplified review on March 26 with Phase I expiring May 6. The shareholder vote is also set for May 6. A 45-day go-shop contacted 44 potential bidders — six executed NDAs but none submitted a competing bid. The go-shop expired January 23, 2026."),
+    ],
+    background: [
+      p("During the second half of 2020, Carbon Analytics, as Clearwater Analytics' holdco was then known, ran a recapitalization process, contacting about 29 financial sponsors, including Warburg Pincus and Permira. This resulted in investments from Warburg Pincus and Permira while Welsh Carson remained the majority stockholder."),
+      p("On September 28, 2021, Clearwater Analytics completed its IPO at $18 per share and adopted an Up-C structure, with voting control concentrated among Welsh Carson, Warburg Pincus, and Permira."),
+      p("During the fall of 2023, Clearwater Analytics conducted a market check, contacting eight parties, but it got no indications of interest."),
+      p("During 2024 and the second quarter of 2025, the company's principal equity owners cut their holdings below board-nomination thresholds, resulting in termination of the company's stockholders agreement."),
+      p("On August 1, 2025, following trading volatility after recent acquisitions, directors first raised the possibility of a take-private by Permira."),
+      p("On August 7 and August 15, representatives of Warburg Pincus expressed continued interest in exploring a potential transaction but did not discuss price."),
+      p("On October 23, Warburg Pincus and Permira submitted a preliminary non-binding proposal to acquire the company for $24.50 per share in cash, representing a 29% premium, conditioned on special-committee approval, majority-of-minorities stockholder approval and two weeks of exclusivity with a post-signing go-shop."),
+      p("On October 29, a special committee of the company's board declined exclusivity and authorized limited due diligence under standstill NDAs."),
+      p("On November 19, the special committee authorized a targeted pre-signing market check, contacting strategics and sponsors with a December 12 bid deadline."),
+      p("On December 14, Sponsor Party A submitted a non-binding proposal of $20 to $22 per share. Later that day, the consortium of Warburg Pincus and Permira submitted a $24.25-per-share cash proposal requiring exclusivity."),
+      p("On December 15, the special committee rejected both proposals and countered at $25.75 per share with a go-shop, reduced termination fee and 7% reverse termination fee."),
+      p("Later on December 15, the consortium revised its offer to $24.35 per share, a 20-day go-shop, a 3.5% termination fee (1.75% go-shop) and a 6.5% reverse termination fee."),
+      p("On December 16, after further negotiations, the consortium increased its price to $24.50 per share and then agreed to $24.55 per share in cash, a 7% reverse termination fee, a 3.25% termination fee (1.5% go-shop) and a go-shop period ending January 23, 2026. That same day, the parties entered a five-day exclusivity period."),
+      p("From December 16 to December 20, the parties finalized definitive documentation. On December 20, after receiving fairness opinions from PJT Partners and JP Morgan in favor of the $24.55-per-share consideration, the special committee unanimously recommended approval, and the board approved the merger agreement and recommended it to stockholders. The company executed the merger agreement, debt-commitment letter, equity-commitment letters and fee-funding agreements on December 20 and announced the transaction on December 21."),
+      p("On December 22, the company began a 45-day go-shop, contacting 44 potential bidders. Between December 27, 2025, and January 23, 2026, six parties executed NDAs, but each declined to submit a superior proposal, citing valuation concerns, financing constraints or strategic considerations. The go-shop expired on January 23, 2026, without any alternative takeover proposal."),
+    ],
+    commentary: [
+      p("The merger agreement includes a go-shop period ending on January 23, 2026, subject to a potential 10-day extension."),
+      p("Clearwater Analytics announced that its go-shop period expired on January 23 without receiving any alternative acquisition proposals."),
+      p("Despite financial advisors soliciting interest from 44 potential suitors — including both financial sponsors and strategic parties — none of the six entities that accessed confidential data submitted a competing bid against Clearwater's existing merger agreement with a consortium of Permira and Warburg Pincus."),
+    ],
+    filings: [
+      {
+        _key: k(),
+        jurisdiction: "HSR",
+        outcome: "cleared",
+        outcome_summary: "Early termination granted February 13, 2026.",
+        steps: [
+          { _key: k(), label: "HSR filed", actual_date: "2026-01-27" },
+          { _key: k(), label: "Early termination granted", actual_date: "2026-02-13" },
+        ],
+      },
+      {
+        _key: k(),
+        jurisdiction: "EC_Merger",
+        outcome: "pending",
+        outcome_summary: "Notified as a super-simplified review on March 26. Phase I expires May 6 — coincides with the shareholder vote date. Super-simplified cases are routinely cleared well within Phase I.",
+        steps: [
+          { _key: k(), label: "EC notification (super-simplified)", actual_date: "2026-03-26" },
+          { _key: k(), label: "Phase I decision (25 working days)", expected_date: "2026-05-06", note: "Coincides with shareholder vote" },
+        ],
+      },
+      {
+        _key: k(),
+        jurisdiction: "SAMR",
+        outcome: "pending",
+        outcome_summary: "Application filed in Q1 2026. Fintech/SaaS deals generally routine at SAMR but timing visibility is limited.",
+        steps: [
+          { _key: k(), label: "SAMR application filed", actual_date: "2026-03-15" },
+          { _key: k(), label: "SAMR Phase I (30 days)", expected_date: "2026-04-15" },
+          { _key: k(), label: "SAMR decision", expected_date: "2026-06-15" },
+        ],
+      },
+      {
+        _key: k(),
+        jurisdiction: "Other",
+        display_name: "ACCC (Australia merger control)",
+        outcome: "cleared",
+        outcome_summary: "Waiver determination in Q1 — merger does not need to be notified.",
+        steps: [
+          { _key: k(), label: "ACCC waiver granted", actual_date: "2026-02-28" },
+        ],
+      },
+      {
+        _key: k(),
+        jurisdiction: "Turkey",
+        outcome: "pending",
+        outcome_summary: "Notification filed Q1 2026.",
+        steps: [
+          { _key: k(), label: "Turkish CA filing", actual_date: "2026-03-10" },
+          { _key: k(), label: "Turkish CA decision", expected_date: "2026-05-15" },
+        ],
+      },
+      {
+        _key: k(),
+        jurisdiction: "Other",
+        display_name: "FIRB (Australia FDI)",
+        outcome: "pending",
+        outcome_summary: "Application submitted Q2 2026 given Temasek involvement. Statutory 30-day review period (extendable).",
+        steps: [
+          { _key: k(), label: "FIRB application submitted", expected_date: "2026-04-15" },
+          { _key: k(), label: "FIRB decision (30 days, extendable)", expected_date: "2026-06-15" },
+        ],
+      },
+    ],
+    shareholder_vote: {
+      outcome: "pending",
+      label: "Target shareholders — May 6, 2026 (requires majority + majority of disinterested under DGCL §144)",
+      outcome_summary:
+        "Virtual special meeting at 10:30 AM on May 6. Requires both a majority of all outstanding voting power AND a separate majority of disinterested stockholders (DGCL Section 144), given the buyer group's pre-existing ownership. Board unanimously recommends FOR. Record date: April 6, 2026 (298,388,859 shares).",
+      steps: [
+        { _key: k(), label: "Preliminary proxy filed", actual_date: "2026-02-24" },
+        { _key: k(), label: "Definitive proxy filed", actual_date: "2026-04-09" },
+        { _key: k(), label: "Consideration election deadline", expected_date: "2026-04-16" },
+        { _key: k(), label: "Shareholder vote", expected_date: "2026-05-06", note: "Virtual meeting, 10:30 AM" },
+      ],
+    },
+    ctfn_analysis: [
+      p("Our 78% probability reflects a clean regulatory picture (HSR cleared, EC super-simplified, ACCC waived) with SAMR and FIRB as the only timing unknowns. The fintech SaaS profile is generally low-risk at SAMR compared to semiconductor or critical infrastructure deals."),
+      p("Clearwater Analytics is a cloud-native SaaS platform for institutional investors, providing automated investment accounting, portfolio management, trading, reconciliation, regulatory reporting, performance, compliance, and risk analytics in one unified system. It processes and reconciles data on over $10 trillion in assets globally for more than 2,500 clients including insurers, asset managers, hedge funds, banks, corporations, and governments."),
+      p("The company expanded significantly into front-office and risk capabilities through its 2025 acquisitions of Enfusion and Beacon. Q4 2025 results showed $217.5mn revenue (+72% YoY), $841mn full-year ARR (+77% YoY), 79.2% non-GAAP gross margin, and net revenue retention of 109%."),
+      p("Permira and Warburg Pincus are not new to the company — both co-invested in a 2020 growth round alongside Welsh Carson and participated in the September 2021 IPO at $18/share. They are long-term backers returning to full control at $24.55, roughly 52% above the IPO equity valuation."),
+      p("The conflicts-of-interest narrative is the primary litigation risk. The buyout was agreed less than two weeks after Starboard Value disclosed a 5% activist stake on December 9, 2025. Multiple plaintiff firms (Kaskela, Levi & Korsinsky, Scott+Scott) allege the insider buyers possessed MNPI about CWAN's growth trajectory and that the go-shop was procedurally insufficient. Between March 4-17, 2026, CWAN received four disclosure-deficiency demand letters and nine books-and-records demands under DGCL Section 220."),
+      p("However, the 47% premium, clean go-shop outcome (44 bidders contacted, none competed), unanimous board/special committee recommendation, and dual fairness opinions from PJT Partners and JP Morgan provide a strong defense. At announcement, several analysts had price targets above $35 — but no strategic or financial buyer was willing to bid."),
+    ],
+    risk_factors: [
+      p("SAMR timing: although fintech SaaS is lower-risk than semiconductor at SAMR, Chinese regulatory timelines remain unpredictable."),
+      p("FIRB timing: Temasek (Singapore sovereign wealth) involvement triggers Australian foreign investment review."),
+      p("Litigation / conflicts of interest: multiple plaintiff firms allege insider buyers possessed MNPI, process was insufficient, and go-shop was procedurally compromised. 4 disclosure-deficiency demands + 9 books-and-records demands received."),
+      p("Disinterested-stockholder vote threshold (DGCL §144): requires separate majority of non-insider shares, adding vote complexity."),
+      p("Starboard Value (5% activist) disclosed stake 12 days before deal announcement — timing raises process-independence questions."),
+    ],
+    shareholder_activism: [
+      {
+        _key: k(),
+        date: "2025-12-09",
+        actor: "Starboard Value (~5% stake)",
+        stance: "critical",
+        description:
+          "Starboard Value disclosed a ~5% stake in CWAN and publicly called for the company to run a robust, independent sales process, citing undervaluation and integration concerns around the Enfusion and Beacon acquisitions. Just 12 days later, the definitive merger agreement with Permira/Warburg was announced.",
+      },
+      {
+        _key: k(),
+        date: "2026-03-17",
+        actor: "Plaintiff law firms (Kaskela, Levi & Korsinsky, Scott+Scott)",
+        stance: "critical",
+        description:
+          "Multiple plaintiff firms announced investigations alleging significant conflicts of interest, inadequate sale process, and undervaluation. CWAN received four disclosure-deficiency demand letters and nine books-and-records demand letters under DGCL Section 220 between March 4-17, 2026. Central allegation: insider buyers (Permira/Warburg) possessed MNPI about CWAN's growth trajectory and the go-shop was procedurally insufficient.",
+      },
+    ],
+    documents: [
+      { _key: k(), title: "Press Release", url: "https://www.sec.gov/" },
+      { _key: k(), title: "Definitive Merger Agreement", url: "https://www.sec.gov/" },
+      { _key: k(), title: "Definitive Proxy Statement", url: "https://www.sec.gov/" },
+      { _key: k(), title: "European Commission Notification", url: "https://competition-cases.ec.europa.eu/cases/M.12339" },
+    ],
+    trigger_alert: false,
+    alert_summary: "Shareholder vote May 6; EC Phase I clearance expected same day. SAMR and FIRB pending.",
+  },
 ];
 
 async function run() {
