@@ -1489,6 +1489,172 @@ const deals = [
     trigger_alert: false,
     alert_summary: "NMPRC public hearing on PIPE set for April 30; merger hearing schedule under review.",
   },
+
+  // 9 ── QRVO / SWKS — semiconductor merger
+  {
+    acquirer: "Skyworks Solutions",
+    target: "Qorvo",
+    acquirer_ticker: "SWKS",
+    target_ticker: "QRVO",
+    status: "regulatory_review",
+    sector: "technology",
+    target_jurisdiction: "Delaware",
+    deck: "Negotiating with primary regulators in the US (FTC) and China (SAMR). FTC second request received February 5. Merger agreement runs two years. Starboard Value (8% of QRVO) signed a voting agreement in support.",
+    key_risk_summary:
+      "China's SAMR is known for slow-walking US-based technology mergers, specifically in the semiconductor industry which this deal falls in. The FTC second request also heavily impacts timing of the deal, though the merger agreement runs two years in length.",
+    equity_value: 9730,
+    shares_outstanding: 92,
+    offer_price: 32.50,
+    offer_terms: "$32.50 in cash and 0.960 of a Skyworks common share for each Qorvo share held",
+    premium: 14.3,
+    premium_reference: "vs QRVO closing price on October 27",
+    termination_fee: 298.7,
+    termination_fee_pct: 3.1,
+    reverse_termination_fee: 298.7,
+    reverse_termination_fee_pct: 3.1,
+    termination_fee_notes:
+      "$100mn (1%) additional in the event of a failure to get required regulatory clearances or an injunction related to antitrust laws.",
+    financing:
+      "Skyworks has secured a $3.05bn debt commitment from Goldman Sachs via senior unsecured bridge loans to finance a portion of the merger's cash consideration and related fees. The receipt of this financing is not a condition for Skyworks' obligation to complete the merger.",
+    ctfn_closing_probability: 60,
+    ctfn_estimated_close: "2027-01-15",
+    ctfn_probability_notes:
+      "FTC second request + SAMR slow-walk risk on semiconductor mergers. Two-year merger agreement provides runway. Starboard voting agreement supportive.",
+    announcement_date: "2025-10-28",
+    published_date: "2025-10-28",
+    next_key_event_date: "2026-06-15",
+    next_key_event_label: "FTC substantial compliance target",
+    outside_date: "2027-04-27",
+    outside_date_final: "2027-10-27",
+    outside_date_notes:
+      "Subject to two additional extensions to July 27, 2027, and to October 27, 2027.",
+    closing_guidance: "Early 2027",
+    best_efforts:
+      "If necessary to get regulatory clearance, the parties shall defend the transaction in court and divest any asset with revenues under $100mn, and any combination of assets with total revenues under $250mn.",
+    target_advisors:
+      "Centerview Partners is serving as financial advisor. Davis Polk & Wardwell is serving as legal counsel. Joele Frank, Wilkinson Brimmer Katcher is running PR.",
+    acquirer_advisors:
+      "Qatalyst Partners and Goldman Sachs are serving as financial advisors. Skadden, Arps, Slate, Meagher & Flom is serving as legal counsel. FGS Global is running PR.",
+    free_preview: [
+      p("Skyworks Solutions is acquiring Qorvo in a cash-and-stock transaction valued at $9.73bn. Qorvo shareholders will receive $32.50 in cash and 0.960 of a Skyworks common share for each Qorvo share held. The combination creates a $22bn US-based leader in high-performance RF and analog solutions."),
+      p("The deal faces scrutiny from the FTC (second request received February 5, 2026) and China's SAMR, which is known for slow-walking US semiconductor mergers. The merger agreement runs for two years, providing significant regulatory runway. Starboard Value, an 8% shareholder of Qorvo, has signed a voting agreement in support."),
+    ],
+    background: [
+      p("In 2015, the merger of RF Micro Devices (RFMD) and TriQuint Semiconductor created Qorvo. That transaction was a 'merger of equals' intended to consolidate two significant RF players to better compete with larger rivals like Broadcom and Skyworks. It was approved following standard HSR review without significant divestitures, though the current regulatory environment for semiconductor consolidation is notably more stringent."),
+      p("In 2021, Skyworks completed the $2.75bn acquisition of Silicon Labs' Infrastructure and Automotive business. That transaction was focused on diversifying Skyworks' revenue away from mobile toward high-growth markets like automotive and power, and received regulatory clearance relatively smoothly as it was seen as complementary."),
+    ],
+    commentary: [
+      p("Skyworks shareholders will own 63% of the combined company, while Qorvo shareholders will own 37%, on a fully diluted basis. Starboard Value, an 8% shareholder of Qorvo, has signed a voting agreement in support of the transaction."),
+      p("Qorvo is a global leader in RF technologies operating in three segments: Advanced Cellular Group (ACG) — RF solutions for smartphones, wearables, and laptops; Connectivity and Sensors Group (CSG) — Wi-Fi, Ultra-Wideband (UWB), and Bluetooth Low Energy for IoT; and High Performance Analog (HPA) — power management and RF for defense, aerospace, and infrastructure. Key use cases include phased array radar, LEO satellite communications, and 5G cellular base stations."),
+      p("Skyworks is a leading provider of analog and mixed-signal semiconductors targeting electric/hybrid vehicles, industrial motor control, 5G infrastructure, and data centers. Its Sky5 platform provides integrated 'modem-to-antenna' solutions for 5G smartphones. In automotive, Skyworks provides digital isolators for EV battery systems and V2X modules. Its timing solutions are also used in AI data centers to synchronize massive arrays of GPUs."),
+      p("Significant overlap in the RF front-end (RFFE) market, particularly for smartphones and mobile devices. Both supply power amplifiers, switches, and integrated front-end modules to the same Tier-1 mobile OEMs (Apple and Samsung). Both have substantial business segments focused on wireless infrastructure (5G), defense & aerospace, and IoT connectivity (Wi-Fi, Bluetooth). Both maintain internal GaAs (Gallium Arsenide) and filter fabrication facilities."),
+      p("The combination aims to create a $22bn US-based leader in high-performance RF and analog solutions with a comprehensive end-to-end product portfolio for 5G, 6G, and AI-driven connectivity. Expected to generate $450mn in annual pre-tax cost synergies by year three and be significantly accretive to non-GAAP EPS in the first full year post-closing."),
+    ],
+    filings: [
+      {
+        _key: k(),
+        jurisdiction: "HSR",
+        outcome: "conditional",
+        outcome_summary: "HSR waiting period was scheduled to expire January 5, 2026. Skyworks withdrew and refiled on January 7. FTC issued a second request on February 5, 2026.",
+        steps: [
+          { _key: k(), label: "HSR filed", actual_date: "2025-12-03" },
+          { _key: k(), label: "HSR expiration scheduled", actual_date: "2026-01-05" },
+          { _key: k(), label: "Skyworks withdrew and refiled", actual_date: "2026-01-07" },
+          { _key: k(), label: "FTC second request issued", actual_date: "2026-02-05" },
+          { _key: k(), label: "Substantial compliance (est. 3-6 months)", expected_date: "2026-06-15" },
+          { _key: k(), label: "30-day waiting period expires", expected_date: "2026-07-15" },
+          { _key: k(), label: "FTC decision", expected_date: "2026-09-30" },
+        ],
+      },
+      {
+        _key: k(),
+        jurisdiction: "SAMR",
+        outcome: "pending",
+        outcome_summary: "China's SAMR is known for slow-walking US semiconductor mergers. Filed for approval. SAMR review could extend well into 2027.",
+        steps: [
+          { _key: k(), label: "SAMR filing", actual_date: "2025-12-15" },
+          { _key: k(), label: "SAMR Phase I review (30 days)", expected_date: "2026-02-15" },
+          { _key: k(), label: "SAMR Phase II review (90 days)", expected_date: "2026-05-15" },
+          { _key: k(), label: "SAMR Phase III (60 days, if extended)", expected_date: "2026-07-15" },
+          { _key: k(), label: "SAMR decision", expected_date: "2026-12-31", note: "Could extend significantly — semiconductor mergers often slow-walked" },
+        ],
+      },
+      {
+        _key: k(),
+        jurisdiction: "Other",
+        display_name: "South Korea (KFTC)",
+        outcome: "pending",
+        steps: [
+          { _key: k(), label: "KFTC filing", actual_date: "2025-12-15" },
+          { _key: k(), label: "KFTC decision", expected_date: "2026-06-30" },
+        ],
+      },
+      {
+        _key: k(),
+        jurisdiction: "Other",
+        display_name: "Taiwan (TFTC)",
+        outcome: "pending",
+        steps: [
+          { _key: k(), label: "TFTC filing", actual_date: "2025-12-15" },
+          { _key: k(), label: "TFTC decision", expected_date: "2026-06-30" },
+        ],
+      },
+      {
+        _key: k(),
+        jurisdiction: "Other",
+        display_name: "FDI screening (9 EU countries + UK)",
+        outcome: "pending",
+        outcome_summary: "Investment screening filings in Belgium, France, Germany, Ireland, Italy, Netherlands, Spain, UK, and possibly others.",
+        steps: [
+          { _key: k(), label: "FDI filings submitted", expected_date: "2026-02-28" },
+          { _key: k(), label: "FDI clearances", expected_date: "2026-09-30" },
+        ],
+      },
+    ],
+    shareholder_vote: {
+      outcome: "approved",
+      label: "Both target and acquirer shareholders — approved February 11, 2026",
+      outcome_summary:
+        "Both Qorvo and Skyworks shareholders approved on February 11, 2026. Starboard Value (8% of QRVO) signed a voting agreement in support.",
+      committed_pct: 8,
+      committed_notes: "Starboard Value — signed voting agreement",
+      steps: [
+        { _key: k(), label: "Proxy statement filing deadline", actual_date: "2025-12-11" },
+        { _key: k(), label: "HSR expiration date", actual_date: "2026-01-17" },
+        { _key: k(), label: "Shareholder votes — both approved", actual_date: "2026-02-11" },
+      ],
+    },
+    ctfn_analysis: [
+      p("Our 60% probability reflects FTC second-request uncertainty and SAMR slow-walk risk. The semiconductor sector has seen heightened antitrust scrutiny globally — SAMR in particular has used prolonged review timelines as leverage in US-China technology disputes."),
+      p("The two-year merger agreement (outside date April 27, 2027 with extensions to October 27, 2027) provides significant runway, which is why the probability is not lower despite dual-front regulatory risk. The $100mn additional reverse termination fee for regulatory failure gives Qorvo shareholders meaningful downside protection."),
+      p("The divestiture cap ($100mn for any single asset, $250mn combined) limits the parties' obligation to offer remedies, which could be a constraint if the FTC demands broader structural remedies in the RFFE market. Apple accounted for ~69% of Skyworks' revenue and ~46% of Qorvo's in FY2025 — Apple's view of the merger is a silent but significant factor."),
+    ],
+    risk_factors: [
+      p("FTC second request: significant RFFE market overlap — both supply power amplifiers and front-end modules to Apple and Samsung."),
+      p("SAMR slow-walk: China known for extended reviews of US semiconductor mergers as geopolitical leverage."),
+      p("Customer concentration: Apple = 69% of SWKS revenue and 46% of QRVO revenue. Apple's position on the merger is a silent risk factor."),
+      p("Divestiture cap ($100mn / $250mn) may limit ability to satisfy FTC if broader remedies are demanded."),
+      p("9-country FDI screening in Europe adds secondary timeline risk."),
+    ],
+    shareholder_activism: [
+      {
+        _key: k(),
+        date: "2025-10-28",
+        actor: "Starboard Value (8% of Qorvo)",
+        stance: "supportive",
+        description:
+          "Starboard Value, holding an 8% stake in Qorvo, signed a voting agreement in support of the transaction at announcement. Starboard's endorsement provides a meaningful committed vote block and signals activist investor confidence in the strategic logic.",
+      },
+    ],
+    documents: [
+      { _key: k(), title: "Press Release", url: "https://www.sec.gov/" },
+      { _key: k(), title: "Investor Presentation", url: "https://www.sec.gov/" },
+      { _key: k(), title: "Definitive Merger Agreement", url: "https://www.sec.gov/Archives/edgar/data/1604778/000110465925102809/tm2529220d2_ex2-1.htm" },
+      { _key: k(), title: "Definitive Proxy", url: "https://www.sec.gov/Archives/edgar/data/1604778/000110465925124244/tm2534027-1_defm14a.htm" },
+    ],
+    trigger_alert: false,
+    alert_summary: "FTC second request received; SAMR review ongoing. Shareholder votes approved February 11.",
+  },
 ];
 
 async function run() {
