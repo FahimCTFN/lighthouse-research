@@ -763,6 +763,188 @@ const deals = [
     trigger_alert: false,
     alert_summary: "FTC issues a second request; we now expect a divestiture remedy.",
   },
+
+  // 5 ── KVUE / KMB — consumer health mega-merger
+  {
+    acquirer: "Kimberly-Clark",
+    target: "Kenvue",
+    acquirer_ticker: "KMB",
+    target_ticker: "KVUE",
+    status: "regulatory_review",
+    sector: "consumer",
+    target_jurisdiction: "Delaware",
+    deck: "Shareholders overwhelmingly approved (96-99%). FTC second request is the primary gating item. Divestitures likely in feminine hygiene (NZ/AU already proposed). KMB announced post-closing org structure April 15.",
+    key_risk_summary:
+      "FTC second request focusing on concentrated market share in baby care (Huggies vs Johnson's Baby), feminine hygiene (Kotex vs Stayfree/Carefree), and OTC health. Divestitures in multiple geographies likely required — NZ/AU feminine hygiene divestiture already proposed to regulators.",
+    equity_value: 40000,
+    shares_outstanding: 1903,
+    offer_price: 21.01,
+    offer_terms: "$3.50 cash + 0.14625 KMB shares per KVUE share (~$21.01)",
+    premium: 46,
+    premium_reference: "vs KVUE close $14.37 on Oct 31, 2025",
+    termination_fee: 1136,
+    termination_fee_pct: 2.8,
+    reverse_termination_fee: 1136,
+    reverse_termination_fee_pct: 2.8,
+    termination_fee_notes:
+      "Reciprocal $1.136bn termination fee payable by either party in competing-transaction or board recommendation-change scenarios.",
+    financing:
+      "Cash component (~$6.7bn) funded via cash on hand, new debt issuance, and proceeds from previously announced sale of 51% of KMB's International Family Care and Professional business. $7.7bn committed bridge facility from JPMorgan Chase. Combined ownership at close: KMB ~54%, KVUE ~46%.",
+    ctfn_closing_probability: 72,
+    ctfn_estimated_close: "2026-10-15",
+    ctfn_probability_notes:
+      "Strong shareholder support (96-99%) removes vote risk. FTC second request + required divestitures are the primary variables. Multiple jurisdictions still outstanding.",
+    announcement_date: "2025-11-03",
+    published_date: "2025-11-03",
+    next_key_event_date: "2026-07-15",
+    next_key_event_label: "FTC substantial compliance target",
+    outside_date: "2026-11-02",
+    outside_date_final: "2027-05-03",
+    outside_date_notes:
+      "Automatic extension to May 3, 2027 if regulatory approvals remain pending.",
+    closing_guidance: "H2 2026",
+    best_efforts:
+      "Reasonable best efforts standard for regulatory approvals, subject to specified limitations in the merger agreement.",
+    target_advisors:
+      "Centerview Partners and Goldman Sachs (financial). Cravath, Swaine & Moore (legal — 13-partner team).",
+    acquirer_advisors:
+      "J.P. Morgan and PJT Partners (financial). Kirkland & Ellis (legal).",
+    free_preview: [
+      p("Kimberly-Clark's $48.7bn acquisition of Kenvue creates a $32 billion global health and wellness leader combining KMB's Huggies, Kleenex, and Kotex with Kenvue's Tylenol, Band-Aid, Neutrogena, Listerine, and Aveeno. Consideration is $3.50 cash plus 0.14625 KMB shares per KVUE share, implying ~$21.01 per share — a 46% premium."),
+      p("Both shareholder bases overwhelmingly approved the transaction on January 29, 2026 (~96% KMB, ~99% KVUE). HSR expired February 4, but the FTC issued a second request. Competitive overlaps in baby care, feminine hygiene, and OTC health make divestitures likely. KMB announced post-closing organizational structure and leadership on April 15, 2026 — a sign of active integration planning."),
+    ],
+    background: [
+      p("Kenvue was spun out of Johnson & Johnson in May 2023 via the largest consumer health IPO in history. Shares subsequently fell ~35% from the IPO price, prompting activist interest."),
+      p("Starboard Value CEO Jeffrey Smith began building a significant position in late 2024, arguing Kenvue's iconic brands were undervalued under the existing management structure. By March 2025, Starboard secured a board seat and pushed for a 'comprehensive review of strategic alternatives.'"),
+      p("The strategic review process ran through the summer and fall of 2025. Kimberly-Clark emerged as the acquirer, with the merger agreement signed on November 2, 2025 and announced November 3."),
+      p("Starboard publicly described KMB and KVUE as overlapping 'beautifully' — the deal was effectively activist-driven, with the strategic review initiated at Starboard's insistence."),
+    ],
+    commentary: [
+      p("The combined company targets $1.9bn in cost synergies and $500mn in incremental revenue synergy profit, partially offset by $300mn in reinvestment. At ~14x adjusted EBITDA, the acquisition multiple reflects Kenvue's depressed post-spin trading rather than intrinsic brand value."),
+      p("Kenvue's portfolio — Tylenol, Band-Aid, Neutrogena, Listerine, Aveeno, Johnson's Baby — represents some of the most recognized consumer health brands globally. KMB's operational discipline in supply chain and distribution is expected to be a key value driver post-close."),
+      p("On April 15, 2026, Kimberly-Clark announced the post-closing organizational structure and identified key leadership positions — a strong signal of integration confidence ahead of regulatory clearance."),
+    ],
+    filings: [
+      {
+        _key: k(),
+        jurisdiction: "HSR",
+        outcome: "conditional",
+        outcome_summary: "HSR waiting period expired February 4, 2026. However, FTC issued a second request for more intensive review. Focus: market concentration in baby care, feminine hygiene, and OTC health. Divestitures likely required.",
+        steps: [
+          { _key: k(), label: "HSR filed", actual_date: "2025-12-01" },
+          { _key: k(), label: "HSR waiting period expired", actual_date: "2026-02-04" },
+          { _key: k(), label: "FTC second request issued", actual_date: "2026-02-15", note: "Baby care, feminine hygiene, OTC overlap" },
+          { _key: k(), label: "Substantial compliance (est. 3-6 months)", expected_date: "2026-07-15" },
+          { _key: k(), label: "30-day waiting period expires", expected_date: "2026-08-15" },
+          { _key: k(), label: "FTC decision / consent decree", expected_date: "2026-09-30" },
+        ],
+      },
+      {
+        _key: k(),
+        jurisdiction: "EC_Merger",
+        outcome: "pending",
+        outcome_summary: "Filing planned. Both companies have significant European revenues — EUMR thresholds exceeded. Pre-notification likely underway.",
+        steps: [
+          { _key: k(), label: "Pre-notification discussions", expected_date: "2026-04-01" },
+          { _key: k(), label: "Formal notification", expected_date: "2026-05-15" },
+          { _key: k(), label: "Phase I decision (25 working days)", expected_date: "2026-06-26" },
+        ],
+      },
+      {
+        _key: k(),
+        jurisdiction: "CMA",
+        outcome: "pending",
+        outcome_summary: "Both companies have UK operations. CMA review expected.",
+        steps: [
+          { _key: k(), label: "CMA review", expected_date: "2026-06-30", note: "Phase 1: 40 working days" },
+        ],
+      },
+      {
+        _key: k(),
+        jurisdiction: "Other",
+        display_name: "New Zealand / Australia",
+        outcome: "conditional",
+        outcome_summary: "Companies proposed to divest all of Kenvue's feminine hygiene business in NZ and AU to address competitive overlap (Kotex vs Stayfree/Carefree).",
+        steps: [
+          { _key: k(), label: "Clearance application filed", actual_date: "2026-02-15" },
+          { _key: k(), label: "Divestiture proposal submitted", actual_date: "2026-03-15", note: "Full Kenvue feminine hygiene business in NZ/AU" },
+          { _key: k(), label: "Decision", expected_date: "2026-06-15" },
+        ],
+      },
+    ],
+    shareholder_vote: {
+      outcome: "approved",
+      label: "Both companies — special meetings held January 29, 2026",
+      outcome_summary:
+        "~96% of KMB shares voted FOR; ~99% of KVUE shares voted FOR. ISS recommended approval. Overwhelming mandate from both shareholder bases.",
+      committed_pct: 15,
+      committed_notes: "Starboard Value, D.E. Shaw, Toms Capital activist block",
+      steps: [
+        { _key: k(), label: "Record date", actual_date: "2025-12-11" },
+        { _key: k(), label: "Proxy/prospectus effective + mailed", actual_date: "2025-12-16" },
+        { _key: k(), label: "ISS recommendation (FOR)", actual_date: "2026-01-15" },
+        { _key: k(), label: "Special meetings — both approved", actual_date: "2026-01-29", note: "KMB ~96% FOR, KVUE ~99% FOR" },
+      ],
+    },
+    ctfn_analysis: [
+      p("Our 72% probability reflects strong shareholder support (removing vote risk entirely) offset by meaningful FTC second-request uncertainty. The overlaps in baby care (Huggies vs Johnson's Baby), feminine hygiene (Kotex vs Stayfree/Carefree), and potentially OTC health are real — divestitures in at least feminine hygiene are near-certain."),
+      p("The NZ/AU divestiture proposal (full Kenvue feminine hygiene business) signals the parties' willingness to offer structural remedies, but the FTC may demand broader divestitures in the US market where concentration is highest. The H2 2026 closing guidance assumes FTC resolution by Q3."),
+      p("KMB's April 15 announcement of post-closing organizational structure is a strong confidence signal — companies typically don't publicize integration plans this early unless they expect regulatory clearance."),
+    ],
+    risk_factors: [
+      p("FTC second request: concentrated market share in baby care, feminine hygiene, and OTC health could require significant divestitures."),
+      p("Divestiture scope: if FTC demands broader US remedies beyond feminine hygiene, deal economics deteriorate."),
+      p("Integration execution: Kenvue has underperformed since J&J spin-off (stock down ~35% from IPO); operational turnaround is essential."),
+      p("Leverage: combined entity carries substantially higher debt post-close; $7.7bn bridge facility from JPMorgan."),
+      p("Delaware Chancery Court disclosure litigation over JPMorgan's dual role as bridge lender and KMB financial advisor."),
+    ],
+    shareholder_activism: [
+      {
+        _key: k(),
+        date: "2025-03-15",
+        actor: "Starboard Value (Jeffrey Smith)",
+        stance: "supportive",
+        description:
+          "Starboard secured a board seat at Kenvue and pushed for a comprehensive review of strategic alternatives. Starboard described KMB and KVUE as overlapping 'beautifully' and was the catalyst for the deal process.",
+      },
+      {
+        _key: k(),
+        date: "2025-10-20",
+        actor: "D.E. Shaw (~3% stake)",
+        stance: "supportive",
+        description:
+          "D.E. Shaw built a ~3% position in KVUE during the strategic review, signaling institutional support for a transaction.",
+      },
+      {
+        _key: k(),
+        date: "2025-10-25",
+        actor: "Toms Capital / Third Point",
+        stance: "supportive",
+        description:
+          "Multiple event-driven and activist funds accumulated positions ahead of the announcement, creating a supportive shareholder base for any deal the board recommended.",
+      },
+      {
+        _key: k(),
+        date: "2026-03-10",
+        actor: "Delaware Chancery Court plaintiff",
+        stance: "critical",
+        description:
+          "Complaint filed alleging failure to adequately disclose JPMorgan's fees for providing $7.7bn acquisition bridge financing while simultaneously serving as KMB's financial advisor. Routine M&A disclosure litigation — not expected to be deal-blocking.",
+      },
+    ],
+    documents: [
+      { _key: k(), title: "Press Release — KMB/KVUE (11/3/25)", url: "https://investors.kenvue.com/financial-news/news-details/2025/Kimberly-Clark-to-Acquire-Kenvue-Creating-a-32-Billion-Global-Health-and-Wellness-Leader/default.aspx" },
+      { _key: k(), title: "Agreement and Plan of Merger (8-K)", url: "https://www.sec.gov/Archives/edgar/data/1944048/000110465925105216/tm2529895d1_8k.htm" },
+      { _key: k(), title: "Merger Agreement (full text)", url: "https://www.sec.gov/Archives/edgar/data/1944048/000110465925105216/tm2529895d1_ex2-1.htm" },
+      { _key: k(), title: "Definitive Merger Proxy (DEFM14A)", url: "https://www.sec.gov/Archives/edgar/data/1944048/000114036125045607/ny20060344x1_defm14a.htm" },
+      { _key: k(), title: "Shareholder Vote Results (1/29/26)", url: "https://investors.kenvue.com/financial-news/news-details/2026/Kimberly-Clark-and-Kenvue-Shareholders-Overwhelmingly-Approve-Kimberly-Clarks-Acquisition-of-Kenvue/default.aspx" },
+      { _key: k(), title: "KMB Post-Closing Org Structure (4/15/26)", url: "https://www.prnewswire.com/news-releases/kimberly-clark-announces-post-closing-organizational-structure-and-identifies-key-leadership-302742498.html" },
+    ],
+    allow_single_purchase: true,
+    single_purchase_price: 99,
+    trigger_alert: false,
+    alert_summary: "KMB announces post-closing organizational structure ahead of regulatory clearance.",
+  },
 ];
 
 async function run() {
