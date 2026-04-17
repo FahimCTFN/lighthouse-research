@@ -137,7 +137,14 @@ export interface PaidDeal extends PublicDeal {
   filings?: Filing[];
   background?: PortableTextBlock[];
   commentary?: PortableTextBlock[];
-  ctfn_analysis?: PortableTextBlock[];
+  ctfn_probability?: PortableTextBlock[];
+  ctfn_target_company?: PortableTextBlock[];
+  ctfn_acquirer_company?: PortableTextBlock[];
+  ctfn_overlaps?: PortableTextBlock[];
+  ctfn_rationale_synergies?: PortableTextBlock[];
+  ctfn_competition?: PortableTextBlock[];
+  ctfn_customers?: PortableTextBlock[];
+  ctfn_precedent_transactions?: PortableTextBlock[];
   risk_factors?: PortableTextBlock[];
   shareholder_activism?: ActivismEntry[];
   documents?: DealDocument[];

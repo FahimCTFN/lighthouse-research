@@ -1,5 +1,5 @@
 // Shared rich-text block config used by every Portable Text field on Deal.
-// Lets editors use headings, lists, bold/italic, blockquotes, and links.
+// Supports headings, lists, bold/italic, blockquotes, links, and inline images.
 export const richTextBlock = {
   type: "block",
   styles: [
@@ -43,3 +43,25 @@ export const richTextBlock = {
     ],
   },
 } as const;
+
+// Image block for embedding charts, diagrams, or screenshots in rich text.
+export const richTextImage = {
+  type: "image",
+  options: { hotspot: true },
+  fields: [
+    {
+      name: "alt",
+      type: "string",
+      title: "Alt text",
+      description: "Describe the image for accessibility.",
+    },
+    {
+      name: "caption",
+      type: "string",
+      title: "Caption (optional)",
+    },
+  ],
+} as const;
+
+// Combined rich text config: blocks + images.
+export const richTextWithImages = [richTextBlock, richTextImage];

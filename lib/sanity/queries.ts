@@ -128,7 +128,14 @@ export const PAID_DEAL_QUERY = groq`
       committed_notes,
       steps[]{ _key, label, expected_date, actual_date, note }
     },
-    ctfn_analysis,
+    ctfn_probability,
+    ctfn_target_company,
+    ctfn_acquirer_company,
+    ctfn_overlaps,
+    ctfn_rationale_synergies,
+    ctfn_competition,
+    ctfn_customers,
+    ctfn_precedent_transactions,
     risk_factors,
     shareholder_activism[]{
       _key,

@@ -103,10 +103,7 @@ export default async function DealPage({
 
             <ShareholderVote vote={(deal as PaidDeal).shareholder_vote} />
 
-            <CtfnAnalysis
-              analysis={(deal as PaidDeal).ctfn_analysis}
-              risks={(deal as PaidDeal).risk_factors}
-            />
+            <CtfnAnalysis deal={deal as PaidDeal} />
 
             <ShareholderActivism
               entries={(deal as PaidDeal).shareholder_activism}

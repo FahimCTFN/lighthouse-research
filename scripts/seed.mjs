@@ -232,7 +232,7 @@ const deals = [
         { _key: k(), label: "Vote meeting", expected_date: "2026-04-23" },
       ],
     },
-    ctfn_analysis: [
+    ctfn_probability: [
       p("Our 71% probability reflects the California tail risk as binary. Base case: EC remedies via children's-TV divestitures, California AG settles with conditions or backs down short of litigation. Bear case: California files in state court to block, forcing closing into mid-2027 or recut terms."),
       p("The ticking fee structure protects WBD shareholders from regulatory delay value erosion, but doesn't compensate holders for timeline uncertainty — the $0.25/qtr accrual works out to roughly 1% per quarter."),
     ],
@@ -411,7 +411,7 @@ const deals = [
         { _key: k(), label: "Vote meeting", actual_date: "2025-11-14", note: "Approved" },
       ],
     },
-    ctfn_analysis: [
+    ctfn_probability: [
       p("Our 58% probability reflects the novelty of the STB standard. There is no direct precedent for how the 2001 rules are applied to a transcontinental Class I combination. The rules require mergers to enhance competition, not just maintain it — a materially higher bar than the HSR standard."),
       p("The January 2026 application rejection was substantive — the STB unanimously cited two major deficiencies: failure to provide a full-system competitive impact analysis with forward-looking projections and the omission of Schedule 5.8 covering the 'Materially Burdensome Regulatory Condition' language. This suggests the parties' initial approach may not survive the enhanced standard without meaningful remedies."),
       p("DOJ's March 2026 brief suggesting the STB order HSR-style ordinary-course business documents is an unusual level of engagement in a proceeding formally governed by the STB, and signals the Division's intent to shape the evidentiary record."),
@@ -616,7 +616,7 @@ const deals = [
         { _key: k(), label: "Vote meeting", actual_date: "2025-12-22", note: "Approved" },
       ],
     },
-    ctfn_analysis: [
+    ctfn_probability: [
       p("Our 74% probability reflects a relatively clean competition profile offset by political sensitivity around PIF as lead investor. Section 6.5(a) of the merger agreement is favorable to close — parties are not required to agree to any remedy in connection with HSR or CFIUS."),
       p("FSR Phase II would extend timing by 90+ days if invoked. Our base case assumes Phase I clearance subject to limited commitments on subsidy transparency."),
     ],
@@ -747,7 +747,7 @@ const deals = [
         { _key: k(), label: "Vote meeting", expected_date: "2026-05-06" },
       ],
     },
-    ctfn_analysis: [
+    ctfn_probability: [
       p("Our 77% probability reflects a strong strategic rationale offset by a clear product overlap in thrombectomy. We expect a divestiture remedy — most likely a single product line with associated IP — rather than an outright block."),
       p("The 6% reverse termination fee gives PEN shareholders meaningful downside protection if the FTC blocks the deal without an accepted remedy."),
     ],
@@ -886,7 +886,7 @@ const deals = [
         { _key: k(), label: "Special meetings — both approved", actual_date: "2026-01-29", note: "KMB ~96% FOR, KVUE ~99% FOR" },
       ],
     },
-    ctfn_analysis: [
+    ctfn_probability: [
       p("Our 72% probability reflects strong shareholder support (removing vote risk entirely) offset by meaningful FTC second-request uncertainty. The overlaps in baby care (Huggies vs Johnson's Baby), feminine hygiene (Kotex vs Stayfree/Carefree), and potentially OTC health are real — divestitures in at least feminine hygiene are near-certain."),
       p("The NZ/AU divestiture proposal (full Kenvue feminine hygiene business) signals the parties' willingness to offer structural remedies, but the FTC may demand broader divestitures in the US market where concentration is highest. The H2 2026 closing guidance assumes FTC resolution by Q3."),
       p("KMB's April 15 announcement of post-closing organizational structure is a strong confidence signal — companies typically don't publicize integration plans this early unless they expect regulatory clearance."),
@@ -1100,7 +1100,7 @@ const deals = [
         { _key: k(), label: "Definitive proxy + shareholder vote", expected_date: "2026-07-15", note: "Estimated based on typical proxy timeline" },
       ],
     },
-    ctfn_analysis: [
+    ctfn_probability: [
       p("Our 65% probability reflects the multi-jurisdictional complexity — HSR, FERC, three state utility commissions (PUCO, NYPSC, CPUC), California Energy Commission, FCC, and CFIUS. Each jurisdiction reviews independently and on its own timeline. State utility reviews for holding company changes routinely take 6-12 months."),
       p("The all-equity financing removes one major risk variable — no financing condition, no debt commitment expiration. The consortium's willingness to fund 100% with equity signals strong conviction and eliminates the most common cause of deal failure in leveraged infrastructure transactions."),
       p("Indiana political risk is real but delayed — the next legislative session is January 2027. PUCO data center backlash could create friction at the Ohio commission. CFIUS risk is moderate given QIA's involvement and AES's critical infrastructure assets."),
@@ -1258,7 +1258,7 @@ const deals = [
         { _key: k(), label: "Shareholder votes (both companies)", expected_date: "2026-07-15", note: "Mid-July target per management" },
       ],
     },
-    ctfn_analysis: [
+    ctfn_probability: [
       p("Our 62% probability reflects the near-certainty of an EC Phase 2 investigation on powder coatings (combined share up to 50%) and significant vehicle refinish overlap. The CMA investigation launched today (April 16) adds a second competition authority with independent remedies jurisdiction."),
       p("The nil-premium, all-stock structure creates a shareholder opposition dynamic unusual for deals of this size — Artisan Partners called it a 'selling out' of a well-performing company for the currency of one with 'inferior assets and a track record of value stagnation.' While Artisan + Shapiro together hold only ~1.8% of Axalta, their public stance could embolden other passive holders."),
       p("Precedent transactions provide mixed guidance. Sherwin-Williams' $11bn acquisition of Valspar (2017) required FTC-mandated divestiture of Valspar's North American industrial wood coatings. AkzoNobel's own acquisition of BASF's industrial coatings saw an in-depth EC review with clearance subject to competition remaining. The SigmaKalon/PPG acquisition (2007) was cleared after the EC found significant competition in automotive refinish coatings (20-30% combined share in France and several other segments)."),
@@ -1445,7 +1445,7 @@ const deals = [
         { _key: k(), label: "Shareholder vote — approved", actual_date: "2025-08-28" },
       ],
     },
-    ctfn_analysis: [
+    ctfn_probability: [
       p("Our 70% probability reflects CTFN's STRONG enforceability rating (favors seller) offset by the NMPRC's unpredictable procedural posture. The PIPE investigation is a novel complication — hearing examiners pausing the merger schedule over a pre-closing equity investment is unusual and creates timeline risk."),
       p("PUCT and FERC cleared without conditions. The NMPRC is the sole remaining US gating authority. New Mexico's regulatory history with this asset is difficult — the prior Avangrid merger was terminated after years of NMPRC opposition. Blackstone's approach (equity-funded, no leverage) is designed to address the commission's historic concerns about financial buyers."),
       p("The NM AG's challenge to the PIPE adds political dimension. If the AG succeeds in unwinding the PIPE, it doesn't necessarily kill the merger — but it signals the political environment Blackstone faces at the NMPRC."),
@@ -1545,12 +1545,24 @@ const deals = [
     ],
     commentary: [
       p("Skyworks shareholders will own 63% of the combined company, while Qorvo shareholders will own 37%, on a fully diluted basis. Starboard Value, an 8% shareholder of Qorvo, has signed a voting agreement in support of the transaction."),
+    ],
+    ctfn_target_company: [
       p("Qorvo is a global leader in the development and commercialization of technologies and products for the wireless, wired, and power markets. The company operates in three reportable segments: Advanced Cellular Group (ACG), which provides radio frequency (RF) solutions for smartphones, wearables, and laptops; Connectivity and Sensors Group (CSG), which focuses on Wi-Fi, Ultra-Wideband (UWB), and Bluetooth Low Energy (BLE) for the Internet of Things (IoT); and High Performance Analog (HPA), which supplies power management and RF solutions for defense, aerospace, and infrastructure. Key use cases include high-power phased array radar for electronic military applications, low Earth orbit (LEO) satellite communications, and 5G cellular base stations. In the consumer space, Qorvo's solutions enable Wi-Fi 7 connectivity and Matter-compatible smart home devices, while its UWB technology is used for precision location services like digital car keys."),
+    ],
+    ctfn_acquirer_company: [
       p("Skyworks is a leading provider of analog and mixed-signal semiconductors that empower the wireless networking revolution. The company targets high-growth verticals including electric and hybrid vehicles, industrial motor control, 5G wireless infrastructure, and data centers. Its product portfolio includes power amplifiers, front-end modules, and precision timing chips. A critical use case for Skyworks is its Sky5 platform, which provides integrated 'modem-to-antenna' solutions for 5G smartphones to manage complex frequency bands while optimizing battery life. In the automotive sector, Skyworks provides digital isolators that act as safety barriers in high-voltage EV battery systems and V2X (Vehicle-to-Everything) modules that allow cars to communicate with surrounding infrastructure. Its timing solutions are also used in AI data centers to synchronize massive arrays of GPUs."),
+    ],
+    ctfn_overlaps: [
       p("There is significant overlap in the RF front-end (RFFE) market, particularly for smartphones and mobile devices. Both companies supply power amplifiers, switches, and integrated front-end modules to the same Tier-1 mobile OEMs (Apple and Samsung). Additionally, they both have substantial business segments focused on wireless infrastructure (5G), defense & aerospace, and IoT connectivity solutions (Wi-Fi, Bluetooth). Both companies also maintain internal fabrication facilities for GaAs (Gallium Arsenide) and filter technologies."),
+    ],
+    ctfn_rationale_synergies: [
       p("The combination aims to create a $22bn US-based leader in high-performance RF and analog solutions. The primary rationale is to provide a more comprehensive, end-to-end product portfolio for the complex 5G, 6G, and AI-driven connectivity era. By combining Skyworks' expertise in highly integrated modules with Qorvo's strength in high-performance filter technology and HPA, the merged entity expects to accelerate innovation. The transaction is expected to generate $450mn in annual pre-tax cost synergies by year three and be significantly accretive to non-GAAP EPS in the first full year post-closing."),
+    ],
+    ctfn_competition: [
       p("For Qorvo, the HPA business competes primarily with Analog Devices, MACOM Technology Solutions Holdings, Monolithic Power Systems, NXP Semiconductors, Scientific Components, Silergy, and Texas Instruments. CSG competes primarily with Broadcom, Murata Manufacturing, Nordic Semiconductor, NXP Semiconductors, Qualcomm Technologies, RichWave Technology, Silicon Laboratories, Skyworks Solutions, and Vanchip (Tianjin) Technology. ACG competes primarily with Broadcom, Maxscend Microelectronics, Murata Manufacturing, Qualcomm Technologies, Skyworks Solutions, and Vanchip (Tianjin) Technology."),
       p("For Skyworks, the company competes with the likes of Analog Devices, Broadcom, Cirrus Logic, Murata Manufacturing, NXP Semiconductors, Qorvo, Qualcomm, and Texas Instruments."),
+    ],
+    ctfn_customers: [
       p("In fiscal year 2025, Apple accounted for approximately 69% of Skyworks' total net revenue. This is a slight increase from 66% in 2024 and 64% in 2023. For Qorvo, in the 2025 fiscal year, Apple accounted for 46% of Qorvo's total revenue (consistent with 46% in 2024 and up from 37% in 2023). Samsung accounted for 10% of total revenue in fiscal 2025, down slightly from 12% in 2024."),
     ],
     filings: [
@@ -1627,7 +1639,7 @@ const deals = [
         { _key: k(), label: "Shareholder votes — both approved", actual_date: "2026-02-11" },
       ],
     },
-    ctfn_analysis: [
+    ctfn_probability: [
       p("Our 60% probability reflects FTC second-request uncertainty and SAMR slow-walk risk. The semiconductor sector has seen heightened antitrust scrutiny globally — SAMR in particular has used prolonged review timelines as leverage in US-China technology disputes."),
       p("The two-year merger agreement (outside date April 27, 2027 with extensions to October 27, 2027) provides significant runway, which is why the probability is not lower despite dual-front regulatory risk. The $100mn additional reverse termination fee for regulatory failure gives Qorvo shareholders meaningful downside protection."),
       p("The divestiture cap ($100mn for any single asset, $250mn combined) limits the parties' obligation to offer remedies, which could be a constraint if the FTC demands broader structural remedies in the RFFE market. Apple accounted for ~69% of Skyworks' revenue and ~46% of Qorvo's in FY2025 — Apple's view of the merger is a silent but significant factor."),
@@ -1779,15 +1791,27 @@ const deals = [
         { _key: k(), label: "Shareholder vote — approved", actual_date: "2026-04-30" },
       ],
     },
-    ctfn_analysis: [
+    ctfn_probability: [
       p("Our 62% probability reflects SAMR as the primary gating risk. The HSR process appears straightforward — the overlap in embedded processing and wireless connectivity is real but the combined market shares are unlikely to trigger an FTC challenge given the fragmented nature of the IoT semiconductor market."),
       p("The 69% premium is exceptionally high and reflects TI's strategic conviction that Silicon Labs' wireless IoT platform is a must-have asset for its long-term portfolio. The premium also substantially reduces the risk of shareholder opposition or competing bids."),
       p("The two-year merger agreement (outside date February 4, 2027 with extensions to February 4, 2028) provides significant runway for SAMR review. However, the precedent of Qualcomm/NXP (SAMR never formally denied — just slow-walked until the parties gave up) and Intel/Tower (terminated after SAMR delays) makes China the binary risk."),
+    ],
+    ctfn_target_company: [
       p("Silicon Labs is a leading innovator in secure, intelligent wireless technology and mixed-signal solutions purposed for the Internet of Things (IoT). The company specializes in low-power wireless connectivity, providing a broad platform of System-on-Chips (SoCs), modules, and software that support a variety of protocols, including Bluetooth, Wi-Fi, Matter, Zigbee, Z-Wave, Thread, Wi-SUN, and sub-GHz proprietary technologies. Use cases for its hardware and software solutions range from smart home thermostats, security systems, and municipal energy grids to industrial automation, connected health devices (such as heart monitors), and smart retail assets. Silicon Labs distinguishes itself through its expertise in high-performance analog and mixed-signal integrated circuit (IC) design, as well as its proprietary Simplicity Studio software development environment, which simplifies the complexity of radio frequency (RF) design from silicon to cloud."),
+    ],
+    ctfn_acquirer_company: [
       p("Texas Instruments (TI) is a global semiconductor company that designs, manufactures, and sells analog and embedded processing chips for a vast array of electronic applications. Its Analog segment focuses on managing power requirements and signal processing through products such as battery-management solutions, DC/DC regulators, and linear devices. The Embedded Processing segment provides the digital 'brains' for electronic equipment, ranging from low-cost microcontrollers for consumer goods like electric toothbrushes to complex, specialized devices for motor control and industrial automation. A key technical differentiator for TI is its strategy of vertical integration, owning and operating 300mm wafer fabrication facilities that provide a dependable, low-cost supply of chips."),
+    ],
+    ctfn_overlaps: [
       p("The companies have a direct and significant overlap in the Embedded Processing and Wireless Connectivity markets. Both TI and Silicon Labs develop and sell microcontrollers and wireless SoCs targeted at the industrial and IoT end markets. Specifically, Silicon Labs' leadership in secure wireless protocols (like Zigbee and Matter) for smart homes and infrastructure overlaps with TI's existing embedded wireless portfolio designed for communications and industrial equipment. Furthermore, both companies offer mixed-signal and power management solutions, such as digital isolators and sensors, used in industrial automation and power supply systems."),
+    ],
+    ctfn_rationale_synergies: [
       p("The acquisition, valued at approximately $7.5bn in cash, aims to combine Silicon Labs' best-in-class wireless connectivity expertise with TI's massive manufacturing scale and market reach. Strategically, TI intends to 'reshore' Silicon Labs' manufacturing from external foundries to its own internally owned 300mm wafer fabs, which is expected to yield approximately $450mn in annual manufacturing and operational synergies within three years post-close. This move is designed to provide customers with a more dependable supply while reducing costs through TI's superior production efficiency. Additionally, the deal allows TI to cross-sell Silicon Labs' 1,200 wireless products through its extensive market channels and direct-to-customer e-commerce platform, deepening engagement across industrial and automotive customer bases."),
+    ],
+    ctfn_competition: [
       p("Silicon Labs identifies primary competitors as Broadcom, Espressif, Infineon, MediaTek, Microchip, Nordic Semiconductor, NXP, Qualcomm, Renesas, STMicroelectronics, Synaptics, Telink and Texas Instruments."),
+    ],
+    ctfn_precedent_transactions: [
       p("In 2011, Texas Instruments acquired National Semiconductor for $6.5bn, which remains one of the largest analog semiconductor deals to date and served as a model for TI's consolidation strategy."),
       p("In 2021, Skyworks Solutions acquired Silicon Labs' Infrastructure & Automotive business for $2.75bn, leaving Silicon Labs as a pure-play IoT company until this current transaction."),
       p("Because the transaction requires approval from China's SAMR, which has slow-walked clearing deals in recent years, our analyst team notes recent unsuccessful deals that didn't receive timely approval from SAMR including Qualcomm's attempted acquisition of NXP Semiconductors which was terminated in 2018, and Intel's attempted acquisition of Tower Semiconductor which was terminated in 2023."),
@@ -1881,7 +1905,7 @@ const deals = [
         { _key: k(), label: "Shareholder vote", expected_date: "2026-05-08" },
       ],
     },
-    ctfn_analysis: [],
+    ctfn_probability: [],
     risk_factors: [
       p("HSR pull-and-refile suggests potential regulatory friction — parties may have needed additional time or pre-clearance discussions with the FTC/DOJ."),
       p("SkyWater's defense and intelligence community contracts could raise national security considerations beyond standard antitrust review."),
@@ -2026,7 +2050,7 @@ const deals = [
         { _key: k(), label: "Shareholder votes — both approved", actual_date: "2026-02-10" },
       ],
     },
-    ctfn_analysis: [
+    ctfn_probability: [
       p("Our 68% probability reflects the multi-jurisdictional complexity — 10+ state utility commissions each review independently and on their own timelines. Pennsylvania PUC is the critical path and the most complex review given Essential's significant natural-gas operations in the state."),
       p("The all-stock, fixed-exchange-ratio structure eliminates financing risk and aligns both shareholder bases. The 10% premium is modest by M&A standards but consistent with utility 'merger of equals' transactions where the strategic rationale is about operational scale rather than a control premium."),
       p("The $835mn reverse termination fee (6.8%) provides strong downside protection for Essential shareholders if regulatory approvals fail. The asymmetry with the $370mn target fee (3%) reflects that regulatory risk is primarily borne by the acquirer."),
@@ -2195,7 +2219,7 @@ const deals = [
         { _key: k(), label: "Shareholder vote", expected_date: "2026-05-06", note: "Virtual meeting, 10:30 AM" },
       ],
     },
-    ctfn_analysis: [
+    ctfn_probability: [
       p("Our 78% probability reflects a clean regulatory picture (HSR cleared, EC super-simplified, ACCC waived) with SAMR and FIRB as the only timing unknowns. The fintech SaaS profile is generally low-risk at SAMR compared to semiconductor or critical infrastructure deals."),
       p("Clearwater Analytics is a cloud-native SaaS platform for institutional investors, providing automated investment accounting, portfolio management, trading, reconciliation, regulatory reporting, performance, compliance, and risk analytics in one unified system. It processes and reconciles data on over $10 trillion in assets globally for more than 2,500 clients including insurers, asset managers, hedge funds, banks, corporations, and governments."),
       p("The company expanded significantly into front-office and risk capabilities through its 2025 acquisitions of Enfusion and Beacon. Q4 2025 results showed $217.5mn revenue (+72% YoY), $841mn full-year ARR (+77% YoY), 79.2% non-GAAP gross margin, and net revenue retention of 109%."),

@@ -1,5 +1,5 @@
 import { defineField, defineType } from "sanity";
-import { richTextBlock } from "./richText";
+import { richTextBlock, richTextWithImages } from "./richText";
 
 export const deal = defineType({
   name: "deal",
@@ -509,12 +509,72 @@ export const deal = defineType({
       group: "content",
       of: [richTextBlock],
     }),
+    // ── CTFN Analysis (structured sub-sections) ──────────────
+    // Each sub-section is an independent rich-text field with image support.
+    // Empty sub-sections are hidden on the frontend.
     defineField({
-      name: "ctfn_analysis",
-      title: "CTFN Analysis",
+      name: "ctfn_probability",
+      title: "CTFN Probability Assessment",
       type: "array",
       group: "content",
-      of: [richTextBlock],
+      of: richTextWithImages,
+      description: "CTFN's closing probability narrative and key risk assessment.",
+    }),
+    defineField({
+      name: "ctfn_target_company",
+      title: "Target Company",
+      type: "array",
+      group: "content",
+      of: richTextWithImages,
+      description: "Target company description, business segments, products.",
+    }),
+    defineField({
+      name: "ctfn_acquirer_company",
+      title: "Acquirer Company",
+      type: "array",
+      group: "content",
+      of: richTextWithImages,
+      description: "Acquirer company description, business segments, products.",
+    }),
+    defineField({
+      name: "ctfn_overlaps",
+      title: "Overlaps",
+      type: "array",
+      group: "content",
+      of: richTextWithImages,
+      description: "Competitive overlap analysis between the merging parties.",
+    }),
+    defineField({
+      name: "ctfn_rationale_synergies",
+      title: "Rationale & Synergies",
+      type: "array",
+      group: "content",
+      of: richTextWithImages,
+      description: "Strategic rationale, expected synergies, value creation thesis.",
+    }),
+    defineField({
+      name: "ctfn_competition",
+      title: "Competition",
+      type: "array",
+      group: "content",
+      of: richTextWithImages,
+      description: "Competitive landscape for both companies.",
+    }),
+    defineField({
+      name: "ctfn_customers",
+      title: "Customers",
+      type: "array",
+      group: "content",
+      of: richTextWithImages,
+      description: "Key customer relationships, concentration, revenue split.",
+    }),
+    defineField({
+      name: "ctfn_precedent_transactions",
+      title: "Precedent Transactions",
+      type: "array",
+      group: "content",
+      of: richTextWithImages,
+      description: "Relevant precedent M&A transactions in the sector.",
     }),
     defineField({
       name: "risk_factors",
