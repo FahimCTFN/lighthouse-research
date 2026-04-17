@@ -940,10 +940,198 @@ const deals = [
       { _key: k(), title: "Shareholder Vote Results (1/29/26)", url: "https://investors.kenvue.com/financial-news/news-details/2026/Kimberly-Clark-and-Kenvue-Shareholders-Overwhelmingly-Approve-Kimberly-Clarks-Acquisition-of-Kenvue/default.aspx" },
       { _key: k(), title: "KMB Post-Closing Org Structure (4/15/26)", url: "https://www.prnewswire.com/news-releases/kimberly-clark-announces-post-closing-organizational-structure-and-identifies-key-leadership-302742498.html" },
     ],
-    allow_single_purchase: true,
-    single_purchase_price: 99,
     trigger_alert: false,
     alert_summary: "KMB announces post-closing organizational structure ahead of regulatory clearance.",
+  },
+
+  // 6 ── AES / GIP-led consortium
+  {
+    acquirer: "Global Infrastructure Partners / EQT / CalPERS / QIA",
+    target: "AES Corporation",
+    acquirer_ticker: "GIP",
+    target_ticker: "AES",
+    status: "announced",
+    sector: "energy",
+    target_jurisdiction: "Delaware",
+    deck: "AES AGM set for April 29; preliminary proxy filing May 1; primary regulatory filings May 30. Indiana politics and PUCO data center backlash are the key state-level risks.",
+    key_risk_summary:
+      "Indiana politics (though next legislative session January 2027); PUCO — possible data center backlash; CFIUS to a lesser extent given QIA involvement or EQT given Trump admin backlash vs. Europe.",
+    equity_value: 10700,
+    shares_outstanding: 713,
+    offer_price: 15,
+    offer_terms: "$15 per share in cash (dividends continue per ordinary course plus stub period; next quarterly ex date is May 1 for $0.17595)",
+    premium: 35.5,
+    premium_reference: "vs AES unaffected close on July 8, prior to media reports of a possible takeover",
+    termination_fee: 321,
+    termination_fee_pct: 3,
+    reverse_termination_fee: 588,
+    reverse_termination_fee_pct: 5.5,
+    termination_fee_notes:
+      "$100mn (1%) additional reverse termination fee if regulators block the deal.",
+    financing:
+      "The consortium will fund 100% of the acquisition with equity. No debt financing.",
+    ctfn_closing_probability: 65,
+    ctfn_estimated_close: "2027-03-31",
+    ctfn_probability_notes:
+      "Multiple state utility commissions + CFIUS + FERC create a complex multi-jurisdictional review. All-equity financing removes leverage risk.",
+    announcement_date: "2026-03-02",
+    published_date: "2026-03-02",
+    next_key_event_date: "2026-04-29",
+    next_key_event_label: "AES AGM",
+    outside_date: "2027-06-01",
+    outside_date_final: "2027-12-01",
+    outside_date_notes:
+      "Subject to two three-month extensions to September 1, 2027 and December 1, 2027.",
+    closing_guidance: "Late 2026 or early 2027",
+    best_efforts:
+      "If needed to get regulatory clearance, the parties shall divest assets and defend the transaction in court.",
+    target_advisors:
+      "JP Morgan is serving as lead financial advisor, and Wells Fargo is also serving as financial advisor. Skadden, Arps, Slate, Meagher & Flom is serving as lead legal counsel. Davis Polk & Wardwell is serving as legal counsel on certain debt matters.",
+    acquirer_advisors:
+      "Goldman Sachs is serving as financial advisor to GIP, CalPERS and QIA. Citi is serving as financial advisor to EQT. Kirkland & Ellis is serving as legal counsel to GIP as well as to the broader consortium. Simpson Thacher & Bartlett is serving as legal counsel to EQT.",
+    free_preview: [
+      p("AES Corporation ($10.7bn equity value) is being taken private by a consortium led by Global Infrastructure Partners (GIP), with EQT, California Public Employees' Retirement System (CalPERS), and Qatar Investment Authority (QIA) as co-investors. The $15 per share all-cash offer represents a 35.5% premium."),
+      p("AES has been a takeover target since the summer of 2025. The deal requires approvals from HSR, FERC, PUCO (Ohio), NYPSC (New York), CPUC (California), CEC (California Energy Commission), FCC, CFIUS, and various non-US jurisdictions. The proxy statement shall be filed within 45 business days post-DMA, or by May 1."),
+    ],
+    background: [
+      p("AES has been a takeover target since the summer of 2025. The company operates a diversified portfolio of power generation and utility assets across the US and internationally, with growing exposure to data center power supply."),
+      p("The consortium led by Global Infrastructure Partners emerged as the acquirer, with the merger agreement signed and announced on March 2, 2026. GIP, a leading global infrastructure investor, is joined by EQT (European private equity), CalPERS (California state pension fund), and QIA (Qatar sovereign wealth fund)."),
+      p("The all-equity financing structure — no debt — is notable for a deal of this size and removes leverage-related closing risk. Dividends continue per ordinary course plus a stub period, with the next quarterly ex-date of May 1 for $0.17595 per share."),
+    ],
+    commentary: [
+      p("AES has been a takeover target since the summer of 2025. The consortium's all-equity structure is unusual for infrastructure take-privates and eliminates financing conditionality risk."),
+      p("The multi-jurisdictional regulatory profile is the primary complexity — HSR, FERC, three state utility commissions (PUCO, NYPSC, CPUC), California Energy Commission, FCC, and CFIUS all require approval. State regulatory approvals for utility holding company changes typically take 6-12 months."),
+      p("QIA's involvement introduces CFIUS exposure, though the primary CFIUS concern would be around critical infrastructure (power generation / grid assets) rather than data sensitivity. EQT's European origin may also draw scrutiny given current Trump administration posture toward European investors."),
+    ],
+    filings: [
+      {
+        _key: k(),
+        jurisdiction: "HSR",
+        outcome: "pending",
+        outcome_summary: "HSR filing expected by May 30.",
+        steps: [
+          { _key: k(), label: "HSR to be filed", expected_date: "2026-05-30" },
+          { _key: k(), label: "Initial waiting period (30 days)", expected_date: "2026-06-29" },
+          { _key: k(), label: "Second request (if issued)", note: "Would extend timeline 3-6 months" },
+        ],
+      },
+      {
+        _key: k(),
+        jurisdiction: "Other",
+        display_name: "FERC (Federal Energy Regulatory Commission)",
+        outcome: "pending",
+        outcome_summary: "FERC approval required for change of control of power generation assets.",
+        steps: [
+          { _key: k(), label: "FERC filing", expected_date: "2026-05-30" },
+          { _key: k(), label: "FERC approval", expected_date: "2026-12-15", note: "Typical review 6-12 months" },
+        ],
+      },
+      {
+        _key: k(),
+        jurisdiction: "Other",
+        display_name: "PUCO (Ohio Public Utilities Commission)",
+        outcome: "pending",
+        outcome_summary: "Ohio utility commission approval required. Possible data center backlash is a risk factor.",
+        steps: [
+          { _key: k(), label: "PUCO filing", expected_date: "2026-05-30" },
+          { _key: k(), label: "PUCO review + hearings", expected_date: "2027-01-15", note: "State utility reviews typically 6-12 months" },
+        ],
+      },
+      {
+        _key: k(),
+        jurisdiction: "Other",
+        display_name: "NYPSC (New York)",
+        outcome: "pending",
+        steps: [
+          { _key: k(), label: "NYPSC filing", expected_date: "2026-05-30" },
+          { _key: k(), label: "NYPSC approval", expected_date: "2027-01-15" },
+        ],
+      },
+      {
+        _key: k(),
+        jurisdiction: "Other",
+        display_name: "CPUC (California)",
+        outcome: "pending",
+        steps: [
+          { _key: k(), label: "CPUC filing", expected_date: "2026-05-30" },
+          { _key: k(), label: "CPUC approval", expected_date: "2027-01-15" },
+        ],
+      },
+      {
+        _key: k(),
+        jurisdiction: "Other",
+        display_name: "CEC (California Energy Commission)",
+        outcome: "pending",
+        steps: [
+          { _key: k(), label: "CEC filing", expected_date: "2026-05-30" },
+          { _key: k(), label: "CEC approval", expected_date: "2027-01-15" },
+        ],
+      },
+      {
+        _key: k(),
+        jurisdiction: "FCC",
+        outcome: "pending",
+        steps: [
+          { _key: k(), label: "FCC filing", expected_date: "2026-05-30" },
+          { _key: k(), label: "FCC approval", expected_date: "2026-12-15" },
+        ],
+      },
+      {
+        _key: k(),
+        jurisdiction: "CFIUS",
+        outcome: "pending",
+        outcome_summary: "CFIUS review required given QIA (Qatar sovereign wealth) involvement and AES's critical infrastructure assets (power generation, grid). EQT's European origin may also draw scrutiny.",
+        steps: [
+          { _key: k(), label: "CFIUS filing deadline", expected_date: "2026-03-27", note: "Filed by March 27 per merger agreement" },
+          { _key: k(), label: "CFIUS Phase 1 review (45 days)", expected_date: "2026-05-11" },
+          { _key: k(), label: "CFIUS Phase 2 investigation (45 days)", expected_date: "2026-06-25", note: "If required" },
+          { _key: k(), label: "CFIUS determination", expected_date: "2026-07-30" },
+        ],
+      },
+    ],
+    shareholder_vote: {
+      outcome: "pending",
+      label: "Target shareholders — proxy to be filed by May 1",
+      outcome_summary:
+        "Proxy statement shall be filed within 45 business days post-DMA, or by May 1. AES AGM set for April 29.",
+      steps: [
+        { _key: k(), label: "AES AGM", expected_date: "2026-04-29" },
+        { _key: k(), label: "Preliminary proxy filing", expected_date: "2026-05-01" },
+        { _key: k(), label: "Definitive proxy + shareholder vote", expected_date: "2026-07-15", note: "Estimated based on typical proxy timeline" },
+      ],
+    },
+    ctfn_analysis: [
+      p("Our 65% probability reflects the multi-jurisdictional complexity — HSR, FERC, three state utility commissions (PUCO, NYPSC, CPUC), California Energy Commission, FCC, and CFIUS. Each jurisdiction reviews independently and on its own timeline. State utility reviews for holding company changes routinely take 6-12 months."),
+      p("The all-equity financing removes one major risk variable — no financing condition, no debt commitment expiration. The consortium's willingness to fund 100% with equity signals strong conviction and eliminates the most common cause of deal failure in leveraged infrastructure transactions."),
+      p("Indiana political risk is real but delayed — the next legislative session is January 2027. PUCO data center backlash could create friction at the Ohio commission. CFIUS risk is moderate given QIA's involvement and AES's critical infrastructure assets."),
+    ],
+    risk_factors: [
+      p("Multi-jurisdictional regulatory complexity: 8+ separate approvals required, each on independent timelines."),
+      p("Indiana politics — next legislative session January 2027 could create retroactive obstacles."),
+      p("PUCO data center backlash — Ohio commission may impose conditions on data center power supply operations."),
+      p("CFIUS: QIA sovereign wealth + EQT European origin + critical infrastructure assets = meaningful review."),
+      p("Extended timeline risk: state utility reviews routinely take 6-12 months; outside date extensions may be needed."),
+    ],
+    shareholder_activism: [
+      {
+        _key: k(),
+        date: "2026-03-24",
+        actor: "Indiana lawmakers",
+        stance: "critical",
+        description:
+          "Indiana Utility Regulatory Commission investigation raised concerns after lawmakers questioned the impact of the takeover on Indiana ratepayers and the state's energy infrastructure.",
+        source_url: "https://www.wfyi.org/news/articles/indiana-utility-regulatory-commission-investigation-after-lawmakers-raise-concerns-residents-bills",
+      },
+    ],
+    documents: [
+      { _key: k(), title: "Press Release", url: "https://www.sec.gov/" },
+      { _key: k(), title: "Definitive Merger Agreement", url: "https://www.sec.gov/Archives/edgar/data/874761/000119312526084157/d100078dex21.htm" },
+      { _key: k(), title: "Proxy Statement Filing Deadline (May 1)", url: "https://www.sec.gov/Archives/edgar/data/874761/000119312526084157/d100078dex21.htm" },
+      { _key: k(), title: "Regulatory Filing Deadlines (May 30)", url: "https://www.sec.gov/Archives/edgar/data/874761/000119312526084157/d100078dex21.htm" },
+      { _key: k(), title: "Outside Date (Jun 1, 2027)", url: "https://www.sec.gov/Archives/edgar/data/874761/000119312526084157/d100078dex21.htm" },
+    ],
+    trigger_alert: false,
+    alert_summary: "AES AGM set for April 29; regulatory filings due May 30.",
   },
 ];
 
