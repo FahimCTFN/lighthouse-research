@@ -332,8 +332,8 @@ const deals = [
       "STB's 2001 rules require enhancement of competition, not just preservation. First test of that standard on a Class I merger.",
     announcement_date: "2025-07-29",
     published_date: "2025-07-30",
-    next_key_event_date: "2026-04-07",
-    next_key_event_label: "Submission of HSR-style documents to DOJ/STB",
+    next_key_event_date: "2026-04-30",
+    next_key_event_label: "STB application refiling",
     outside_date: "2028-01-28",
     closing_guidance: "H1 2027",
     best_efforts:
