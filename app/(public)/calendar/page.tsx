@@ -76,13 +76,17 @@ export default async function CalendarPage() {
         <CalendarWrapper events={events} />
       ) : (
         <div className="mt-6">
-          {/* Preview: first 5 events */}
-          <div className="rounded-lg border border-gray-200 bg-white">
+          {/* Preview with progressive blur */}
+          <div className="relative overflow-hidden rounded-lg border border-gray-200 bg-white">
             <div className="divide-y divide-gray-100">
               {previewEvents.map((ev, i) => (
                 <div
                   key={`${ev.dealSlug}-${ev.date}-${i}`}
                   className="flex items-center gap-3 px-4 py-3"
+                  style={{
+                    filter: i >= 3 ? `blur(${(i - 2) * 2}px)` : undefined,
+                    opacity: i >= 3 ? 1 - (i - 2) * 0.15 : 1,
+                  }}
                 >
                   <span className="inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-brand-gold" />
                   <span className="shrink-0 text-[12px] tabular-nums text-gray-600">
@@ -105,10 +109,14 @@ export default async function CalendarPage() {
               ))}
             </div>
 
-            {/* Fade + blur overlay */}
-            <div className="relative">
-              <div className="h-16 bg-gradient-to-b from-transparent to-white" />
-            </div>
+            {/* Gradient overlay fading to paper background */}
+            <div
+              className="pointer-events-none absolute inset-x-0 bottom-0 h-32"
+              style={{
+                background:
+                  "linear-gradient(to bottom, transparent 0%, rgba(250,248,242,0.6) 40%, rgba(250,248,242,0.95) 80%, rgb(250,248,242) 100%)",
+              }}
+            />
           </div>
 
           {/* Subscribe prompt */}
