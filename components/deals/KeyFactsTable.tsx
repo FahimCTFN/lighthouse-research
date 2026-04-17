@@ -46,7 +46,7 @@ export function KeyFactsTable({ deal }: { deal: PaidDeal }) {
     { label: "Announced", value: formatDate(deal.announcement_date) },
     {
       label: "Shareholder vote",
-      value: summarizeShareholderVote(deal.shareholder_vote),
+      value: summarizeShareholderVotes(deal.shareholder_votes),
     },
     {
       label: "Outside date",
@@ -155,33 +155,37 @@ const OUTCOME_SHORT: Record<ShareholderVoteOutcome, string> = {
   not_required: "Not required",
 };
 
-function summarizeShareholderVote(vote?: ShareholderVote): string {
-  if (!vote || (!vote.steps?.length && !vote.outcome)) return "—";
-  const outcome = vote.outcome ?? "pending";
-  const party = inferParty(vote);
+function summarizeShareholderVotes(votes?: ShareholderVote[]): string {
+  if (!votes?.length) return "—";
+  return votes
+    .map((vote) => {
+      const outcome = vote.outcome ?? "pending";
+      const party =
+        vote.party === "acquirer"
+          ? "Acquirer"
+          : vote.party === "both"
+            ? "Both"
+            : "Target";
 
-  if (outcome === "not_required") return "Not required";
+      if (outcome === "not_required") return `${party}: N/A`;
 
-  if (outcome === "approved" || outcome === "rejected") {
-    const lastDone = [...(vote.steps ?? [])]
-      .reverse()
-      .find((s) => s.actual_date);
-    const date = lastDone?.actual_date
-      ? ` · ${formatDate(lastDone.actual_date)}`
-      : "";
-    return `${party} · ${OUTCOME_SHORT[outcome]}${date}`;
-  }
+      if (outcome === "approved" || outcome === "rejected") {
+        const lastDone = [...(vote.steps ?? [])]
+          .reverse()
+          .find((s) => s.actual_date);
+        const date = lastDone?.actual_date
+          ? ` · ${formatDate(lastDone.actual_date)}`
+          : "";
+        return `${party} · ${OUTCOME_SHORT[outcome]}${date}`;
+      }
 
-  const next = (vote.steps ?? []).find(
-    (s) => !s.actual_date && s.expected_date,
-  );
-  const date = next?.expected_date ? ` · ${formatDate(next.expected_date)}` : "";
-  return `${party} · ${OUTCOME_SHORT[outcome]}${date}`;
-}
-
-function inferParty(vote: ShareholderVote): string {
-  const s = (vote.label ?? "").toLowerCase();
-  if (s.includes("both")) return "Both";
-  if (s.includes("acquirer")) return "Acquirer";
-  return "Target";
+      const next = (vote.steps ?? []).find(
+        (s) => !s.actual_date && s.expected_date,
+      );
+      const date = next?.expected_date
+        ? ` · ${formatDate(next.expected_date)}`
+        : "";
+      return `${party} · ${OUTCOME_SHORT[outcome]}${date}`;
+    })
+    .join(" | ");
 }

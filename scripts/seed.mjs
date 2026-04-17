@@ -154,6 +154,7 @@ const deals = [
         jurisdiction: "CMA",
         outcome: "pending",
         outcome_summary: "CMA opened case April 13 and invited public comment. Phase 1 investigation expected to launch after comment period closes. Analysts expect straightforward Phase 1 clearance — combined market share below 20% in UK.",
+        case_url: "https://www.gov.uk/cma-cases/paramount-slash-warner-bros-discovery-merger-inquiry",
         steps: [
           { _key: k(), label: "CMA case opened + invitation to comment", actual_date: "2026-04-13" },
           { _key: k(), label: "Comment period closes", expected_date: "2026-04-27" },
@@ -219,7 +220,7 @@ const deals = [
         ],
       },
     ],
-    shareholder_vote: {
+    shareholder_votes: [{ party: "target",
       outcome: "pending",
       label: "WBD shareholders — majority of outstanding shares",
       outcome_summary:
@@ -231,7 +232,7 @@ const deals = [
         { _key: k(), label: "ISS / Glass Lewis recommendations", actual_date: "2026-04-14" },
         { _key: k(), label: "Vote meeting", expected_date: "2026-04-23" },
       ],
-    },
+    }],
     ctfn_probability: [
       p("Our 71% probability reflects the California tail risk as binary. Base case: EC remedies via children's-TV divestitures, California AG settles with conditions or backs down short of litigation. Bear case: California files in state court to block, forcing closing into mid-2027 or recut terms."),
       p("The ticking fee structure protects WBD shareholders from regulatory delay value erosion, but doesn't compensate holders for timeline uncertainty — the $0.25/qtr accrual works out to roughly 1% per quarter."),
@@ -366,6 +367,7 @@ const deals = [
         jurisdiction: "STB",
         outcome: "conditional",
         outcome_summary: "First Class I merger tested under the STB's 2001 enhance-competition standard. Application rejected as incomplete in January citing failure to provide a full-system competitive impact analysis and omission of Schedule 5.8. Refiling April 30; deadline June 22. Once accepted, the process involves a 45-day public comment window, 90-day responsive applications window, then evidentiary record-building.",
+        case_url: "https://www.stb.gov/resources/major-railroad-mergers/",
         steps: [
           { _key: k(), label: "STB acknowledged notice of intent", actual_date: "2025-07-30" },
           { _key: k(), label: "Full merger application filed", actual_date: "2025-12-19", note: "Docket No. FD 36873" },
@@ -403,14 +405,14 @@ const deals = [
         ],
       },
     ],
-    shareholder_vote: {
+    shareholder_votes: [{ party: "target",
       outcome: "approved",
       label: "Target shareholders — approved November 14, 2025",
       steps: [
         { _key: k(), label: "Proxy mailed", actual_date: "2025-10-01" },
         { _key: k(), label: "Vote meeting", actual_date: "2025-11-14", note: "Approved" },
       ],
-    },
+    }],
     ctfn_probability: [
       p("Our 58% probability reflects the novelty of the STB standard. There is no direct precedent for how the 2001 rules are applied to a transcontinental Class I combination. The rules require mergers to enhance competition, not just maintain it — a materially higher bar than the HSR standard."),
       p("The January 2026 application rejection was substantive — the STB unanimously cited two major deficiencies: failure to provide a full-system competitive impact analysis with forward-looking projections and the omission of Schedule 5.8 covering the 'Materially Burdensome Regulatory Condition' language. This suggests the parties' initial approach may not survive the enhanced standard without meaningful remedies."),
@@ -609,14 +611,14 @@ const deals = [
         steps: [{ _key: k(), label: "Turkish CA clearance", actual_date: "2026-02-15" }],
       },
     ],
-    shareholder_vote: {
+    shareholder_votes: [{ party: "target",
       outcome: "approved",
       label: "Target shareholders — approved December 22, 2025",
       steps: [
         { _key: k(), label: "Proxy mailed", actual_date: "2025-10-31" },
         { _key: k(), label: "Vote meeting", actual_date: "2025-12-22", note: "Approved" },
       ],
-    },
+    }],
     ctfn_probability: [
       p("Our 74% probability reflects a relatively clean competition profile offset by political sensitivity around PIF as lead investor. Section 6.5(a) of the merger agreement is favorable to close — parties are not required to agree to any remedy in connection with HSR or CFIUS."),
       p("FSR Phase II would extend timing by 90+ days if invoked. Our base case assumes Phase I clearance subject to limited commitments on subsidy transparency."),
@@ -738,7 +740,7 @@ const deals = [
         ],
       },
     ],
-    shareholder_vote: {
+    shareholder_votes: [{ party: "target",
       outcome: "pending",
       label: "Penumbra shareholders — simple majority",
       committed_pct: 14,
@@ -747,7 +749,7 @@ const deals = [
         { _key: k(), label: "Proxy mailed", actual_date: "2026-03-01" },
         { _key: k(), label: "Vote meeting", expected_date: "2026-05-06" },
       ],
-    },
+    }],
     ctfn_probability: [
       p("Our 77% probability reflects a strong strategic rationale offset by a clear product overlap in thrombectomy. We expect a divestiture remedy — most likely a single product line with associated IP — rather than an outright block."),
       p("The 6% reverse termination fee gives PEN shareholders meaningful downside protection if the FTC blocks the deal without an accepted remedy."),
@@ -872,7 +874,7 @@ const deals = [
         ],
       },
     ],
-    shareholder_vote: {
+    shareholder_votes: [{ party: "target",
       outcome: "approved",
       label: "Both companies — special meetings held January 29, 2026",
       outcome_summary:
@@ -885,7 +887,7 @@ const deals = [
         { _key: k(), label: "ISS recommendation (FOR)", actual_date: "2026-01-15" },
         { _key: k(), label: "Special meetings — both approved", actual_date: "2026-01-29", note: "KMB ~96% FOR, KVUE ~99% FOR" },
       ],
-    },
+    }],
     ctfn_probability: [
       p("Our 72% probability reflects strong shareholder support (removing vote risk entirely) offset by meaningful FTC second-request uncertainty. The overlaps in baby care (Huggies vs Johnson's Baby), feminine hygiene (Kotex vs Stayfree/Carefree), and potentially OTC health are real — divestitures in at least feminine hygiene are near-certain."),
       p("The NZ/AU divestiture proposal (full Kenvue feminine hygiene business) signals the parties' willingness to offer structural remedies, but the FTC may demand broader divestitures in the US market where concentration is highest. The H2 2026 closing guidance assumes FTC resolution by Q3."),
@@ -1089,7 +1091,7 @@ const deals = [
         ],
       },
     ],
-    shareholder_vote: {
+    shareholder_votes: [{ party: "target",
       outcome: "pending",
       label: "Target shareholders — proxy to be filed by May 1",
       outcome_summary:
@@ -1099,7 +1101,7 @@ const deals = [
         { _key: k(), label: "Preliminary proxy filing", expected_date: "2026-05-01" },
         { _key: k(), label: "Definitive proxy + shareholder vote", expected_date: "2026-07-15", note: "Estimated based on typical proxy timeline" },
       ],
-    },
+    }],
     ctfn_probability: [
       p("Our 65% probability reflects the multi-jurisdictional complexity — HSR, FERC, three state utility commissions (PUCO, NYPSC, CPUC), California Energy Commission, FCC, and CFIUS. Each jurisdiction reviews independently and on its own timeline. State utility reviews for holding company changes routinely take 6-12 months."),
       p("The all-equity financing removes one major risk variable — no financing condition, no debt commitment expiration. The consortium's willingness to fund 100% with equity signals strong conviction and eliminates the most common cause of deal failure in leveraged infrastructure transactions."),
@@ -1222,6 +1224,7 @@ const deals = [
         jurisdiction: "CMA",
         outcome: "pending",
         outcome_summary: "Draft merger notice filed. CMA opened formal investigation April 16 and invited comment until May 1. Phase 1 expected to begin after comment period. Case officers: Anushka Singh, Raphael Cannell, Manisha Juttla.",
+        case_url: "https://www.gov.uk/cma-cases/akzonobel-slash-axalta-merger-inquiry",
         steps: [
           { _key: k(), label: "Draft merger notice filed", actual_date: "2026-04-01" },
           { _key: k(), label: "CMA opened investigation + invitation to comment", actual_date: "2026-04-16" },
@@ -1244,7 +1247,7 @@ const deals = [
         ],
       },
     ],
-    shareholder_vote: {
+    shareholder_votes: [{ party: "target",
       outcome: "pending",
       label: "Both target and acquirer — majority of votes cast required",
       outcome_summary:
@@ -1254,7 +1257,7 @@ const deals = [
         { _key: k(), label: "Definitive proxy mailed", expected_date: "2026-06-01" },
         { _key: k(), label: "Shareholder votes (both companies)", expected_date: "2026-07-15", note: "Mid-July target per management" },
       ],
-    },
+    }],
     ctfn_probability: [
       p("Our 62% probability reflects the near-certainty of an EC Phase 2 investigation on powder coatings (combined share up to 50%) and significant vehicle refinish overlap. The CMA investigation launched today (April 16) adds a second competition authority with independent remedies jurisdiction."),
       p("The nil-premium, all-stock structure creates a shareholder opposition dynamic unusual for deals of this size — Artisan Partners called it a 'selling out' of a well-performing company for the currency of one with 'inferior assets and a track record of value stagnation.' While Artisan + Shapiro together hold only ~1.8% of Axalta, their public stance could embolden other passive holders."),
@@ -1440,14 +1443,14 @@ const deals = [
         ],
       },
     ],
-    shareholder_vote: {
+    shareholder_votes: [{ party: "target",
       outcome: "approved",
       label: "Target shareholders — approved August 28, 2025",
       steps: [
         { _key: k(), label: "Definitive proxy filed", actual_date: "2025-07-17" },
         { _key: k(), label: "Shareholder vote — approved", actual_date: "2025-08-28" },
       ],
-    },
+    }],
     ctfn_probability: [
       p("Our 70% probability reflects CTFN's STRONG enforceability rating (favors seller) offset by the NMPRC's unpredictable procedural posture. The PIPE investigation is a novel complication — hearing examiners pausing the merger schedule over a pre-closing equity investment is unusual and creates timeline risk."),
       p("PUCT and FERC cleared without conditions. The NMPRC is the sole remaining US gating authority. New Mexico's regulatory history with this asset is difficult — the prior Avangrid merger was terminated after years of NMPRC opposition. Blackstone's approach (equity-funded, no leverage) is designed to address the commission's historic concerns about financial buyers."),
@@ -1625,7 +1628,7 @@ const deals = [
         ],
       },
     ],
-    shareholder_vote: {
+    shareholder_votes: [{ party: "target",
       outcome: "approved",
       label: "Both target and acquirer shareholders — approved February 11, 2026",
       outcome_summary:
@@ -1636,7 +1639,7 @@ const deals = [
         { _key: k(), label: "Proxy statement filed", actual_date: "2025-12-11" },
         { _key: k(), label: "Shareholder votes — both approved", actual_date: "2026-02-11" },
       ],
-    },
+    }],
     ctfn_probability: [
       p("Our 60% probability reflects FTC second-request uncertainty and SAMR slow-walk risk. The semiconductor sector has seen heightened antitrust scrutiny globally — SAMR in particular has used prolonged review timelines as leverage in US-China technology disputes."),
       p("The two-year merger agreement (outside date April 27, 2027 with extensions to October 27, 2027) provides significant runway, which is why the probability is not lower despite dual-front regulatory risk. The $100mn additional reverse termination fee for regulatory failure gives Qorvo shareholders meaningful downside protection."),
@@ -1769,14 +1772,14 @@ const deals = [
         ],
       },
     ],
-    shareholder_vote: {
-      outcome: "approved",
-      label: "Target shareholders — approved April 30, 2026",
+    shareholder_votes: [{ party: "target",
+      outcome: "pending",
+      label: "Target shareholders — vote scheduled April 30, 2026",
       steps: [
         { _key: k(), label: "Proxy statement filed", actual_date: "2026-03-12" },
-        { _key: k(), label: "Shareholder vote — approved", actual_date: "2026-04-30" },
+        { _key: k(), label: "Shareholder vote", expected_date: "2026-04-30" },
       ],
-    },
+    }],
     ctfn_probability: [
       p("Our 62% probability reflects SAMR as the primary gating risk. The HSR process appears straightforward — the overlap in embedded processing and wireless connectivity is real but the combined market shares are unlikely to trigger an FTC challenge given the fragmented nature of the IoT semiconductor market."),
       p("The 69% premium is exceptionally high and reflects TI's strategic conviction that Silicon Labs' wireless IoT platform is a must-have asset for its long-term portfolio. The premium also substantially reduces the risk of shareholder opposition or competing bids."),
@@ -1880,7 +1883,7 @@ const deals = [
         ],
       },
     ],
-    shareholder_vote: {
+    shareholder_votes: [{ party: "target",
       outcome: "pending",
       label: "Target shareholders — May 8, 2026",
       committed_pct: 20,
@@ -1889,7 +1892,7 @@ const deals = [
         { _key: k(), label: "Proxy statement filed", actual_date: "2026-03-15" },
         { _key: k(), label: "Shareholder vote", expected_date: "2026-05-08" },
       ],
-    },
+    }],
     ctfn_probability: [],
     risk_factors: [
       p("HSR pull-and-refile suggests potential regulatory friction — parties may have needed additional time or pre-clearance discussions with the FTC/DOJ."),
@@ -2027,14 +2030,14 @@ const deals = [
         ],
       },
     ],
-    shareholder_vote: {
+    shareholder_votes: [{ party: "target",
       outcome: "approved",
       label: "Both target and acquirer shareholders — approved February 10, 2026",
       steps: [
         { _key: k(), label: "Proxy statement filed", actual_date: "2025-12-15" },
         { _key: k(), label: "Shareholder votes — both approved", actual_date: "2026-02-10" },
       ],
-    },
+    }],
     ctfn_probability: [
       p("Our 68% probability reflects the multi-jurisdictional complexity — 10+ state utility commissions each review independently and on their own timelines. Pennsylvania PUC is the critical path and the most complex review given Essential's significant natural-gas operations in the state."),
       p("The all-stock, fixed-exchange-ratio structure eliminates financing risk and aligns both shareholder bases. The 10% premium is modest by M&A standards but consistent with utility 'merger of equals' transactions where the strategic rationale is about operational scale rather than a control premium."),
@@ -2144,6 +2147,7 @@ const deals = [
         jurisdiction: "EC_Merger",
         outcome: "pending",
         outcome_summary: "Notified as a super-simplified review on March 26. Phase I expires May 6 — coincides with the shareholder vote date. Super-simplified cases are routinely cleared well within Phase I.",
+        case_url: "https://competition-cases.ec.europa.eu/cases/M.12339",
         steps: [
           { _key: k(), label: "EC notification (super-simplified)", actual_date: "2026-03-26" },
           { _key: k(), label: "Phase I decision (25 working days)", expected_date: "2026-05-06", note: "Coincides with shareholder vote" },
@@ -2192,7 +2196,7 @@ const deals = [
         ],
       },
     ],
-    shareholder_vote: {
+    shareholder_votes: [{ party: "target",
       outcome: "pending",
       label: "Target shareholders — May 6, 2026 (requires majority + majority of disinterested under DGCL §144)",
       outcome_summary:
@@ -2203,7 +2207,7 @@ const deals = [
         { _key: k(), label: "Consideration election deadline", expected_date: "2026-04-16" },
         { _key: k(), label: "Shareholder vote", expected_date: "2026-05-06", note: "Virtual meeting, 10:30 AM" },
       ],
-    },
+    }],
     ctfn_probability: [
       p("Our 78% probability reflects a clean regulatory picture (HSR cleared, EC super-simplified, ACCC waived) with SAMR and FIRB as the only timing unknowns. The fintech SaaS profile is generally low-risk at SAMR compared to semiconductor or critical infrastructure deals."),
       p("Clearwater Analytics is a cloud-native SaaS platform for institutional investors, providing automated investment accounting, portfolio management, trading, reconciliation, regulatory reporting, performance, compliance, and risk analytics in one unified system. It processes and reconciles data on over $10 trillion in assets globally for more than 2,500 clients including insurers, asset managers, hedge funds, banks, corporations, and governments."),

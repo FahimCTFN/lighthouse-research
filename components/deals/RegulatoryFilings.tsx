@@ -148,6 +148,17 @@ function FilingCard({ filing }: { filing: Filing }) {
           {filing.outcome_summary}
         </p>
       )}
+
+      {filing.case_url && (
+        <a
+          href={filing.case_url}
+          target="_blank"
+          rel="noreferrer"
+          className="mt-2 inline-flex items-center gap-1 text-[11px] font-medium text-brand-navy underline decoration-brand-gold underline-offset-2 hover:decoration-2"
+        >
+          View case page ↗
+        </a>
+      )}
     </article>
   );
 }

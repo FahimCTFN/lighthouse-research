@@ -332,6 +332,13 @@ export const deal = defineType({
               description: "Describe remedies, pending theories of harm, etc.",
             },
             {
+              name: "case_url",
+              type: "url",
+              title: "Case page URL (optional)",
+              description:
+                "Link to the regulator's dedicated case page (e.g. EC competition case, CMA inquiry page, STB docket). Leave blank if none exists.",
+            },
+            {
               name: "steps",
               type: "array",
               title: "Lifecycle steps",
@@ -409,75 +416,97 @@ export const deal = defineType({
       rows: 3,
       group: "regulatory",
     }),
-    // ── Shareholder Vote (structured, separate from regulatory) ────────
+    // ── Shareholder Votes (array — supports target + acquirer separately) ──
     defineField({
-      name: "shareholder_vote",
-      title: "Shareholder Vote",
-      type: "object",
+      name: "shareholder_votes",
+      title: "Shareholder Votes",
+      type: "array",
       group: "regulatory",
-      fields: [
+      of: [
         {
-          name: "outcome",
-          type: "string",
-          title: "Outcome",
-          options: {
-            list: [
-              { title: "Pending", value: "pending" },
-              { title: "Approved", value: "approved" },
-              { title: "Rejected", value: "rejected" },
-              { title: "Postponed", value: "postponed" },
-              { title: "Not required", value: "not_required" },
-            ],
-          },
-          initialValue: "pending",
-        },
-        {
-          name: "label",
-          type: "string",
-          title: "Label (e.g. \"Target shareholders — simple majority\")",
-        },
-        {
-          name: "outcome_summary",
-          type: "text",
-          rows: 2,
-          title: "Notes / recommendations",
-        },
-        {
-          name: "committed_pct",
-          type: "number",
-          title: "Voting agreements — % of shares committed (optional)",
-          description:
-            "Percentage of outstanding shares bound to vote FOR via voting agreements. Leave blank if no agreements (or not disclosed).",
-          validation: (R) => R.min(0).max(100),
-        },
-        {
-          name: "committed_notes",
-          type: "string",
-          title: "Voting agreements — notes (optional)",
-          description:
-            "Who signed (e.g. \"Ellison Parties and affiliates\"). One short line.",
-        },
-        {
-          name: "steps",
-          type: "array",
-          title: "Vote lifecycle",
-          of: [
+          type: "object",
+          name: "vote_entry",
+          fields: [
             {
-              type: "object",
-              name: "vote_step",
-              fields: [
+              name: "party",
+              type: "string",
+              title: "Voting party",
+              options: {
+                list: [
+                  { title: "Target shareholders", value: "target" },
+                  { title: "Acquirer shareholders", value: "acquirer" },
+                  { title: "Both (joint meeting)", value: "both" },
+                ],
+              },
+              validation: (R) => R.required(),
+            },
+            {
+              name: "outcome",
+              type: "string",
+              title: "Outcome",
+              options: {
+                list: [
+                  { title: "Pending", value: "pending" },
+                  { title: "Approved", value: "approved" },
+                  { title: "Rejected", value: "rejected" },
+                  { title: "Postponed", value: "postponed" },
+                  { title: "Not required", value: "not_required" },
+                ],
+              },
+              initialValue: "pending",
+            },
+            {
+              name: "label",
+              type: "string",
+              title: "Label (e.g. \"Simple majority required\")",
+            },
+            {
+              name: "outcome_summary",
+              type: "text",
+              rows: 2,
+              title: "Notes / recommendations (ISS, Glass Lewis, etc.)",
+            },
+            {
+              name: "committed_pct",
+              type: "number",
+              title: "Voting agreements — % committed (optional)",
+              validation: (R) => R.min(0).max(100),
+            },
+            {
+              name: "committed_notes",
+              type: "string",
+              title: "Voting agreements — who signed (optional)",
+            },
+            {
+              name: "steps",
+              type: "array",
+              title: "Vote lifecycle",
+              of: [
                 {
-                  name: "label",
-                  type: "string",
-                  title: "Step",
-                  validation: (R) => R.required(),
+                  type: "object",
+                  name: "vote_step",
+                  fields: [
+                    {
+                      name: "label",
+                      type: "string",
+                      title: "Step",
+                      validation: (R) => R.required(),
+                    },
+                    { name: "expected_date", type: "date", title: "Expected" },
+                    { name: "actual_date", type: "date", title: "Actual" },
+                    { name: "note", type: "text", rows: 2, title: "Note" },
+                  ],
                 },
-                { name: "expected_date", type: "date", title: "Expected" },
-                { name: "actual_date", type: "date", title: "Actual" },
-                { name: "note", type: "text", rows: 2, title: "Note" },
               ],
             },
           ],
+          preview: {
+            select: { party: "party", outcome: "outcome" },
+            prepare({ party, outcome }: { party?: string; outcome?: string }) {
+              const labels: Record<string, string> = { target: "Target", acquirer: "Acquirer", both: "Both" };
+              return { title: `${labels[party ?? ""] ?? party} shareholders`, subtitle: outcome ?? "pending" };
+            },
+          },
         },
       ],
     }),

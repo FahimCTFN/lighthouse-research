@@ -20,7 +20,7 @@ import { KeyRiskPull } from "@/components/deals/KeyRiskPull";
 import { KeyFactsTable } from "@/components/deals/KeyFactsTable";
 import { PaywallGate } from "@/components/deals/PaywallGate";
 import { RegulatoryFilings } from "@/components/deals/RegulatoryFilings";
-import { ShareholderVote } from "@/components/deals/ShareholderVote";
+import { ShareholderVoteSection } from "@/components/deals/ShareholderVote";
 import { CtfnAnalysis } from "@/components/deals/CtfnAnalysis";
 import { ShareholderActivism } from "@/components/deals/ShareholderActivism";
 import { UpdateBanner } from "@/components/deals/UpdateBanner";
@@ -101,7 +101,7 @@ export default async function DealPage({
 
             <RegulatoryFilings filings={(deal as PaidDeal).filings} />
 
-            <ShareholderVote vote={(deal as PaidDeal).shareholder_vote} />
+            <ShareholderVoteSection votes={(deal as PaidDeal).shareholder_votes} />
 
             <CtfnAnalysis deal={deal as PaidDeal} />
 

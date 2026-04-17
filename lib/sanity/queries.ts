@@ -117,10 +117,13 @@ export const PAID_DEAL_QUERY = groq`
       display_name,
       outcome,
       outcome_summary,
+      case_url,
       steps[]{ _key, label, expected_date, actual_date, note }
     },
     best_efforts,
-    shareholder_vote{
+    shareholder_votes[]{
+      _key,
+      party,
       outcome,
       label,
       outcome_summary,

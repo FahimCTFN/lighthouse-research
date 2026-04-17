@@ -82,6 +82,7 @@ export interface Filing {
   display_name?: string;
   outcome: FilingOutcome;
   outcome_summary?: string;
+  case_url?: string;
   steps?: FilingStep[];
 }
 
@@ -114,6 +115,8 @@ export type ShareholderVoteOutcome =
   | "not_required";
 
 export interface ShareholderVote {
+  _key?: string;
+  party?: "target" | "acquirer" | "both";
   outcome?: ShareholderVoteOutcome;
   label?: string;
   outcome_summary?: string;
@@ -126,7 +129,7 @@ export interface PaidDeal extends PublicDeal {
   ctfn_probability_notes?: string;
   financing?: string;
   best_efforts?: string;
-  shareholder_vote?: ShareholderVote;
+  shareholder_votes?: ShareholderVote[];
   target_advisors?: string;
   acquirer_advisors?: string;
   filings?: Filing[];
