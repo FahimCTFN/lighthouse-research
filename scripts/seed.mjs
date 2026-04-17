@@ -1896,6 +1896,158 @@ const deals = [
     trigger_alert: false,
     alert_summary: "HSR waiting period expires April 24; shareholder vote May 8.",
   },
+
+  // 12 ── WTRG / AWK — water utilities merger
+  {
+    acquirer: "American Water Works",
+    target: "Essential Utilities",
+    acquirer_ticker: "AWK",
+    target_ticker: "WTRG",
+    status: "regulatory_review",
+    sector: "energy",
+    target_jurisdiction: "Pennsylvania",
+    deck: "Both shareholder bases approved February 10, 2026. Pennsylvania PUC is the central review — parties seeking Q3 2026 conclusion. 10+ state utility commissions require approval.",
+    key_risk_summary:
+      "Pennsylvania is likely to be the central review, and the parties are seeking to have it concluded in the third quarter of 2026. The transaction is also subject to approvals from the Illinois Commerce Commission, Kentucky Public Service Commission, New Jersey Board of Public Utilities, North Carolina Utilities Commission, Pennsylvania Public Utility Commission, Public Utility Commission of Texas, Virginia State Corporation Commission, and parties may need to notify the California Public Utilities Commission, Indiana Utility Regulatory Commission and the Public Utilities Commission of Ohio, as well as any other state public-utility commission that asserts jurisdiction.",
+    equity_value: 12200,
+    shares_outstanding: 283,
+    offer_price: 43.18,
+    offer_terms: "0.305 shares of American Water common stock for each share of Essential they own, implying $43.18 per share",
+    premium: 10,
+    premium_reference: "based on 60-day VWAP of each company's common stock over the 60-trading-day period ending October 24",
+    termination_fee: 370,
+    termination_fee_pct: 3,
+    reverse_termination_fee: 835,
+    reverse_termination_fee_pct: 6.8,
+    financing:
+      "All stock. No cash component, no debt financing required.",
+    ctfn_closing_probability: 68,
+    ctfn_estimated_close: "2027-03-15",
+    ctfn_probability_notes:
+      "10+ state utility commissions create multi-jurisdictional complexity. Pennsylvania PUC is the central and most complex review. All-stock structure removes financing risk.",
+    announcement_date: "2025-10-27",
+    published_date: "2025-10-27",
+    next_key_event_date: "2026-06-21",
+    next_key_event_label: "PPUC docket",
+    outside_date: "2027-04-26",
+    outside_date_final: "2027-10-26",
+    outside_date_notes:
+      "May be extended for a period of three months up to two times, until October 26, 2027.",
+    closing_guidance: "Q1 2027",
+    best_efforts:
+      "The parties shall divest assets and defend the transaction in court if needed to win clearance.",
+    target_advisors:
+      "Moelis & Company is serving as exclusive financial advisor. Gibson, Dunn & Crutcher is serving as legal counsel. Joele Frank, Wilkinson Brimmer Katcher is running PR.",
+    acquirer_advisors:
+      "Bank of America is serving as exclusive financial advisor. Skadden, Arps, Slate, Meagher & Flom is serving as legal counsel. Joele Frank, Wilkinson Brimmer Katcher is running PR on this side of the transaction, too.",
+    free_preview: [
+      p("American Water Works is acquiring Essential Utilities in an all-stock transaction. Essential shareholders will receive 0.305 shares of American Water common stock for each share of Essential they own, implying $43.18 per share — a 10% premium based on 60-day VWAP of each company's common stock over the 60-trading-day period ending October 24."),
+      p("Both target and acquirer shareholders approved on February 10, 2026. The parties shall file under HSR as well as with the US Federal Communications Commission and any other necessary regulator within 60 days post-DMA, or by December 26, 2025. Pennsylvania is likely to be the central review, and the parties are seeking to have it concluded in the third quarter of 2026."),
+    ],
+    background: [
+      p("From time to time prior to 2025, the boards and senior management of American Water and Essential regularly reviewed strategic options."),
+      p("On June 4, 2025, after his appointment as CEO of American Water, John Griffith contacted his counterpart at Essential, Christopher Franklin, to initiate executive-level discussions."),
+      p("On June 18, they met and discussed general business matters."),
+      p("On July 15, Franklin met with Essential chair Karl Kurz and discussed the possibility of re-engaging regarding a potential transaction."),
+      p("On July 23, Griffith and Franklin discussed a potential all-stock transaction framework, including that Essential shareholders would receive a premium and that post-closing governance would be shared between the companies."),
+      p("On July 30, the American Water board reviewed these discussions and authorized continued engagement, and the Essential board separately authorized continued deal talks."),
+      p("On August 5, Griffith and Franklin discussed an all-stock, fixed-exchange-ratio transaction reflecting a potential premium of 10% for Essential shareholders, post-closing governance, and regulatory considerations."),
+      p("On August 20, the parties continued talks regarding board composition and executive roles."),
+      p("On August 24, the parties aligned on key governance concepts and agreed to enter into an NDA to facilitate due diligence."),
+      p("On August 25, the parties executed an NDA containing customary standstill provisions."),
+      p("Between late August and September, the parties started reciprocal due diligence, opened data rooms, and exchanged non-public information on financial performance, capital plans, regulatory matters and Essential's natural-gas operations."),
+      p("On September 4, American Water delivered a draft term sheet for an all-stock merger reflecting a premium to Essential shareholders."),
+      p("On September 29, the Essential board reviewed the draft merger agreement, including regulatory approval obligations and no-shop provisions, and authorized continued negotiations."),
+      p("On September 30, the American Water board reviewed due-diligence progress and directed management to continue negotiations."),
+      p("Between early and mid October, the parties negotiated the merger agreement, including regulatory covenants, interim operating covenants, employee matters, the definition of burdensome effect, termination fees and the exchange ratio, and Essential shared its updated five-year plan."),
+      p("On October 24, the American Water board reviewed the agreed exchange ratio of 0.305 shares of American Water common stock for each share of Essential common stock and approved the transaction."),
+      p("On October 26, the Essential board approved the transaction at the agreed exchange ratio."),
+      p("On October 26, the parties executed their merger agreement, and, on October 27, before markets opened, they announced the transaction."),
+    ],
+    commentary: [
+      p("American Water shareholders will own 69%, and Essential shareholders will own 31%, of the combined company on a fully diluted basis."),
+    ],
+    filings: [
+      {
+        _key: k(),
+        jurisdiction: "HSR",
+        outcome: "pending",
+        outcome_summary: "Parties required to file within 60 days post-DMA (by December 26, 2025).",
+        steps: [
+          { _key: k(), label: "HSR filing deadline", expected_date: "2025-12-26" },
+          { _key: k(), label: "HSR clearance", expected_date: "2026-03-30" },
+        ],
+      },
+      {
+        _key: k(),
+        jurisdiction: "FCC",
+        outcome: "pending",
+        outcome_summary: "FCC filing required within 60 days post-DMA.",
+        steps: [
+          { _key: k(), label: "FCC filing deadline", expected_date: "2025-12-26" },
+          { _key: k(), label: "FCC clearance", expected_date: "2026-06-30" },
+        ],
+      },
+      {
+        _key: k(),
+        jurisdiction: "Other",
+        display_name: "Pennsylvania PUC (central review)",
+        outcome: "pending",
+        outcome_summary: "Pennsylvania is likely to be the central review. Parties seeking to have it concluded in Q3 2026. Multiple PPUC docket dates scheduled through September 2026.",
+        steps: [
+          { _key: k(), label: "Pennsylvania PUC application filed", actual_date: "2025-11-26" },
+          { _key: k(), label: "PPUC docket", expected_date: "2026-06-21" },
+          { _key: k(), label: "PPUC docket", expected_date: "2026-06-25" },
+          { _key: k(), label: "PPUC docket", expected_date: "2026-07-23" },
+          { _key: k(), label: "PPUC docket", expected_date: "2026-07-29" },
+          { _key: k(), label: "PPUC docket", expected_date: "2026-08-03" },
+          { _key: k(), label: "PPUC docket", expected_date: "2026-08-04" },
+          { _key: k(), label: "PPUC docket", expected_date: "2026-08-05" },
+          { _key: k(), label: "PPUC decision target (Q3 2026)", expected_date: "2026-09-24" },
+        ],
+      },
+      {
+        _key: k(),
+        jurisdiction: "Other",
+        display_name: "Other state utility commissions (10+)",
+        outcome: "pending",
+        outcome_summary: "Approvals required from: Illinois Commerce Commission, Kentucky PSC, New Jersey Board of Public Utilities, North Carolina Utilities Commission, Public Utility Commission of Texas, Virginia State Corporation Commission. Parties may also need to notify: California PUC, Indiana Utility Regulatory Commission, Public Utilities Commission of Ohio, and any other state commission that asserts jurisdiction.",
+        steps: [
+          { _key: k(), label: "State utility filings", expected_date: "2025-12-26" },
+          { _key: k(), label: "State clearances (various timelines)", expected_date: "2027-01-15", note: "State utility reviews typically 6-12 months" },
+        ],
+      },
+    ],
+    shareholder_vote: {
+      outcome: "approved",
+      label: "Both target and acquirer shareholders — approved February 10, 2026",
+      steps: [
+        { _key: k(), label: "Proxy statement filed", actual_date: "2025-12-15" },
+        { _key: k(), label: "Shareholder votes — both approved", actual_date: "2026-02-10" },
+      ],
+    },
+    ctfn_analysis: [
+      p("Our 68% probability reflects the multi-jurisdictional complexity — 10+ state utility commissions each review independently and on their own timelines. Pennsylvania PUC is the critical path and the most complex review given Essential's significant natural-gas operations in the state."),
+      p("The all-stock, fixed-exchange-ratio structure eliminates financing risk and aligns both shareholder bases. The 10% premium is modest by M&A standards but consistent with utility 'merger of equals' transactions where the strategic rationale is about operational scale rather than a control premium."),
+      p("The $835mn reverse termination fee (6.8%) provides strong downside protection for Essential shareholders if regulatory approvals fail. The asymmetry with the $370mn target fee (3%) reflects that regulatory risk is primarily borne by the acquirer."),
+    ],
+    risk_factors: [
+      p("Pennsylvania PUC central review: Essential's natural-gas operations in PA add complexity beyond water/wastewater."),
+      p("10+ state utility commissions require approval — each on independent timelines with independent conditions."),
+      p("Any state commission that 'asserts jurisdiction' could add unexpected regulatory hurdles."),
+      p("Essential's natural-gas business may face additional scrutiny in states with clean-energy policy agendas."),
+      p("Fixed exchange ratio means Essential shareholders bear American Water stock price risk between announcement and close."),
+    ],
+    documents: [
+      { _key: k(), title: "Press Release", url: "https://www.sec.gov/" },
+      { _key: k(), title: "Definitive Merger Agreement", url: "https://www.sec.gov/Archives/edgar/data/78128/000155278125000341/e25376_ex2-1.htm" },
+      { _key: k(), title: "Preliminary Proxy", url: "https://www.sec.gov/" },
+      { _key: k(), title: "Definitive Proxy Statement", url: "https://www.sec.gov/Archives/edgar/data/78128/000119312526037599/d77595ddefm14a.htm" },
+      { _key: k(), title: "Pennsylvania PUC Application (11/26/25)", url: "https://www.sec.gov/" },
+    ],
+    trigger_alert: false,
+    alert_summary: "Pennsylvania PUC docket hearings begin June; parties targeting Q3 2026 conclusion.",
+  },
 ];
 
 async function run() {
