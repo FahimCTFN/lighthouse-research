@@ -139,3 +139,51 @@ export function generateICS(event: CalendarEvent): string {
 function escapeICS(s: string): string {
   return s.replace(/[,;\\]/g, (m) => `\\${m}`).replace(/\n/g, "\\n");
 }
+
+// Google Calendar URL — opens in new tab with event pre-filled
+export function googleCalendarUrl(event: CalendarEvent): string {
+  const dateClean = event.date.replace(/-/g, "");
+  const nextDay = new Date(event.date + "T00:00:00Z");
+  nextDay.setDate(nextDay.getDate() + 1);
+  const endDate = nextDay.toISOString().slice(0, 10).replace(/-/g, "");
+
+  const title = `${event.dealTarget} / ${event.dealAcquirer} — ${event.label}`;
+  const details = [
+    `Regulator: ${event.regulatorFull}`,
+    event.note ? `Note: ${event.note}` : "",
+    "",
+    `View deal: ${process.env.NEXT_PUBLIC_APP_URL || "https://research.ctfnlighthouse.com"}/deals/${event.dealSlug}`,
+  ]
+    .filter(Boolean)
+    .join("\n");
+
+  const params = new URLSearchParams({
+    action: "TEMPLATE",
+    text: title,
+    dates: `${dateClean}/${endDate}`,
+    details,
+  });
+  return `https://calendar.google.com/calendar/render?${params.toString()}`;
+}
+
+// Outlook Web URL — opens in new tab with event pre-filled
+export function outlookCalendarUrl(event: CalendarEvent): string {
+  const title = `${event.dealTarget} / ${event.dealAcquirer} — ${event.label}`;
+  const body = [
+    `Regulator: ${event.regulatorFull}`,
+    event.note ? `Note: ${event.note}` : "",
+    "",
+    `View deal: ${process.env.NEXT_PUBLIC_APP_URL || "https://research.ctfnlighthouse.com"}/deals/${event.dealSlug}`,
+  ]
+    .filter(Boolean)
+    .join("\n");
+
+  const params = new URLSearchParams({
+    subject: title,
+    startdt: event.date,
+    enddt: event.date,
+    body,
+    path: "/calendar/action/compose",
+  });
+  return `https://outlook.live.com/calendar/0/action/compose?${params.toString()}`;
+}
