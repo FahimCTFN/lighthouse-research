@@ -1133,6 +1133,182 @@ const deals = [
     trigger_alert: false,
     alert_summary: "AES AGM set for April 29; regulatory filings due May 30.",
   },
+
+  // 7 ── AXTA / AKZA — coatings merger of equals
+  {
+    acquirer: "AkzoNobel",
+    target: "Axalta Coating Systems",
+    target_ticker: "AXTA",
+    acquirer_ticker: "AKZA:NA",
+    status: "regulatory_review",
+    sector: "industrials",
+    target_jurisdiction: "Bermuda",
+    deck: "CMA comment period ends May 1; EC formal filing pending (Phase 2 probe likely on powder coatings). Shareholder votes targeted for mid-July. All-stock merger of equals creating #2 global coatings company behind Sherwin-Williams.",
+    key_risk_summary:
+      "EC may require divestitures in Europe as the merging parties may control up to 50% of the powder coating market, as well as a significant portion of the vehicle refinish market. The potential divestiture process will likely have a significant impact on timing.",
+    equity_value: 9100,
+    shares_outstanding: 213,
+    offer_price: 36.63,
+    offer_terms: "0.6539 AkzoNobel shares per Axalta share (implying €36.63/share)",
+    premium: 0,
+    premium_reference: "nil — structured as merger of equals",
+    termination_fee: 150,
+    termination_fee_pct: 2,
+    reverse_termination_fee: 150,
+    reverse_termination_fee_pct: 2,
+    termination_fee_notes:
+      "€150mn reciprocal (2%). All-stock consideration — no cash component to Axalta shareholders.",
+    financing:
+      "AkzoNobel will pay a special cash dividend to its own shareholders equal to €2.5bn minus aggregate regular dividends paid in 2026 before closing. Funded via: senior unsecured notes (EMTN programme), commercial paper ($3bn + €1.5bn programmes), ~€900mn net proceeds from completed AkzoNobel India sale to JSW Group, and €1.5bn multi-currency revolving credit facility (includes $750mn swingline, runs to March 2031). Bridge loan facility available if needed.",
+    ctfn_closing_probability: 62,
+    ctfn_estimated_close: "2026-12-31",
+    ctfn_probability_notes:
+      "EC Phase 2 probe widely expected on powder coatings (up to 50% combined share). CMA just opened investigation. Shareholder opposition from Artisan Partners + Shapiro Capital (~1.8% of AXTA) is vocal but not blocking-scale.",
+    announcement_date: "2025-11-18",
+    published_date: "2025-11-19",
+    next_key_event_date: "2026-05-01",
+    next_key_event_label: "CMA comment period ends; EC formal filing",
+    outside_date: "2027-05-18",
+    outside_date_final: "2027-11-18",
+    outside_date_notes:
+      "Subject to extension to November 18, 2027 if regulatory approvals remain pending.",
+    closing_guidance: "Late 2026 to early 2027",
+    best_efforts:
+      "If needed to get regulatory clearance, the parties shall divest assets and defend the transaction in court.",
+    target_advisors:
+      "Evercore and JP Morgan (co-lead financial). Incentrum Group also providing financial advice. Cravath, Swaine & Moore and NautaDutilh (legal). Walkers Global (Bermuda law). Joele Frank, Wilkinson Brimmer Katcher (PR).",
+    acquirer_advisors:
+      "Morgan Stanley (financial). De Brauw Blackstone Westbroek and Davis Polk & Wardwell (legal). FGS Global (PR). Lazard and Wakkie+Perrick serving as financial and legal advisors, respectively, to the supervisory board of AkzoNobel.",
+    free_preview: [
+      p("Axalta Coating Systems and AkzoNobel are combining in an all-stock merger of equals to create a premier global coatings company with ~$17bn in annual revenue and a combined enterprise value of ~$25bn. The combined company will be the second largest coatings company by revenue behind Sherwin-Williams."),
+      p("Axalta shareholders will receive 0.6539 AkzoNobel shares per share. AkzoNobel shareholders will own ~55% and Axalta shareholders ~45% of the combined company. The deal faces significant regulatory scrutiny — EC may require divestitures given up to 50% combined share in powder coatings and substantial overlap in vehicle refinish."),
+    ],
+    background: [
+      p("In 2017, PPG Industries and AkzoNobel both engaged with Axalta regarding a merger, though no deal was announced as the companies were unable to agree on terms."),
+      p("AES has been a takeover target since the summer of 2025. The merger of equals structure was announced November 18, 2025. The nil-premium, all-stock structure positions this as a strategic combination rather than a premium acquisition."),
+      p("AkzoNobel completed the sale of 60.76% of AkzoNobel India to JSW Group on December 10, 2025, generating ~€900mn in net proceeds. AkzoNobel's India Powder Coatings business and International Research Center were retained."),
+      p("AkzoNobel CFO Maarten de Vries, scheduled to retire in April 2026, extended his tenure by one year to support merger execution. Axalta CFO Carl Anderson will take the combined company CFO role at close."),
+    ],
+    commentary: [
+      p("AkzoNobel will pay a special cash dividend to its own shareholders equal to €2.5bn minus aggregate regular/interim dividends paid in 2026 before closing. This is an AkzoNobel shareholder benefit and does not accrue to Axalta shareholders."),
+      p("The transaction targets $600mn in annual run-rate cost synergies, with 90% expected within three years. Primary drivers: procurement savings, SG&A efficiencies, manufacturing footprint optimization, and supply chain management. Combined annual R&D spend of ~$400mn with over 4,000 scientists."),
+      p("Axalta operates in Performance Coatings (65.5% of sales — refinish and industrial end-markets) and Mobility Coatings (34.5% — light vehicle and commercial vehicle OEMs). Key brands: Cromax, Standox, AquaEC, Imron."),
+      p("AkzoNobel serves industrial and consumer markets via Decorative Paints (Dulux, Sikkens) and Performance Coatings (automotive refinish, aerospace, marine, protective, powder, industrial). Present in 150+ countries."),
+      p("Significant overlaps in Automotive Refinish and Industrial Coatings end-markets. Both are world leaders in coatings for vehicle repair (refinish) and industrial applications like metal and powder coatings. Also notable overlap in Mobility/Transportation portfolios — both provide high-tech coatings to light vehicles, commercial vehicles, and aerospace."),
+    ],
+    filings: [
+      {
+        _key: k(),
+        jurisdiction: "HSR",
+        outcome: "pending",
+        outcome_summary: "Subject to HSR clearance. Filing targeted by end of February 2026. No second request publicly reported.",
+        steps: [
+          { _key: k(), label: "HSR filing", expected_date: "2026-02-28", note: "CEO indicated all main filings by ~Feb 10" },
+          { _key: k(), label: "HSR clearance / second request", expected_date: "2026-05-30" },
+        ],
+      },
+      {
+        _key: k(),
+        jurisdiction: "EC_Merger",
+        outcome: "pending",
+        outcome_summary: "Parties in pre-notification with EC. Preliminary filing submitted, awaiting feedback. Capitol Forum reports an in-depth Phase 2 probe is likely given up to 50% combined powder coatings share. No remedy discussions at this stage as of April 9.",
+        steps: [
+          { _key: k(), label: "Preliminary filing submitted", actual_date: "2026-02-10" },
+          { _key: k(), label: "Awaiting EC feedback on preliminary filing", actual_date: "2026-03-20" },
+          { _key: k(), label: "Formal notification (Form CO)", expected_date: "2026-05-15" },
+          { _key: k(), label: "Phase I decision (25 working days)", expected_date: "2026-06-26" },
+          { _key: k(), label: "Phase II (if opened — likely)", note: "90 working days + 15 if remedies. Would push to late 2026 / early 2027." },
+        ],
+      },
+      {
+        _key: k(),
+        jurisdiction: "CMA",
+        outcome: "pending",
+        outcome_summary: "Draft merger notice filed. CMA opened formal investigation April 16 and invited comment until May 1. Phase 1 expected to begin after comment period. Case officers: Anushka Singh, Raphael Cannell, Manisha Juttla.",
+        steps: [
+          { _key: k(), label: "Draft merger notice filed", actual_date: "2026-04-01" },
+          { _key: k(), label: "CMA opened investigation + invitation to comment", actual_date: "2026-04-16" },
+          { _key: k(), label: "Comment period closes", expected_date: "2026-05-01" },
+          { _key: k(), label: "Phase 1 formal launch", expected_date: "2026-05-10", note: "Expected shortly after comment period" },
+          { _key: k(), label: "Phase 1 decision (40 working days)", expected_date: "2026-07-07" },
+          { _key: k(), label: "Phase 2 (if referred)", note: "Up to 24 weeks" },
+        ],
+      },
+      {
+        _key: k(),
+        jurisdiction: "Other",
+        display_name: "Other antitrust + FDI (~30 jurisdictions)",
+        outcome: "pending",
+        outcome_summary: "Various non-US requirements to be filed by May 30. Approximately 30 jurisdictions require clearance. AkzoNobel's works council consultation (required under Dutch law) is a separate closing condition.",
+        steps: [
+          { _key: k(), label: "Major jurisdiction filings completed", expected_date: "2026-02-28" },
+          { _key: k(), label: "Remaining filings by May 30", expected_date: "2026-05-30" },
+          { _key: k(), label: "Works council consultation (Dutch law)", note: "Must be completed before closing" },
+        ],
+      },
+    ],
+    shareholder_vote: {
+      outcome: "pending",
+      label: "Both target and acquirer — majority of votes cast required",
+      outcome_summary:
+        "Both Axalta and AkzoNobel shareholders must approve. Proxy statement to be filed within 45 business days post-DMA or by May 1. Votes targeted for mid-July 2026. Artisan Partners (~0.7%) and Shapiro Capital (~1.1%) have publicly opposed the deal, representing ~1.8% of Axalta shares.",
+      steps: [
+        { _key: k(), label: "Proxy statement filing deadline", expected_date: "2026-05-01" },
+        { _key: k(), label: "Definitive proxy mailed", expected_date: "2026-06-01" },
+        { _key: k(), label: "Shareholder votes (both companies)", expected_date: "2026-07-15", note: "Mid-July target per management" },
+      ],
+    },
+    ctfn_analysis: [
+      p("Our 62% probability reflects the near-certainty of an EC Phase 2 investigation on powder coatings (combined share up to 50%) and significant vehicle refinish overlap. The CMA investigation launched today (April 16) adds a second competition authority with independent remedies jurisdiction."),
+      p("The nil-premium, all-stock structure creates a shareholder opposition dynamic unusual for deals of this size — Artisan Partners called it a 'selling out' of a well-performing company for the currency of one with 'inferior assets and a track record of value stagnation.' While Artisan + Shapiro together hold only ~1.8% of Axalta, their public stance could embolden other passive holders."),
+      p("Precedent transactions provide mixed guidance. Sherwin-Williams' $11bn acquisition of Valspar (2017) required FTC-mandated divestiture of Valspar's North American industrial wood coatings. AkzoNobel's own acquisition of BASF's industrial coatings saw an in-depth EC review with clearance subject to competition remaining. The SigmaKalon/PPG acquisition (2007) was cleared after the EC found significant competition in automotive refinish coatings (20-30% combined share in France and several other segments)."),
+    ],
+    risk_factors: [
+      p("EC Phase 2 probe on powder coatings overlap (up to 50% combined share) — widely expected by analysts (Capitol Forum, January 2026)."),
+      p("Vehicle refinish overlap: both companies are global leaders in coatings for vehicle repair (body shops). Divestitures likely required in multiple geographies."),
+      p("CMA Phase 2 referral risk: UK investigation just opened; combined powder coatings share may trigger Phase 2."),
+      p("Shareholder opposition: Artisan Partners (~0.7%) and Shapiro Capital (~1.1%) publicly oppose the deal — combined ~1.8% of Axalta. Could embolden broader vote resistance given nil premium."),
+      p("~30 jurisdictions require clearance — coordination across regulators adds timeline complexity."),
+      p("AkzoNobel special dividend (€2.5bn) reduces combined balance sheet flexibility if divestitures reduce expected synergies."),
+    ],
+    shareholder_activism: [
+      {
+        _key: k(),
+        date: "2025-11-19",
+        actor: "Artisan Partners (~0.7% of Axalta)",
+        stance: "opposed",
+        description:
+          "Artisan Partners, holding 1.4mn shares, spoke out against the proposed all-stock merger of equals. It called the transaction a 'selling out' of a well-performing, undervalued Axalta for the currency of AkzoNobel, a company it criticized for having inferior assets and a track record of value stagnation. Artisan urged other shareholders to vote against the deal and invited alternative buyers offering more money.",
+      },
+      {
+        _key: k(),
+        date: "2025-12-05",
+        actor: "Shapiro Capital Management (~1.1% of Axalta)",
+        stance: "opposed",
+        description:
+          "President Louis Shapiro stated Axalta investors 'should get the premium they deserve' and signaled a vote against unless terms improve. This was a notable escalation of opposition beyond Artisan alone.",
+      },
+      {
+        _key: k(),
+        date: "2025-11-20",
+        actor: "Cevian Capital (~5% of AkzoNobel)",
+        stance: "supportive",
+        description:
+          "Cevian Capital, one of AkzoNobel's largest shareholders, publicly supports the merger. Cevian's backing is significant given they hold ~5% and their support reduces the risk of AkzoNobel shareholder opposition.",
+      },
+    ],
+    documents: [
+      { _key: k(), title: "Press Release", url: "https://www.sec.gov/" },
+      { _key: k(), title: "Definitive Merger Agreement", url: "https://www.sec.gov/" },
+      { _key: k(), title: "Investor Presentation", url: "https://www.sec.gov/" },
+      { _key: k(), title: "Artisan Partners Statement on Axalta (11/19/25)", url: "https://www.sec.gov/" },
+      { _key: k(), title: "Valspar/Sherwin-Williams FTC Divestiture (7/28/17)", url: "https://www.ftc.gov/" },
+      { _key: k(), title: "BASF/AkzoNobel EC Full Text Decision (10/29/16)", url: "https://ec.europa.eu/" },
+      { _key: k(), title: "SigmaKalon/PPG EC Full Text Decision (12/10/07)", url: "https://ec.europa.eu/" },
+    ],
+    trigger_alert: false,
+    alert_summary: "CMA opens formal investigation; EC formal filing expected May.",
+  },
 ];
 
 async function run() {
