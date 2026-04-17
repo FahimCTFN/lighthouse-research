@@ -1,15 +1,10 @@
 import type { PortableTextBlock } from "@portabletext/react";
 
 export type DealStatus =
-  | "announced"
-  | "regulatory_review"
-  | "hsr_waiting"
-  | "proxy_filed"
-  | "vote_scheduled"
-  | "closing_imminent"
+  | "pre_event"
+  | "ongoing"
   | "closed"
-  | "terminated"
-  | "archived";
+  | "terminated";
 
 export type Sector =
   | "technology"

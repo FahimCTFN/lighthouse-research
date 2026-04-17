@@ -15,7 +15,6 @@ export default async function ArchivePage() {
 
   const closed = deals.filter((d) => d.status === "closed");
   const terminated = deals.filter((d) => d.status === "terminated");
-  const archived = deals.filter((d) => d.status === "archived");
 
   return (
     <main className="mx-auto max-w-7xl px-6 pt-10">
@@ -49,13 +48,6 @@ export default async function ArchivePage() {
         deals={terminated}
         isPaid={isPaid}
         emptyHint="No deals have been terminated."
-      />
-      <Section
-        title="Archived"
-        count={archived.length}
-        deals={archived}
-        isPaid={isPaid}
-        emptyHint="No archived deals yet."
       />
     </main>
   );

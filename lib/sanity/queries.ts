@@ -162,9 +162,9 @@ export const DEAL_BY_SLUG_LIGHT_QUERY = groq`
 
 export const ALL_ACTIVE_DEAL_COUNT = groq`count(*[_type == "deal" && status != "archived"])`;
 
-// Archive — closed / terminated / archived deals
+// Archive — closed / terminated deals
 export const ARCHIVED_DEALS_QUERY = groq`
-  *[_type == "deal" && status in ["closed", "terminated", "archived"]] | order(_updatedAt desc) {
+  *[_type == "deal" && status in ["closed", "terminated"]] | order(_updatedAt desc) {
     _id,
     _updatedAt,
     acquirer,

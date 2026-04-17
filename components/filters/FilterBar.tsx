@@ -6,12 +6,10 @@ import type { DealStatus, Sector } from "@/lib/sanity/types";
 import { STAGE_LABEL, SECTOR_LABEL } from "@/lib/format";
 
 const STAGES: DealStatus[] = [
-  "announced",
-  "regulatory_review",
-  "hsr_waiting",
-  "proxy_filed",
-  "vote_scheduled",
-  "closing_imminent",
+  "pre_event",
+  "ongoing",
+  "closed",
+  "terminated",
 ];
 
 const SECTORS: Sector[] = [

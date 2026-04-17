@@ -2,29 +2,18 @@ import type { DealStatus } from "@/lib/sanity/types";
 
 // For the tag-pill / badge background — editorial palette.
 export const STAGE_COLORS: Record<DealStatus, string> = {
-  announced: "bg-blue-50 text-blue-800 border border-blue-200",
-  regulatory_review:
+  pre_event: "bg-blue-50 text-blue-800 border border-blue-200",
+  ongoing:
     "bg-brand-gold-light text-brand-gold-ink border border-brand-gold/40",
-  hsr_waiting:
-    "bg-brand-gold-light text-brand-gold-ink border border-brand-gold/40",
-  proxy_filed: "bg-indigo-50 text-indigo-800 border border-indigo-200",
-  vote_scheduled: "bg-indigo-50 text-indigo-800 border border-indigo-200",
-  closing_imminent: "bg-green-50 text-green-800 border border-green-200",
   closed: "bg-gray-100 text-gray-600 border border-gray-300",
   terminated: "bg-red-50 text-red-800 border border-red-200",
-  archived: "bg-gray-50 text-gray-400 border border-gray-200",
 };
 
 export const STAGE_LABEL: Record<DealStatus, string> = {
-  announced: "Announced",
-  regulatory_review: "Regulatory Review",
-  hsr_waiting: "HSR Waiting",
-  proxy_filed: "Proxy Filed",
-  vote_scheduled: "Vote Scheduled",
-  closing_imminent: "Closing Imminent",
+  pre_event: "Pre-event",
+  ongoing: "Ongoing",
   closed: "Closed",
   terminated: "Terminated",
-  archived: "Archived",
 };
 
 export function formatUSDM(value?: number): string {

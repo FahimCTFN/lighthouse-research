@@ -28,14 +28,8 @@ export function SnapshotCard({
     },
     {
       label: "Offer price",
-      value:
-        deal.offer_terms ||
-        (deal.offer_price != null ? formatPrice(deal.offer_price) : "—"),
-      sub: deal.offer_terms
-        ? undefined
-        : deal.offer_price
-          ? "per share"
-          : undefined,
+      value: deal.offer_price != null ? formatPrice(deal.offer_price) : "—",
+      sub: deal.offer_price ? "per share" : undefined,
     },
     {
       label: "Premium to unaffected",
