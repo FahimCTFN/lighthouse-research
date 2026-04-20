@@ -409,7 +409,7 @@ const deals = [
       },
       {
         _key: k(),
-        jurisdiction: "CNA",
+        jurisdiction: "COFECE",
         outcome: "pending",
         outcome_summary: "Comisión Federal de Competencia Económica — cross-border operations require Mexican clearance.",
         steps: [
@@ -2114,7 +2114,7 @@ const deals = [
         outcome: "pending",
         outcome_summary: "Approval required for utility holding company change. Filing required within 60 days post-DMA.",
         steps: [
-          { _key: k(), label: "Application filing", note: "Within 60 days post-DMA" },
+          { _key: k(), label: "Application filed", actual_date: "2025-12-26", note: "On or before the 60-day post-DMA deadline (Oct 27, 2025 + 60d)" },
           { _key: k(), label: "Commission decision", note: "Review timelines typically 6-12 months" },
         ],
       },
@@ -2124,7 +2124,7 @@ const deals = [
         outcome: "pending",
         outcome_summary: "Approval required for utility holding company change. Filing required within 60 days post-DMA.",
         steps: [
-          { _key: k(), label: "Application filing", note: "Within 60 days post-DMA" },
+          { _key: k(), label: "Application filed", actual_date: "2025-12-26", note: "On or before the 60-day post-DMA deadline (Oct 27, 2025 + 60d)" },
           { _key: k(), label: "Commission decision", note: "Review timelines typically 6-12 months" },
         ],
       },
@@ -2134,7 +2134,7 @@ const deals = [
         outcome: "pending",
         outcome_summary: "Approval required for utility holding company change. Filing required within 60 days post-DMA.",
         steps: [
-          { _key: k(), label: "Application filing", note: "Within 60 days post-DMA" },
+          { _key: k(), label: "Application filed", actual_date: "2025-12-26", note: "On or before the 60-day post-DMA deadline (Oct 27, 2025 + 60d)" },
           { _key: k(), label: "Commission decision", note: "Review timelines typically 6-12 months" },
         ],
       },
@@ -2144,7 +2144,7 @@ const deals = [
         outcome: "pending",
         outcome_summary: "Approval required for utility holding company change. Filing required within 60 days post-DMA.",
         steps: [
-          { _key: k(), label: "Application filing", note: "Within 60 days post-DMA" },
+          { _key: k(), label: "Application filed", actual_date: "2025-12-26", note: "On or before the 60-day post-DMA deadline (Oct 27, 2025 + 60d)" },
           { _key: k(), label: "Commission decision", note: "Review timelines typically 6-12 months" },
         ],
       },
@@ -2155,7 +2155,7 @@ const deals = [
         outcome_summary: "Virginia SCC case PUR-2025-00229 — joint petition of American Water Works, Alpha Merger Sub, Essential Utilities, and Aqua Virginia.",
         case_url: "https://www.scc.virginia.gov/case-information/submit-public-comments/cases/pur-2025-00229-.html",
         steps: [
-          { _key: k(), label: "Application filing", note: "Within 60 days post-DMA" },
+          { _key: k(), label: "Application filed", actual_date: "2025-12-26", note: "On or before the 60-day post-DMA deadline (Oct 27, 2025 + 60d)" },
           { _key: k(), label: "Commission decision", note: "Review timelines typically 6-12 months" },
         ],
       },
