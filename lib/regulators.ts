@@ -115,7 +115,7 @@ export const REGULATORS: Regulator[] = [
   { value: "COMESA",    acronym: "COMESA", name: "Common Market for Eastern and Southern Africa",         country: "Regional (ESA)", category: "Antitrust", level: "Supranational" },
 
   // ── FDI (generic fallback; country in display name) ───────────
-  { value: "FDI",       acronym: "FDI",    name: "Foreign Direct Investment screening (country in display name)", country: "(varies)", category: "FDI" },
+  { value: "FDI",       acronym: "FDI",    name: "Foreign Direct Investment screening",                          country: "(varies)", category: "FDI" },
 
   // ── Americas (ex-US) ──────────────────────────────────────────
   { value: "CCB",           acronym: "CCB",         name: "Canadian Competition Bureau",                  country: "Canada", category: "Antitrust", level: "National" },

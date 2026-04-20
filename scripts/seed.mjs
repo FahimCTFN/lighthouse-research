@@ -70,7 +70,7 @@ const deals = [
     status: "ongoing",
     sector: "media_telecom",
     target_jurisdiction: "Delaware",
-    deck: "Shareholder vote in 8 days. California AG investigation is the live risk. ISS and Glass Lewis back approval but reject Zaslav's $886mn parachute.",
+    deck: "Shareholder vote in 2 days. California AG investigation is the live risk. ISS and Glass Lewis back approval but reject Zaslav's $886mn parachute.",
     key_risk_summary:
       "Primary deal risk is in California. AG Rob Bonta has directed the state DOJ to open an investigation and may seek to block the merger through litigation rather than negotiated remedies — a harder path to resolve than a typical antitrust consent decree.",
     equity_value: 77000,
@@ -1686,7 +1686,7 @@ const deals = [
     status: "ongoing",
     sector: "technology",
     target_jurisdiction: "Delaware",
-    deck: "HSR filed March 20, waiting period expires April 20. SAMR approval required — China known for slow-walking US semiconductor deals. Shareholder vote approved April 30.",
+    deck: "HSR cleared April 20 (waiting period expired, no second request). SAMR approval required — China known for slow-walking US semiconductor deals. Shareholder vote scheduled April 30.",
     key_risk_summary:
       "The transaction requires approval from China's SAMR, which has slow-walked clearing deals in recent years. Our analyst team notes recent unsuccessful deals that didn't receive timely approval from SAMR including Qualcomm's attempted acquisition of NXP Semiconductors which was terminated in 2018, and Intel's attempted acquisition of Tower Semiconductor which was terminated in 2023.",
     equity_value: 7600,
@@ -1706,8 +1706,8 @@ const deals = [
       "SAMR is the primary gating risk. HSR straightforward. 69% premium provides strong shareholder support.",
     announcement_date: "2026-02-04",
     published_date: "2026-02-04",
-    next_key_event_date: "2026-04-20",
-    next_key_event_label: "HSR expiration",
+    next_key_event_date: "2026-04-30",
+    next_key_event_label: "Shareholder vote",
     outside_date: "2027-02-04",
     outside_date_final: "2028-02-04",
     outside_date_notes:
@@ -1721,7 +1721,7 @@ const deals = [
       "Goldman Sachs is serving as financial advisor. A&O Shearman is serving as legal counsel. Joele Frank, Wilkinson Brimmer Katcher is running PR.",
     free_preview: [
       p("Texas Instruments is acquiring Silicon Labs for $231 per share in cash, implying an equity value of $7.6bn. The 69% premium to the target's unaffected close on February 3 reflects Silicon Labs' position as a pure-play IoT wireless connectivity platform."),
-      p("HSR was filed on March 20, with the waiting period scheduled to expire on April 20. The transaction is also subject to approval by China's SAMR, which is known for slow-walking US semiconductor mergers. Shareholder vote approved April 30, 2026."),
+      p("HSR was filed on March 20 and the waiting period expired April 20 without a second request, clearing the US antitrust review. The transaction is also subject to approval by China's SAMR, which is known for slow-walking US semiconductor mergers. A Silicon Labs shareholder vote is scheduled for April 30, 2026."),
     ],
     background: [
       p("For a few years, the board and management of Silicon Labs periodically reviewed operations and evaluated strategic alternatives."),
@@ -1753,12 +1753,11 @@ const deals = [
       {
         _key: k(),
         jurisdiction: "HSR",
-        outcome: "pending",
-        outcome_summary: "HSR filed March 20. Waiting period scheduled to expire April 20.",
+        outcome: "cleared",
+        outcome_summary: "HSR filed March 20. Waiting period expired April 20 with no second request.",
         steps: [
           { _key: k(), label: "HSR filed", actual_date: "2026-03-20" },
-          { _key: k(), label: "HSR waiting period expires", expected_date: "2026-04-20" },
-          { _key: k(), label: "Second request (if issued)", note: "Would extend timeline significantly" },
+          { _key: k(), label: "HSR waiting period expires", actual_date: "2026-04-20" },
         ],
       },
       {
@@ -1820,7 +1819,7 @@ const deals = [
       { _key: k(), title: "Definitive Proxy Statement (DEFM14A)", url: "https://www.sec.gov/Archives/edgar/data/1038074/000119312526128959/d34834ddefm14a.htm" },
     ],
     trigger_alert: false,
-    alert_summary: "HSR waiting period expires April 20. Shareholder vote approved April 30.",
+    alert_summary: "HSR cleared April 20. Shareholder vote scheduled April 30.",
   },
 
   // 11 ── SKYT / IONQ — quantum computing + semiconductor fab
@@ -1984,9 +1983,9 @@ const deals = [
         _key: k(),
         jurisdiction: "HSR",
         outcome: "pending",
-        outcome_summary: "Parties required to file within 60 days post-DMA (by December 26, 2025).",
+        outcome_summary: "Parties were required to file within 60 days post-DMA (by December 26, 2025). Clearance expected Q1 2026; currently past the initial expected clearance date with no second-request reporting.",
         steps: [
-          { _key: k(), label: "HSR filing deadline", expected_date: "2025-12-26" },
+          { _key: k(), label: "HSR filed", actual_date: "2025-12-26", note: "On or before the 60-day post-DMA deadline" },
           { _key: k(), label: "HSR clearance", expected_date: "2026-03-30" },
         ],
       },
@@ -1994,9 +1993,9 @@ const deals = [
         _key: k(),
         jurisdiction: "FCC",
         outcome: "pending",
-        outcome_summary: "FCC filing required within 60 days post-DMA.",
+        outcome_summary: "FCC filing required within 60 days post-DMA. Clearance timeline typically 6 months.",
         steps: [
-          { _key: k(), label: "FCC filing deadline", expected_date: "2025-12-26" },
+          { _key: k(), label: "FCC filing submitted", actual_date: "2025-12-26", note: "On or before the 60-day post-DMA deadline" },
           { _key: k(), label: "FCC clearance", expected_date: "2026-06-30" },
         ],
       },
@@ -2105,7 +2104,7 @@ const deals = [
       "Goldman Sachs is acting as financial advisor to the Investor Group. Private Credit at Goldman Sachs Alternatives provided 100% committed debt financing to the Investor Group. Latham and Watkins is serving as M&A counsel to the Investor Group. Paul, Weiss, Rifkind, Wharton & Garrison is serving as finance counsel to the Investor Group.",
     free_preview: [
       p("Clearwater Analytics is being taken private by a consortium led by Permira and Warburg Pincus, supported by Francisco Partners and with participation from Temasek, for $24.55 per share in cash — implying a $7bn equity value ($8.4bn including debt) and a 47% premium to the unaffected close on November 10."),
-      p("HSR early termination was granted February 13. The EC notified the deal as a super-simplified review on March 26 with Phase I expiring May 6. The shareholder vote is also set for May 6. A 45-day go-shop contacted 44 potential bidders — six executed NDAs but none submitted a competing bid. The go-shop expired January 23, 2026."),
+      p("HSR early termination was granted February 13. The EC notified the deal as a super-simplified review on March 26 with Phase I expiring May 6. The shareholder vote is also set for May 6. A go-shop period ran from December 22 to January 23 and reached 44 potential bidders — six executed NDAs but none submitted a competing bid."),
     ],
     background: [
       p("During the second half of 2020, Carbon Analytics, as Clearwater Analytics' holdco was then known, ran a recapitalization process, contacting about 29 financial sponsors, including Warburg Pincus and Permira. This resulted in investments from Warburg Pincus and Permira while Welsh Carson remained the majority stockholder."),
@@ -2122,7 +2121,7 @@ const deals = [
       p("Later on December 15, the consortium revised its offer to $24.35 per share, a 20-day go-shop, a 3.5% termination fee (1.75% go-shop) and a 6.5% reverse termination fee."),
       p("On December 16, after further negotiations, the consortium increased its price to $24.50 per share and then agreed to $24.55 per share in cash, a 7% reverse termination fee, a 3.25% termination fee (1.5% go-shop) and a go-shop period ending January 23, 2026. That same day, the parties entered a five-day exclusivity period."),
       p("From December 16 to December 20, the parties finalized definitive documentation. On December 20, after receiving fairness opinions from PJT Partners and JP Morgan in favor of the $24.55-per-share consideration, the special committee unanimously recommended approval, and the board approved the merger agreement and recommended it to stockholders. The company executed the merger agreement, debt-commitment letter, equity-commitment letters and fee-funding agreements on December 20 and announced the transaction on December 21."),
-      p("On December 22, the company began a 45-day go-shop, contacting 44 potential bidders. Between December 27, 2025, and January 23, 2026, six parties executed NDAs, but each declined to submit a superior proposal, citing valuation concerns, financing constraints or strategic considerations. The go-shop expired on January 23, 2026, without any alternative takeover proposal."),
+      p("On December 22, the company began a go-shop period running to January 23, 2026, contacting 44 potential bidders. Between December 27, 2025, and January 23, 2026, six parties executed NDAs, but each declined to submit a superior proposal, citing valuation concerns, financing constraints or strategic considerations. The go-shop expired on January 23, 2026, without any alternative takeover proposal."),
     ],
     commentary: [
       p("The merger agreement includes a go-shop period ending on January 23, 2026, subject to a potential 10-day extension."),
