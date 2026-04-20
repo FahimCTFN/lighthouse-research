@@ -872,10 +872,20 @@ const deals = [
       },
       {
         _key: k(),
-        jurisdiction: "Other",
-        display_name: "New Zealand / Australia",
+        jurisdiction: "NZCC",
         outcome: "conditional",
-        outcome_summary: "Companies proposed to divest all of Kenvue's feminine hygiene business in NZ and AU to address competitive overlap (Kotex vs Stayfree/Carefree).",
+        outcome_summary: "Part of a coordinated NZ/AU review. Companies proposed to divest all of Kenvue's feminine hygiene business in NZ and AU (Kotex vs Stayfree/Carefree) to address competitive overlap.",
+        steps: [
+          { _key: k(), label: "Clearance application filed", actual_date: "2026-02-15" },
+          { _key: k(), label: "Divestiture proposal submitted", actual_date: "2026-03-15", note: "Full Kenvue feminine hygiene business in NZ/AU" },
+          { _key: k(), label: "Decision", expected_date: "2026-06-15" },
+        ],
+      },
+      {
+        _key: k(),
+        jurisdiction: "ACCC",
+        outcome: "conditional",
+        outcome_summary: "Part of a coordinated NZ/AU review. Companies proposed to divest all of Kenvue's feminine hygiene business in NZ and AU (Kotex vs Stayfree/Carefree) to address competitive overlap.",
         steps: [
           { _key: k(), label: "Clearance application filed", actual_date: "2026-02-15" },
           { _key: k(), label: "Divestiture proposal submitted", actual_date: "2026-03-15", note: "Full Kenvue feminine hygiene business in NZ/AU" },
@@ -1027,8 +1037,7 @@ const deals = [
       },
       {
         _key: k(),
-        jurisdiction: "Other",
-        display_name: "FERC (Federal Energy Regulatory Commission)",
+        jurisdiction: "FERC",
         outcome: "pending",
         outcome_summary: "FERC approval required for change of control of power generation assets.",
         steps: [
@@ -1038,8 +1047,7 @@ const deals = [
       },
       {
         _key: k(),
-        jurisdiction: "Other",
-        display_name: "PUCO (Ohio Public Utilities Commission)",
+        jurisdiction: "PUCO",
         outcome: "pending",
         outcome_summary: "Ohio utility commission approval required. Possible data center backlash is a risk factor.",
         steps: [
@@ -1049,8 +1057,7 @@ const deals = [
       },
       {
         _key: k(),
-        jurisdiction: "Other",
-        display_name: "NYPSC (New York)",
+        jurisdiction: "NYPSC",
         outcome: "pending",
         steps: [
           { _key: k(), label: "NYPSC filing", expected_date: "2026-05-30" },
@@ -1059,8 +1066,7 @@ const deals = [
       },
       {
         _key: k(),
-        jurisdiction: "Other",
-        display_name: "CPUC (California)",
+        jurisdiction: "CPUC",
         outcome: "pending",
         steps: [
           { _key: k(), label: "CPUC filing", expected_date: "2026-05-30" },
@@ -1069,8 +1075,7 @@ const deals = [
       },
       {
         _key: k(),
-        jurisdiction: "Other",
-        display_name: "CEC (California Energy Commission)",
+        jurisdiction: "CEC",
         outcome: "pending",
         steps: [
           { _key: k(), label: "CEC filing", expected_date: "2026-05-30" },
@@ -1400,8 +1405,7 @@ const deals = [
       },
       {
         _key: k(),
-        jurisdiction: "Other",
-        display_name: "FERC (Federal Energy Regulatory Commission)",
+        jurisdiction: "FERC",
         outcome: "cleared",
         steps: [
           { _key: k(), label: "FERC authorized", actual_date: "2026-02-20" },
@@ -1409,8 +1413,7 @@ const deals = [
       },
       {
         _key: k(),
-        jurisdiction: "Other",
-        display_name: "PUCT (Texas Public Utility Commission)",
+        jurisdiction: "PUCT",
         outcome: "cleared",
         outcome_summary: "180-day review period. PUCT approved the transaction.",
         steps: [
@@ -1420,8 +1423,7 @@ const deals = [
       },
       {
         _key: k(),
-        jurisdiction: "Other",
-        display_name: "NMPRC (New Mexico Public Regulation Commission)",
+        jurisdiction: "NMPRC",
         outcome: "conditional",
         outcome_summary: "Primary remaining regulatory risk. Application filed August 25, 2025. Hearing examiners opened investigation into the $400mn PIPE on March 11 and paused the procedural schedule. NM AG Raúl Torrez challenging the PIPE. Public hearing on PIPE set for April 30.",
         steps: [
@@ -1440,8 +1442,7 @@ const deals = [
       },
       {
         _key: k(),
-        jurisdiction: "Other",
-        display_name: "NRC (Nuclear Regulatory Commission)",
+        jurisdiction: "NRC",
         outcome: "pending",
         outcome_summary: "Approval required for transfer of nuclear facility licenses.",
         steps: [
@@ -1602,8 +1603,7 @@ const deals = [
       },
       {
         _key: k(),
-        jurisdiction: "Other",
-        display_name: "South Korea (KFTC)",
+        jurisdiction: "KFTC",
         outcome: "pending",
         steps: [
           { _key: k(), label: "KFTC filing", actual_date: "2025-12-15" },
@@ -1612,23 +1612,96 @@ const deals = [
       },
       {
         _key: k(),
-        jurisdiction: "Other",
-        display_name: "Taiwan (TFTC)",
+        jurisdiction: "TFTC",
         outcome: "pending",
         steps: [
           { _key: k(), label: "TFTC filing", actual_date: "2025-12-15" },
           { _key: k(), label: "TFTC decision", expected_date: "2026-06-30" },
         ],
       },
+      // FDI screening — individual country filings (consolidated timeline was
+      // an editor estimate, not per-country confirmed dates, so dates
+      // intentionally left blank)
       {
         _key: k(),
-        jurisdiction: "Other",
-        display_name: "FDI screening (9 EU countries + UK)",
+        jurisdiction: "ISC",
         outcome: "pending",
-        outcome_summary: "Investment screening filings in Belgium, France, Germany, Ireland, Italy, Netherlands, Spain, UK, and possibly others.",
+        outcome_summary: "FDI / investment screening review (Belgium).",
         steps: [
-          { _key: k(), label: "FDI filings submitted", expected_date: "2026-02-28" },
-          { _key: k(), label: "FDI clearances", expected_date: "2026-09-30" },
+          { _key: k(), label: "FDI filing" },
+          { _key: k(), label: "Decision" },
+        ],
+      },
+      {
+        _key: k(),
+        jurisdiction: "FDI",
+        display_name: "France — FDI screening",
+        outcome: "pending",
+        outcome_summary: "FDI / investment screening review (France).",
+        steps: [
+          { _key: k(), label: "FDI filing" },
+          { _key: k(), label: "Decision" },
+        ],
+      },
+      {
+        _key: k(),
+        jurisdiction: "BMWK",
+        outcome: "pending",
+        outcome_summary: "FDI / investment screening review (Germany, AWG/AWV regime).",
+        steps: [
+          { _key: k(), label: "FDI filing" },
+          { _key: k(), label: "Decision" },
+        ],
+      },
+      {
+        _key: k(),
+        jurisdiction: "FDI",
+        display_name: "Ireland — FDI screening",
+        outcome: "pending",
+        outcome_summary: "FDI / investment screening review (Ireland).",
+        steps: [
+          { _key: k(), label: "FDI filing" },
+          { _key: k(), label: "Decision" },
+        ],
+      },
+      {
+        _key: k(),
+        jurisdiction: "PCM",
+        outcome: "pending",
+        outcome_summary: "FDI / Golden Powers review (Italy).",
+        steps: [
+          { _key: k(), label: "FDI filing" },
+          { _key: k(), label: "Decision" },
+        ],
+      },
+      {
+        _key: k(),
+        jurisdiction: "BTI",
+        outcome: "pending",
+        outcome_summary: "FDI / investment screening review (Netherlands).",
+        steps: [
+          { _key: k(), label: "FDI filing" },
+          { _key: k(), label: "Decision" },
+        ],
+      },
+      {
+        _key: k(),
+        jurisdiction: "SFI",
+        outcome: "pending",
+        outcome_summary: "FDI / investment screening review (Spain).",
+        steps: [
+          { _key: k(), label: "FDI filing" },
+          { _key: k(), label: "Decision" },
+        ],
+      },
+      {
+        _key: k(),
+        jurisdiction: "NSIA",
+        outcome: "pending",
+        outcome_summary: "National Security and Investment Act screening (UK).",
+        steps: [
+          { _key: k(), label: "Filing" },
+          { _key: k(), label: "Decision" },
         ],
       },
     ],
@@ -2001,8 +2074,7 @@ const deals = [
       },
       {
         _key: k(),
-        jurisdiction: "Other",
-        display_name: "Pennsylvania PUC (central review)",
+        jurisdiction: "PPUC",
         outcome: "pending",
         outcome_summary: "Pennsylvania is likely to be the central review. Parties seeking to have it concluded in Q3 2026. Multiple PPUC docket dates scheduled through September 2026.",
         steps: [
@@ -2241,8 +2313,7 @@ const deals = [
       },
       {
         _key: k(),
-        jurisdiction: "Other",
-        display_name: "ACCC (Australia merger control)",
+        jurisdiction: "ACCC",
         outcome: "cleared",
         outcome_summary: "Waiver determination in Q1 — merger does not need to be notified.",
         steps: [
@@ -2261,8 +2332,7 @@ const deals = [
       },
       {
         _key: k(),
-        jurisdiction: "Other",
-        display_name: "FIRB (Australia FDI)",
+        jurisdiction: "FIRB",
         outcome: "pending",
         outcome_summary: "Application submitted Q2 2026 given Temasek involvement. Statutory 30-day review period (extendable).",
         steps: [

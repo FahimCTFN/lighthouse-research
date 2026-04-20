@@ -66,6 +66,7 @@ export const REGULATORS: Regulator[] = [
 
   // ── US — State PUCs / utility commissions ──────────────────────
   { value: "CPUC",   acronym: "CPUC",   name: "California Public Utilities Commission",                   country: "US",     category: "PUC",       level: "US state" },
+  { value: "CEC",    acronym: "CEC",    name: "California Energy Commission",                             country: "US",     category: "Sector",    level: "US state" },
   { value: "ICC",    acronym: "ICC",    name: "Illinois Commerce Commission",                             country: "US",     category: "PUC",       level: "US state" },
   { value: "IURC",   acronym: "IURC",   name: "Indiana Utility Regulatory Commission",                    country: "US",     category: "PUC",       level: "US state" },
   { value: "KPSC",   acronym: "KPSC",   name: "Kentucky Public Service Commission",                       country: "US",     category: "PUC",       level: "US state" },
