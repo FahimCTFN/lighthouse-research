@@ -5,7 +5,6 @@ import {
   formatDate,
   formatSector,
   formatTickers,
-  daysUntil,
 } from "@/lib/format";
 import type { PublicDeal } from "@/lib/sanity/types";
 
@@ -16,8 +15,6 @@ export function DealHeader({
   deal: PublicDeal;
   followControl?: ReactNode;
 }) {
-  const days = daysUntil(deal.next_key_event_date);
-  const showPulse = days != null && days >= 0 && days <= 14;
   return (
     <header className="border-b border-gray-200 pb-6">
       <Link
@@ -93,12 +90,6 @@ export function DealHeader({
             Active Situations Desk · ctfn.news
           </div>
         </div>
-        {showPulse && deal.next_key_event_label && (
-          <div className="mt-2 flex w-full items-center gap-1.5 rounded border border-brand-gold/60 bg-brand-gold-light px-2.5 py-1 text-[11px] font-medium text-brand-gold-ink sm:mt-0 sm:ml-auto sm:w-auto">
-            <span className="block h-1.5 w-1.5 animate-pulse-dot rounded-full bg-[#e8a020]" />
-            Next event: {deal.next_key_event_label} {formatDate(deal.next_key_event_date)}
-          </div>
-        )}
       </div>
     </header>
   );
