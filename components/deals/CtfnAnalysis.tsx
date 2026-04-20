@@ -78,11 +78,6 @@ function hasContent(blocks?: PortableTextBlock[]): boolean {
 export function CtfnAnalysis({ deal }: { deal: PaidDeal }) {
   const sections: Section[] = [
     {
-      key: "probability",
-      title: "Probability Assessment",
-      value: deal.ctfn_probability,
-    },
-    {
       key: "target",
       title:
         deal.target ? `${deal.target}` : "Target Company",

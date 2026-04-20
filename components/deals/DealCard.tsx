@@ -53,13 +53,9 @@ export function DealCard({
         )}
       </div>
 
-      <dl className="grid grid-cols-3 gap-3 tabular-nums">
+      <dl className="grid grid-cols-2 gap-3 tabular-nums">
         <Stat label="Equity value" value={formatUSDM(deal.equity_value)} />
         <Stat label="Premium" value={formatPercent(deal.premium)} />
-        <Stat
-          label="CTFN prob."
-          value={formatPercent(deal.ctfn_closing_probability)}
-        />
       </dl>
 
       <div className="mt-auto flex items-center justify-between border-t border-gray-100 pt-3 text-[11px] tabular-nums text-gray-500">

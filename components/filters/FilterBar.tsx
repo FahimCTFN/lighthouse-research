@@ -43,7 +43,6 @@ export function FilterBar() {
     filters.stages.length > 0 ||
     filters.sectors.length > 0 ||
     filters.daysWindow != null ||
-    filters.probMin > 0 ||
     filters.sort !== "next_event";
 
   function reset() {
@@ -51,8 +50,6 @@ export function FilterBar() {
       stages: [],
       sectors: [],
       daysWindow: null,
-      probMin: 0,
-      probMax: 100,
       sort: "next_event",
     });
   }
@@ -73,9 +70,6 @@ export function FilterBar() {
 
   const eventSummary =
     filters.daysWindow == null ? "Any time" : `≤ ${filters.daysWindow} days`;
-
-  const probSummary =
-    filters.probMin === 0 ? "Any" : `≥ ${filters.probMin}%`;
 
   const sortSummary =
     SORT_OPTIONS.find((o) => o.value === filters.sort)?.label ?? "Sort";
@@ -153,20 +147,6 @@ export function FilterBar() {
                   update({ daysWindow: v === "any" ? null : Number(v) });
                   close();
                 }}
-              />
-            )}
-          </FilterPopover>
-
-          {/* Min probability */}
-          <FilterPopover
-            label="Min prob."
-            summary={probSummary}
-            active={filters.probMin > 0}
-          >
-            {() => (
-              <ProbPanel
-                value={filters.probMin}
-                onChange={(v) => update({ probMin: v })}
               />
             )}
           </FilterPopover>
@@ -314,48 +294,5 @@ function RadioList({
         );
       })}
     </ul>
-  );
-}
-
-function ProbPanel({
-  value,
-  onChange,
-}: {
-  value: number;
-  onChange: (v: number) => void;
-}) {
-  return (
-    <div className="p-4">
-      <div className="mb-2 flex items-baseline justify-between">
-        <span className="text-[10px] font-medium uppercase tracking-label text-gray-500">
-          Minimum closing probability
-        </span>
-        <span className="text-[14px] font-semibold tabular-nums text-brand-navy">
-          {value}%
-        </span>
-      </div>
-      <input
-        type="range"
-        min={0}
-        max={100}
-        step={5}
-        value={value}
-        onChange={(e) => onChange(Number(e.target.value))}
-        className="h-1 w-full cursor-pointer appearance-none rounded-full bg-gray-200 accent-brand-navy"
-      />
-      <div className="mt-1 flex justify-between text-[10px] text-gray-400 tabular-nums">
-        <span>0%</span>
-        <span>50%</span>
-        <span>100%</span>
-      </div>
-      {value > 0 && (
-        <button
-          onClick={() => onChange(0)}
-          className="mt-3 w-full rounded border border-gray-200 px-2 py-1 text-[12px] text-gray-600 hover:border-brand-navy hover:text-brand-navy"
-        >
-          Reset
-        </button>
-      )}
-    </div>
   );
 }

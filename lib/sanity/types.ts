@@ -29,7 +29,6 @@ export interface DealListItem {
   equity_value?: number;
   offer_price?: number;
   premium?: number;
-  ctfn_closing_probability?: number;
   ctfn_estimated_close?: string;
   announcement_date?: string;
   next_key_event_date?: string;
@@ -51,7 +50,6 @@ export interface PublicDeal extends DealListItem {
   published_date?: string;
   outside_date?: string;
   outside_date_final?: string;
-  outside_date_notes?: string;
   closing_guidance?: string;
   key_risk_summary?: string;
   allow_single_purchase?: boolean;
@@ -126,7 +124,6 @@ export interface ShareholderVote {
 }
 
 export interface PaidDeal extends PublicDeal {
-  ctfn_probability_notes?: string;
   financing?: string;
   best_efforts?: string;
   shareholder_votes?: ShareholderVote[];
@@ -135,7 +132,6 @@ export interface PaidDeal extends PublicDeal {
   filings?: Filing[];
   background?: PortableTextBlock[];
   commentary?: PortableTextBlock[];
-  ctfn_probability?: PortableTextBlock[];
   ctfn_target_company?: PortableTextBlock[];
   ctfn_acquirer_company?: PortableTextBlock[];
   ctfn_overlaps?: PortableTextBlock[];

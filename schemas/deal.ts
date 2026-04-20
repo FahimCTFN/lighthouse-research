@@ -187,22 +187,9 @@ export const deal = defineType({
 
     // ── CTFN Proprietary ────────────────────────────────────────
     defineField({
-      name: "ctfn_closing_probability",
-      title: "CTFN Closing Probability (0–100)",
-      type: "number",
-      group: "ctfn",
-      validation: (R) => R.min(0).max(100),
-    }),
-    defineField({
       name: "ctfn_estimated_close",
       title: "CTFN Estimated Close Date",
       type: "date",
-      group: "ctfn",
-    }),
-    defineField({
-      name: "ctfn_probability_notes",
-      title: "Probability Notes (internal)",
-      type: "text",
       group: "ctfn",
     }),
 
@@ -244,14 +231,6 @@ export const deal = defineType({
       group: "ctfn",
       description:
         "Latest possible outside date if all permitted extensions are exercised. Leave blank if there's no extension provision.",
-    }),
-    defineField({
-      name: "outside_date_notes",
-      title: "Extension terms",
-      type: "string",
-      group: "ctfn",
-      description:
-        'e.g. "Automatic 3-month extension if regulatory approvals pending" or "Four 3-month extensions available".',
     }),
     defineField({
       name: "closing_guidance",
@@ -536,14 +515,6 @@ export const deal = defineType({
     // ── CTFN Analysis (structured sub-sections) ──────────────
     // Each sub-section is an independent rich-text field with image support.
     // Empty sub-sections are hidden on the frontend.
-    defineField({
-      name: "ctfn_probability",
-      title: "CTFN Probability Assessment",
-      type: "array",
-      group: "content",
-      of: richTextWithImages,
-      description: "CTFN's closing probability narrative and key risk assessment.",
-    }),
     defineField({
       name: "ctfn_target_company",
       title: "Target Company",

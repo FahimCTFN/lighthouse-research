@@ -11,8 +11,6 @@ export interface FilterState {
   stages: DealStatus[];
   sectors: Sector[];
   daysWindow: number | null; // 7 / 14 / 30
-  probMin: number;
-  probMax: number;
   sort: SortKey;
 }
 
@@ -20,8 +18,6 @@ const DEFAULTS: FilterState = {
   stages: [],
   sectors: [],
   daysWindow: null,
-  probMin: 0,
-  probMax: 100,
   sort: "next_event",
 };
 
@@ -38,15 +34,11 @@ export function useFilters() {
       .split(",")
       .filter(Boolean) as Sector[];
     const days = searchParams.get("days");
-    const pmin = searchParams.get("pmin");
-    const pmax = searchParams.get("pmax");
     const sort = (searchParams.get("sort") || DEFAULTS.sort) as SortKey;
     return {
       stages,
       sectors,
       daysWindow: days ? Number(days) : null,
-      probMin: pmin ? Number(pmin) : 0,
-      probMax: pmax ? Number(pmax) : 100,
       sort,
     };
   }, [searchParams]);
@@ -58,8 +50,6 @@ export function useFilters() {
       if (next.stages.length) params.set("stage", next.stages.join(","));
       if (next.sectors.length) params.set("sector", next.sectors.join(","));
       if (next.daysWindow) params.set("days", String(next.daysWindow));
-      if (next.probMin > 0) params.set("pmin", String(next.probMin));
-      if (next.probMax < 100) params.set("pmax", String(next.probMax));
       if (next.sort !== DEFAULTS.sort) params.set("sort", next.sort);
       const qs = params.toString();
       router.replace(qs ? `${pathname}?${qs}` : pathname, { scroll: false });
@@ -81,8 +71,6 @@ export function applyFilters(
       const days = daysUntil(d.next_key_event_date);
       if (days == null || days > f.daysWindow || days < 0) return false;
     }
-    const p = d.ctfn_closing_probability ?? 0;
-    if (p < f.probMin || p > f.probMax) return false;
     return true;
   });
 
