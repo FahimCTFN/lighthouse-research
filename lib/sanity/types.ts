@@ -29,6 +29,7 @@ export interface DealListItem {
   equity_value?: number;
   offer_price?: number;
   premium?: number;
+  ctfn_closing_probability?: number;
   ctfn_estimated_close?: string;
   announcement_date?: string;
   next_key_event_date?: string;

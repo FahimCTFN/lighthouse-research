@@ -187,6 +187,13 @@ export const deal = defineType({
 
     // ── CTFN Proprietary ────────────────────────────────────────
     defineField({
+      name: "ctfn_closing_probability",
+      title: "CTFN Closing Probability (0–100)",
+      type: "number",
+      group: "ctfn",
+      validation: (R) => R.min(0).max(100),
+    }),
+    defineField({
       name: "ctfn_estimated_close",
       title: "CTFN Estimated Close Date",
       type: "date",
@@ -274,6 +281,7 @@ export const deal = defineType({
                   { title: "Turkey — Competition Authority", value: "Turkey" },
                   { title: "Germany — BKartA", value: "BKartA" },
                   { title: "Mexico — CNA", value: "CNA" },
+                  { title: "FDI screening (country in display name)", value: "FDI" },
                   { title: "Court / Litigation", value: "Court" },
                   { title: "Other", value: "Other" },
                 ],
