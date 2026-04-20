@@ -2017,15 +2017,93 @@ const deals = [
           { _key: k(), label: "PPUC decision target (Q3 2026)", expected_date: "2026-09-24" },
         ],
       },
+      // Individual state PUC filings — approvals required
       {
         _key: k(),
-        jurisdiction: "Other",
-        display_name: "Other state utility commissions (10+)",
+        jurisdiction: "ICC",
         outcome: "pending",
-        outcome_summary: "Approvals required from: Illinois Commerce Commission, Kentucky PSC, New Jersey Board of Public Utilities, North Carolina Utilities Commission, Public Utility Commission of Texas, Virginia State Corporation Commission. Parties may also need to notify: California PUC, Indiana Utility Regulatory Commission, Public Utilities Commission of Ohio, and any other state commission that asserts jurisdiction.",
+        outcome_summary: "Approval required for utility holding company change. Filing required within 60 days post-DMA.",
         steps: [
-          { _key: k(), label: "State utility filings", expected_date: "2025-12-26" },
-          { _key: k(), label: "State clearances (various timelines)", expected_date: "2027-01-15", note: "State utility reviews typically 6-12 months" },
+          { _key: k(), label: "Application filing", note: "Within 60 days post-DMA" },
+          { _key: k(), label: "Commission decision", note: "Review timelines typically 6-12 months" },
+        ],
+      },
+      {
+        _key: k(),
+        jurisdiction: "KPSC",
+        outcome: "pending",
+        outcome_summary: "Approval required for utility holding company change. Filing required within 60 days post-DMA.",
+        steps: [
+          { _key: k(), label: "Application filing", note: "Within 60 days post-DMA" },
+          { _key: k(), label: "Commission decision", note: "Review timelines typically 6-12 months" },
+        ],
+      },
+      {
+        _key: k(),
+        jurisdiction: "NJBPU",
+        outcome: "pending",
+        outcome_summary: "Approval required for utility holding company change. Filing required within 60 days post-DMA.",
+        steps: [
+          { _key: k(), label: "Application filing", note: "Within 60 days post-DMA" },
+          { _key: k(), label: "Commission decision", note: "Review timelines typically 6-12 months" },
+        ],
+      },
+      {
+        _key: k(),
+        jurisdiction: "NCUC",
+        outcome: "pending",
+        outcome_summary: "Approval required for utility holding company change. Filing required within 60 days post-DMA.",
+        steps: [
+          { _key: k(), label: "Application filing", note: "Within 60 days post-DMA" },
+          { _key: k(), label: "Commission decision", note: "Review timelines typically 6-12 months" },
+        ],
+      },
+      {
+        _key: k(),
+        jurisdiction: "PUCT",
+        outcome: "pending",
+        outcome_summary: "Approval required for utility holding company change. Filing required within 60 days post-DMA.",
+        steps: [
+          { _key: k(), label: "Application filing", note: "Within 60 days post-DMA" },
+          { _key: k(), label: "Commission decision", note: "Review timelines typically 6-12 months" },
+        ],
+      },
+      {
+        _key: k(),
+        jurisdiction: "VSCC",
+        outcome: "pending",
+        outcome_summary: "Approval required for utility holding company change. Filing required within 60 days post-DMA.",
+        steps: [
+          { _key: k(), label: "Application filing", note: "Within 60 days post-DMA" },
+          { _key: k(), label: "Commission decision", note: "Review timelines typically 6-12 months" },
+        ],
+      },
+      // Notification / possibly required — jurisdiction status not yet confirmed
+      {
+        _key: k(),
+        jurisdiction: "CPUC",
+        outcome: "pending",
+        outcome_summary: "Notification possible; approval may be required depending on jurisdictional assertion.",
+        steps: [
+          { _key: k(), label: "Notification / filing (if required)" },
+        ],
+      },
+      {
+        _key: k(),
+        jurisdiction: "IURC",
+        outcome: "pending",
+        outcome_summary: "Notification possible; approval may be required depending on jurisdictional assertion.",
+        steps: [
+          { _key: k(), label: "Notification / filing (if required)" },
+        ],
+      },
+      {
+        _key: k(),
+        jurisdiction: "PUCO",
+        outcome: "pending",
+        outcome_summary: "Notification possible; approval may be required depending on jurisdictional assertion.",
+        steps: [
+          { _key: k(), label: "Notification / filing (if required)" },
         ],
       },
     ],
