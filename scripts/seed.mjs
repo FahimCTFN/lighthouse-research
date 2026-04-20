@@ -87,7 +87,6 @@ const deals = [
       "Ticking fee of $0.25/share per quarter if closing occurs after September 30, 2026.",
     financing:
       "Ellison Trust and RedBird Capital Partners committed ~$47bn in PIPE investments. Combined with committed debt financing, the deal is fully funded and not subject to a financing condition.",
-    ctfn_closing_probability: 71,
     ctfn_estimated_close: "2026-07-15",
     ctfn_probability_notes:
       "Headline risk concentrated in California. EC remedies (children's TV divestiture) assumed.",
@@ -341,7 +340,6 @@ const deals = [
     reverse_termination_fee_pct: 3.5,
     financing:
       "Cash portion funded through a combination of new debt and balance-sheet cash. Union Pacific will issue ~225mn shares to NSC holders, representing ~27% of the combined company on a fully diluted basis.",
-    ctfn_closing_probability: 58,
     ctfn_estimated_close: "2027-06-30",
     ctfn_probability_notes:
       "STB's 2001 rules require enhancement of competition, not just preservation. First test of that standard on a Class I merger.",
@@ -515,7 +513,6 @@ const deals = [
       "Target fee reduced to $540mn (1%) for a superior proposal within 45 days post-DMA with termination within 75 days.",
     financing:
       "~$36bn equity (mostly PIF, with Silver Lake and Affinity minority) and $20bn committed debt from JPMorgan. Oak-Eagle AcquireCo placed $2.875bn 7.250% senior secured notes due 2033, €1.08bn 6.250% senior secured euro notes due 2033, and $2.5bn 8.750% senior notes due 2034 into escrow pending close.",
-    ctfn_closing_probability: 74,
     ctfn_estimated_close: "2026-09-30",
     ctfn_probability_notes:
       "HSR and most non-EU/US reviews cleared. Remaining: CFIUS, EC merger control, EC FSR, Canada.",
@@ -696,7 +693,6 @@ const deals = [
     reverse_termination_fee: 900,
     reverse_termination_fee_pct: 6,
     financing: "BSX to fund $11bn cash portion via balance-sheet cash and new debt.",
-    ctfn_closing_probability: 77,
     ctfn_estimated_close: "2026-11-15",
     ctfn_probability_notes: "Clean but for thrombectomy overlap; divestiture most likely remedy.",
     announcement_date: "2026-01-15",
@@ -806,7 +802,6 @@ const deals = [
       "Reciprocal $1.136bn termination fee payable by either party in competing-transaction or board recommendation-change scenarios.",
     financing:
       "Cash component (~$6.7bn) funded via cash on hand, new debt issuance, and proceeds from previously announced sale of 51% of KMB's International Family Care and Professional business. $7.7bn committed bridge facility from JPMorgan Chase. Combined ownership at close: KMB ~54%, KVUE ~46%.",
-    ctfn_closing_probability: 72,
     ctfn_estimated_close: "2026-10-15",
     ctfn_probability_notes:
       "Strong shareholder support (96-99%) removes vote risk. FTC second request + required divestitures are the primary variables. Multiple jurisdictions still outstanding.",
@@ -986,7 +981,6 @@ const deals = [
       "$100mn (1%) additional reverse termination fee if regulators block the deal.",
     financing:
       "The consortium will fund 100% of the acquisition with equity. No debt financing.",
-    ctfn_closing_probability: 65,
     ctfn_estimated_close: "2027-03-31",
     ctfn_probability_notes:
       "Multiple state utility commissions + CFIUS + FERC create a complex multi-jurisdictional review. All-equity financing removes leverage risk.",
@@ -1173,7 +1167,6 @@ const deals = [
       "€150mn reciprocal (2%). All-stock consideration — no cash component to Axalta shareholders.",
     financing:
       "AkzoNobel will pay a special cash dividend to its own shareholders equal to €2.5bn minus aggregate regular dividends paid in 2026 before closing. Funded via: senior unsecured notes (EMTN programme), commercial paper ($3bn + €1.5bn programmes), ~€900mn net proceeds from completed AkzoNobel India sale to JSW Group, and €1.5bn multi-currency revolving credit facility (includes $750mn swingline, runs to March 2031). Bridge loan facility available if needed.",
-    ctfn_closing_probability: 62,
     ctfn_estimated_close: "2026-12-31",
     ctfn_probability_notes:
       "EC Phase 2 probe widely expected on powder coatings (up to 50% combined share). CMA just opened investigation. Shareholder opposition from Artisan Partners + Shapiro Capital (~1.8% of AXTA) is vocal but not blocking-scale.",
@@ -1348,7 +1341,6 @@ const deals = [
       "$100mn (1%) additional if regulators block the deal.",
     financing:
       "The transaction is funded through equity and assumption of existing debt. Blackstone is also investing $400mn through a purchase of 8mn newly issued TXNM shares at $50 per share via private placement (PIPE). The $400mn PIPE closed on June 2, 2025.",
-    ctfn_closing_probability: 70,
     ctfn_estimated_close: "2026-09-30",
     ctfn_probability_notes:
       "CTFN enforceability rating: STRONG (favors seller). PUCT and FERC cleared. NMPRC is the primary remaining risk — PIPE investigation + AG challenge create procedural uncertainty.",
@@ -1531,7 +1523,6 @@ const deals = [
       "$100mn (1%) additional in the event of a failure to get required regulatory clearances or an injunction related to antitrust laws.",
     financing:
       "Skyworks has secured a $3.05bn debt commitment from Goldman Sachs via senior unsecured bridge loans to finance a portion of the merger's cash consideration and related fees. The receipt of this financing is not a condition for Skyworks' obligation to complete the merger.",
-    ctfn_closing_probability: 60,
     ctfn_estimated_close: "2027-01-15",
     ctfn_probability_notes:
       "FTC second request + SAMR slow-walk risk on semiconductor mergers. Two-year merger agreement provides runway. Starboard voting agreement supportive.",
@@ -1710,7 +1701,6 @@ const deals = [
     reverse_termination_fee_pct: 6.6,
     financing:
       "Texas Instruments expects to fund the merger with a combination of cash on hand and debt financing to be arranged prior to closing.",
-    ctfn_closing_probability: 62,
     ctfn_estimated_close: "2027-01-15",
     ctfn_probability_notes:
       "SAMR is the primary gating risk. HSR straightforward. 69% premium provides strong shareholder support.",
@@ -1855,7 +1845,6 @@ const deals = [
     termination_fee_pct: 3.6,
     financing:
       "Cash and stock. The cash component is funded from IonQ's balance sheet and the stock component is subject to a collar mechanism protecting SkyWater shareholders within the $37.99–$60.13 IonQ price range.",
-    ctfn_closing_probability: 75,
     ctfn_estimated_close: "2026-08-15",
     ctfn_probability_notes:
       "Relatively straightforward HSR given limited direct product overlap. Collar mechanism adds deal-certainty. 20% voting agreement from SkyWater shareholders provides committed support.",
@@ -1945,7 +1934,6 @@ const deals = [
     reverse_termination_fee_pct: 6.8,
     financing:
       "All stock. No cash component, no debt financing required.",
-    ctfn_closing_probability: 68,
     ctfn_estimated_close: "2027-03-15",
     ctfn_probability_notes:
       "10+ state utility commissions create multi-jurisdictional complexity. Pennsylvania PUC is the central and most complex review. All-stock structure removes financing risk.",
@@ -2097,7 +2085,6 @@ const deals = [
       "$111.7mn during go-shop period, $242mn otherwise. Reverse termination fee: $521.1mn.",
     financing:
       "Not conditioned on financing. Debt commitments total $3.525 billion (senior secured term loan + DDTL + revolver), provided by Goldman Sachs Asset Management and others via an amended and restated commitment letter dated January 21, 2026.",
-    ctfn_closing_probability: 78,
     ctfn_estimated_close: "2026-06-30",
     ctfn_probability_notes:
       "HSR cleared. EC super-simplified Phase I. Go-shop confirmed no competing bid. SAMR and FIRB are the remaining timing variables. Strong base case for Q2 close in line with management guidance.",

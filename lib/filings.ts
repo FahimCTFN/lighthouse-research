@@ -1,25 +1,7 @@
 import type { Filing, FilingOutcome, FilingStep } from "@/lib/sanity/types";
+import { JURISDICTION_LABEL as REG_LABELS } from "@/lib/regulators";
 
-export const JURISDICTION_LABEL: Record<string, string> = {
-  HSR: "US — FTC / DOJ (HSR)",
-  CFIUS: "US — CFIUS",
-  STB: "US — STB",
-  FCC: "US — FCC",
-  State_AG: "US — State Attorney General",
-  EC_Merger: "EU — European Commission",
-  EC_FSR: "EU — Foreign Subsidies Regulation",
-  CMA: "UK — Competition & Markets Authority",
-  CADE: "Brazil — CADE",
-  SAMR: "China — SAMR",
-  CCB: "Canada — Competition Bureau",
-  Turkey: "Turkey — Competition Authority",
-  BKartA: "Germany — BKartA",
-  CNA: "Mexico — CNA",
-  FDI: "Foreign Direct Investment screening",
-  Court: "Court / Litigation",
-  Shareholder: "Shareholder Vote",
-  Other: "Other",
-};
+export const JURISDICTION_LABEL: Record<string, string> = REG_LABELS;
 
 export const OUTCOME_LABEL: Record<FilingOutcome, string> = {
   pending: "Pending",

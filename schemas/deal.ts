@@ -1,5 +1,6 @@
 import { defineField, defineType } from "sanity";
 import { richTextBlock, richTextWithImages } from "./richText";
+import { REGULATOR_OPTIONS } from "../lib/regulators";
 
 export const deal = defineType({
   name: "deal",
@@ -187,13 +188,6 @@ export const deal = defineType({
 
     // ── CTFN Proprietary ────────────────────────────────────────
     defineField({
-      name: "ctfn_closing_probability",
-      title: "CTFN Closing Probability (0–100)",
-      type: "number",
-      group: "ctfn",
-      validation: (R) => R.min(0).max(100),
-    }),
-    defineField({
       name: "ctfn_estimated_close",
       title: "CTFN Estimated Close Date",
       type: "date",
@@ -266,25 +260,7 @@ export const deal = defineType({
               type: "string",
               title: "Jurisdiction",
               options: {
-                list: [
-                  { title: "US — FTC / DOJ (HSR)", value: "HSR" },
-                  { title: "US — CFIUS", value: "CFIUS" },
-                  { title: "US — STB", value: "STB" },
-                  { title: "US — FCC", value: "FCC" },
-                  { title: "US — State AG", value: "State_AG" },
-                  { title: "EU — European Commission (merger control)", value: "EC_Merger" },
-                  { title: "EU — European Commission (FSR)", value: "EC_FSR" },
-                  { title: "UK — CMA", value: "CMA" },
-                  { title: "Brazil — CADE", value: "CADE" },
-                  { title: "China — SAMR", value: "SAMR" },
-                  { title: "Canada — Competition Bureau", value: "CCB" },
-                  { title: "Turkey — Competition Authority", value: "Turkey" },
-                  { title: "Germany — BKartA", value: "BKartA" },
-                  { title: "Mexico — CNA", value: "CNA" },
-                  { title: "FDI screening (country in display name)", value: "FDI" },
-                  { title: "Court / Litigation", value: "Court" },
-                  { title: "Other", value: "Other" },
-                ],
+                list: REGULATOR_OPTIONS,
               },
               validation: (R) => R.required(),
             },
