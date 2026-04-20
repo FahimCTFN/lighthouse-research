@@ -11,6 +11,7 @@ import {
   filingDisplayName,
   type StepStatus,
 } from "@/lib/filings";
+import { REGULATOR_SHORT } from "@/lib/regulators";
 import type { Filing, FilingStep } from "@/lib/sanity/types";
 
 export function RegulatoryFilings({ filings }: { filings?: Filing[] }) {
@@ -301,25 +302,5 @@ function MergedTimeline({ filings }: { filings: Filing[] }) {
 }
 
 function filingShortName(f: Filing): string {
-  const s: Record<string, string> = {
-    HSR: "HSR",
-    CFIUS: "CFIUS",
-    STB: "STB",
-    FCC: "FCC",
-    State_AG: "State AG",
-    EC_Merger: "EC",
-    EC_FSR: "EC FSR",
-    CMA: "CMA",
-    CADE: "CADE",
-    SAMR: "SAMR",
-    CCB: "Canada",
-    Turkey: "Turkey",
-    BKartA: "Germany",
-    CNA: "Mexico",
-    FDI: "FDI",
-    Court: "Court",
-    Shareholder: "Vote",
-    Other: "Other",
-  };
-  return s[f.jurisdiction] || f.jurisdiction;
+  return REGULATOR_SHORT[f.jurisdiction] || f.jurisdiction;
 }

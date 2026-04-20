@@ -1,5 +1,6 @@
 import type { DealListItem, Filing, FilingStep, ShareholderVote } from "@/lib/sanity/types";
 import { JURISDICTION_LABEL } from "@/lib/filings";
+import { REGULATOR_SHORT } from "@/lib/regulators";
 
 export interface CalendarEvent {
   date: string; // ISO date
@@ -15,26 +16,6 @@ export interface CalendarEvent {
   isDone: boolean;
   note?: string;
 }
-
-const REGULATOR_SHORT: Record<string, string> = {
-  HSR: "HSR",
-  CFIUS: "CFIUS",
-  STB: "STB",
-  FCC: "FCC",
-  State_AG: "State AG",
-  EC_Merger: "EC",
-  EC_FSR: "EC FSR",
-  CMA: "CMA",
-  CADE: "CADE",
-  SAMR: "SAMR",
-  CCB: "Canada",
-  Turkey: "Turkey",
-  BKartA: "Germany",
-  CNA: "Mexico",
-  FDI: "FDI",
-  Court: "Court",
-  Other: "Other",
-};
 
 interface DealWithEvents extends DealListItem {
   filings?: Filing[];
