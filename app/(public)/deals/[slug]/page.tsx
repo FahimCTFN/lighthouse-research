@@ -16,7 +16,6 @@ import {
 import type { UserMetadata } from "@/lib/clerk/helpers";
 import { DealHeader } from "@/components/deals/DealHeader";
 import { SnapshotCard } from "@/components/deals/SnapshotCard";
-import { KeyRiskPull } from "@/components/deals/KeyRiskPull";
 import { KeyFactsTable } from "@/components/deals/KeyFactsTable";
 import { PaywallGate } from "@/components/deals/PaywallGate";
 import { RegulatoryFilings } from "@/components/deals/RegulatoryFilings";
@@ -85,8 +84,6 @@ export default async function DealPage({
 
       <div className="mt-7 space-y-6">
         <SnapshotCard deal={deal} isPaid={canView} />
-
-        {deal.key_risk_summary && <KeyRiskPull text={deal.key_risk_summary} />}
 
         {canView ? (
           <>

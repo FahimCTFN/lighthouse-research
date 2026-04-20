@@ -4,7 +4,7 @@ import {
   type PortableTextBlock,
   type PortableTextComponents,
 } from "@portabletext/react";
-import { formatDate } from "@/lib/format";
+import { formatDate, formatPercent, formatPrice, formatUSDM } from "@/lib/format";
 import type {
   PaidDeal,
   ShareholderVote,
@@ -41,7 +41,8 @@ const portableComponents: PortableTextComponents = {
 };
 
 export function KeyFactsTable({ deal }: { deal: PaidDeal }) {
-  // Top grid: always 4 cells for visual consistency across deals.
+  // Top grid: 4-cell rows for visual consistency across deals.
+  // Row 1 — deal timeline. Row 2 — deal economics.
   const cells: GridCell[] = [
     { label: "Announced", value: formatDate(deal.announcement_date) },
     {
@@ -60,11 +61,38 @@ export function KeyFactsTable({ deal }: { deal: PaidDeal }) {
       label: "Closing guidance",
       value: deal.closing_guidance || "—",
     },
+    {
+      label: "Implied equity value",
+      value: formatUSDM(deal.equity_value),
+      sub: deal.shares_outstanding
+        ? `${deal.shares_outstanding.toLocaleString()}M shares out`
+        : undefined,
+    },
+    {
+      label: "Offer price",
+      value: deal.offer_price != null ? formatPrice(deal.offer_price) : "—",
+      sub: deal.offer_price ? "per share" : undefined,
+    },
+    {
+      label: "Premium to unaffected",
+      value: formatPercent(deal.premium),
+      sub: deal.premium_reference,
+    },
+    {
+      label: "Termination fee",
+      value: formatTermFees(deal),
+      sub: deal.reverse_termination_fee
+        ? "Target / acquirer RTF"
+        : deal.termination_fee_pct
+          ? `${deal.termination_fee_pct}% of equity`
+          : undefined,
+    },
   ];
 
   // Prose rows: only render when the editor has actually provided content.
   const rawProse: Array<{ label: string; value?: string }> = [
     { label: "Target jurisdiction", value: deal.target_jurisdiction },
+    { label: "Termination fee notes", value: deal.termination_fee_notes },
     { label: "Financing", value: deal.financing },
     { label: "Best efforts", value: deal.best_efforts },
     { label: "Target advisors", value: deal.target_advisors },
@@ -187,4 +215,20 @@ function summarizeShareholderVotes(votes?: ShareholderVote[]): string {
       return `${party} · ${OUTCOME_SHORT[outcome]}${date}`;
     })
     .join(" | ");
+}
+
+function formatTermFees(deal: PaidDeal): string {
+  const withPct = (amount?: number, pct?: number) => {
+    if (amount == null) return null;
+    const base =
+      amount >= 1000 ? `$${(amount / 1000).toFixed(1)}bn` : `$${amount}mn`;
+    return pct != null ? `${base} (${pct}%)` : base;
+  };
+  const t = withPct(deal.termination_fee, deal.termination_fee_pct);
+  const r = withPct(
+    deal.reverse_termination_fee,
+    deal.reverse_termination_fee_pct,
+  );
+  if (t && r) return `${t} / ${r}`;
+  return t || "—";
 }

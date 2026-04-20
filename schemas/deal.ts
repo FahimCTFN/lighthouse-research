@@ -187,6 +187,13 @@ export const deal = defineType({
 
     // ── CTFN Proprietary ────────────────────────────────────────
     defineField({
+      name: "ctfn_closing_probability",
+      title: "CTFN Closing Probability (0–100)",
+      type: "number",
+      group: "ctfn",
+      validation: (R) => R.min(0).max(100),
+    }),
+    defineField({
       name: "ctfn_estimated_close",
       title: "CTFN Estimated Close Date",
       type: "date",
