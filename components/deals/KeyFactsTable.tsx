@@ -65,7 +65,6 @@ export function KeyFactsTable({ deal }: { deal: PaidDeal }) {
   // Prose rows: only render when the editor has actually provided content.
   const rawProse: Array<{ label: string; value?: string }> = [
     { label: "Target jurisdiction", value: deal.target_jurisdiction },
-    { label: "Extension terms", value: deal.outside_date_notes },
     { label: "Financing", value: deal.financing },
     { label: "Best efforts", value: deal.best_efforts },
     { label: "Target advisors", value: deal.target_advisors },
