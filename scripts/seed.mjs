@@ -168,6 +168,7 @@ const deals = [
         display_name: "California Attorney General",
         outcome: "conditional",
         outcome_summary: "AG Rob Bonta has directed the California DOJ to open an investigation. AG may pursue litigation rather than a negotiated consent decree — the primary deal risk. LA County supervisors ordered an economic analysis: interim report due May 24, final recommendations by July 23.",
+        case_url: "https://oag.ca.gov/news/press-releases/attorney-general-bonta-issues-statement-proposed-warner-bros-mergers-california",
         steps: [
           { _key: k(), label: "Investigation opened", actual_date: "2026-03-15" },
           { _key: k(), label: "LA County interim economic report", expected_date: "2026-05-24" },
@@ -875,6 +876,7 @@ const deals = [
         jurisdiction: "NZCC",
         outcome: "conditional",
         outcome_summary: "Part of a coordinated NZ/AU review. Companies proposed to divest all of Kenvue's feminine hygiene business in NZ and AU (Kotex vs Stayfree/Carefree) to address competitive overlap.",
+        case_url: "https://comcom.govt.nz/case-register/case-register-entries/kimberly-clark-corporation-and-kenvue-inc",
         steps: [
           { _key: k(), label: "Clearance application filed", actual_date: "2026-02-15" },
           { _key: k(), label: "Divestiture proposal submitted", actual_date: "2026-03-15", note: "Full Kenvue feminine hygiene business in NZ/AU" },
@@ -1407,6 +1409,8 @@ const deals = [
         _key: k(),
         jurisdiction: "FERC",
         outcome: "cleared",
+        outcome_summary: "FERC Section 203 authorization granted February 20, 2026 — docket EC25-140-000.",
+        case_url: "https://www.prnewswire.com/news-releases/ferc-authorizes-txnm-energy-acquisition-by-blackstone-infrastructure-finds-transaction-consistent-with-public-interest-302693942.html",
         steps: [
           { _key: k(), label: "FERC authorized", actual_date: "2026-02-20" },
         ],
@@ -1416,6 +1420,7 @@ const deals = [
         jurisdiction: "PUCT",
         outcome: "cleared",
         outcome_summary: "180-day review period. PUCT approved the transaction.",
+        case_url: "https://tnmp.com/about-us/news-media/texas-approves-txnm-energys-acquisition-blackstone-infrastructure",
         steps: [
           { _key: k(), label: "Application filed", actual_date: "2025-08-25" },
           { _key: k(), label: "PUCT approved", actual_date: "2026-02-06" },
@@ -1425,7 +1430,8 @@ const deals = [
         _key: k(),
         jurisdiction: "NMPRC",
         outcome: "conditional",
-        outcome_summary: "Primary remaining regulatory risk. Application filed August 25, 2025. Hearing examiners opened investigation into the $400mn PIPE on March 11 and paused the procedural schedule. NM AG Raúl Torrez challenging the PIPE. Public hearing on PIPE set for April 30.",
+        outcome_summary: "Primary remaining regulatory risk. Application filed August 25, 2025 (case 25-00060-UT). Hearing examiners opened investigation into the $400mn PIPE on March 11 and paused the procedural schedule. NM AG Raúl Torrez challenging the PIPE. Public hearing on PIPE set for April 30.",
+        case_url: "https://www.prc.nm.gov/pnm_acquisition_case_information/",
         steps: [
           { _key: k(), label: "Application filed", actual_date: "2025-08-25" },
           { _key: k(), label: "Intervention deadline", actual_date: "2025-12-05" },
@@ -2076,7 +2082,8 @@ const deals = [
         _key: k(),
         jurisdiction: "PPUC",
         outcome: "pending",
-        outcome_summary: "Pennsylvania is likely to be the central review. Parties seeking to have it concluded in Q3 2026. Multiple PPUC docket dates scheduled through September 2026.",
+        outcome_summary: "Pennsylvania is likely to be the central review (docket A-2025-3058927). Parties seeking to have it concluded in Q3 2026. Multiple PPUC docket dates scheduled through September 2026.",
+        case_url: "https://www.puc.pa.gov/docket/A-2025-3058927",
         steps: [
           { _key: k(), label: "Pennsylvania PUC application filed", actual_date: "2025-11-26" },
           { _key: k(), label: "PPUC docket", expected_date: "2026-06-21" },
@@ -2094,9 +2101,10 @@ const deals = [
         _key: k(),
         jurisdiction: "ICC",
         outcome: "pending",
-        outcome_summary: "Approval required for utility holding company change. Filing required within 60 days post-DMA.",
+        outcome_summary: "Illinois docket 25-1057 — Application for Approval of Reorganization filed December 5, 2025.",
+        case_url: "https://www.icc.illinois.gov/docket/P2025-1057",
         steps: [
-          { _key: k(), label: "Application filing", note: "Within 60 days post-DMA" },
+          { _key: k(), label: "Application filed", actual_date: "2025-12-05" },
           { _key: k(), label: "Commission decision", note: "Review timelines typically 6-12 months" },
         ],
       },
@@ -2144,7 +2152,8 @@ const deals = [
         _key: k(),
         jurisdiction: "VSCC",
         outcome: "pending",
-        outcome_summary: "Approval required for utility holding company change. Filing required within 60 days post-DMA.",
+        outcome_summary: "Virginia SCC case PUR-2025-00229 — joint petition of American Water Works, Alpha Merger Sub, Essential Utilities, and Aqua Virginia.",
+        case_url: "https://www.scc.virginia.gov/case-information/submit-public-comments/cases/pur-2025-00229-.html",
         steps: [
           { _key: k(), label: "Application filing", note: "Within 60 days post-DMA" },
           { _key: k(), label: "Commission decision", note: "Review timelines typically 6-12 months" },
