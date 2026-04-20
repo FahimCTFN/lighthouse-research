@@ -15,6 +15,7 @@ export const JURISDICTION_LABEL: Record<string, string> = {
   Turkey: "Turkey — Competition Authority",
   BKartA: "Germany — BKartA",
   CNA: "Mexico — CNA",
+  FDI: "Foreign Direct Investment screening",
   Court: "Court / Litigation",
   Shareholder: "Shareholder Vote",
   Other: "Other",

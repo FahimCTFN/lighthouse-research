@@ -212,11 +212,25 @@ const deals = [
       },
       {
         _key: k(),
-        jurisdiction: "BKartA",
-        display_name: "Germany & Slovenia",
+        jurisdiction: "FDI",
+        display_name: "Germany — BMWK (FDI)",
         outcome: "cleared",
+        outcome_summary:
+          "German Foreign Direct Investment screening cleared under the AWG/AWV regime by the Federal Ministry for Economic Affairs and Climate Action (BMWK). This is national security / investment-screening review, distinct from merger control (no BKartA filing has been publicly documented).",
+        case_url: "https://www.prnewswire.com/news-releases/paramount-enhances-its-superior-30-per-share-all-cash-offer-for-warner-bros-discovery-and-provides-update-on-regulatory-progress-302683694.html",
         steps: [
-          { _key: k(), label: "Local merger control clearances", actual_date: "2026-03-01" },
+          { _key: k(), label: "FDI clearance (BMWK)", actual_date: "2026-01-27" },
+        ],
+      },
+      {
+        _key: k(),
+        jurisdiction: "FDI",
+        display_name: "Slovenia — MGTŠ (FDI)",
+        outcome: "cleared",
+        outcome_summary:
+          "Slovenian FDI screening cleared by the Ministry of the Economy, Tourism and Sport (MGTŠ) under the ZSInv regime. Specific clearance date not publicly disclosed; Paramount CSO Andy Gordon confirmed approval on an early-March 2026 investor call. This is national security / investment-screening review, not competition merger control.",
+        steps: [
+          { _key: k(), label: "FDI clearance publicly confirmed", actual_date: "2026-03-03", note: "Cleared on or before this date; specific clearance date not publicly disclosed (Paramount CSO Andy Gordon confirmed on investor call)" },
         ],
       },
     ],

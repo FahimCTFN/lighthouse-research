@@ -281,6 +281,7 @@ export const deal = defineType({
                   { title: "Turkey — Competition Authority", value: "Turkey" },
                   { title: "Germany — BKartA", value: "BKartA" },
                   { title: "Mexico — CNA", value: "CNA" },
+                  { title: "FDI screening (country in display name)", value: "FDI" },
                   { title: "Court / Litigation", value: "Court" },
                   { title: "Other", value: "Other" },
                 ],

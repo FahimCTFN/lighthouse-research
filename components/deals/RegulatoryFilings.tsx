@@ -316,6 +316,7 @@ function filingShortName(f: Filing): string {
     Turkey: "Turkey",
     BKartA: "Germany",
     CNA: "Mexico",
+    FDI: "FDI",
     Court: "Court",
     Shareholder: "Vote",
     Other: "Other",
