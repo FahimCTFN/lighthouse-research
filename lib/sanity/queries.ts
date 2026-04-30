@@ -60,7 +60,12 @@ export const PUBLIC_DEAL_QUERY = groq`
     allow_single_purchase,
     single_purchase_price,
     last_material_update,
-    free_preview
+    free_preview,
+    // Minimal step data for next-event derivation in the snapshot card.
+    // These are regulatory milestones, not analytical content — safe to
+    // surface to free visitors.
+    filings[]{ jurisdiction, display_name, outcome, steps[]{ label, expected_date, actual_date } },
+    shareholder_votes[]{ outcome, party, steps[]{ label, expected_date, actual_date } }
   }
 `;
 

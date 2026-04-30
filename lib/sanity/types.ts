@@ -56,6 +56,9 @@ export interface PublicDeal extends DealListItem {
   single_purchase_price?: number;
   last_material_update?: string;
   free_preview?: PortableTextBlock[];
+  // Lightweight projections fetched in PUBLIC_DEAL_QUERY for next-event derivation.
+  filings?: Filing[];
+  shareholder_votes?: ShareholderVote[];
 }
 
 export type FilingOutcome =

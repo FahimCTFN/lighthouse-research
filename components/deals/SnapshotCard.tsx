@@ -1,14 +1,16 @@
 import { formatDate, daysUntil, STAGE_LABEL } from "@/lib/format";
-import type { PublicDeal } from "@/lib/sanity/types";
+import { deriveNextKeyEvent } from "@/lib/nextEvent";
+import type { PublicDeal, PaidDeal } from "@/lib/sanity/types";
 
 export function SnapshotCard({
   deal,
   isPaid,
 }: {
-  deal: PublicDeal;
+  deal: PublicDeal | PaidDeal;
   isPaid: boolean;
 }) {
-  const days = daysUntil(deal.next_key_event_date);
+  const nextEvent = deriveNextKeyEvent(deal as PaidDeal);
+  const days = nextEvent ? daysUntil(nextEvent.date) : null;
 
   return (
     <section className="overflow-hidden rounded-lg border border-gray-200 bg-white">
@@ -27,13 +29,13 @@ export function SnapshotCard({
           <div className="text-[10px] font-medium uppercase tracking-label text-gray-500">
             Next event
           </div>
-          {deal.next_key_event_date || deal.next_key_event_label ? (
+          {nextEvent ? (
             <>
               <div className="mt-1 text-[15px] font-semibold leading-tight text-brand-navy">
-                {deal.next_key_event_label || "—"}
+                {nextEvent.label}
               </div>
               <div className="mt-1 flex items-baseline gap-2 text-[12px] tabular-nums text-gray-600">
-                <span>{formatDate(deal.next_key_event_date)}</span>
+                <span>{formatDate(nextEvent.date)}</span>
                 {days != null && days >= 0 && (
                   <span className="text-brand-gold-ink">· in {days}d</span>
                 )}
