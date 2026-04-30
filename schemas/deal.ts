@@ -209,15 +209,19 @@ export const deal = defineType({
     }),
     defineField({
       name: "next_key_event_date",
-      title: "Next Key Event Date",
+      title: "Next Key Event Date — manual override",
       type: "date",
       group: "ctfn",
+      description:
+        "OPTIONAL. Leave blank to auto-derive from the earliest pending filing/vote step. Set both date and label to override the derived value (e.g. to highlight a non-step event like a closing dinner or media moment).",
     }),
     defineField({
       name: "next_key_event_label",
-      title: "Next Key Event Label",
+      title: "Next Key Event Label — manual override",
       type: "string",
       group: "ctfn",
+      description:
+        "OPTIONAL. Required only if you set Next Key Event Date. Leave both blank to auto-derive.",
     }),
     defineField({
       name: "outside_date",

@@ -3,10 +3,11 @@
 // intervention required.
 //
 // Order of preference:
-//   1. The earliest pending step (no actual_date, expected_date >= today)
+//   1. The deal's stored `next_key_event_*` fields, if BOTH are set and
+//      the date is still in the future. This is the editorial override —
+//      leave Studio fields blank to fall through to auto-derivation.
+//   2. The earliest pending step (no actual_date, expected_date >= today)
 //      across all non-completed filings and shareholder votes.
-//   2. The deal's stored `next_key_event_*` fields, if their date is
-//      still in the future.
 //   3. `ctfn_estimated_close` as a "Closing target" fallback.
 //   4. null.
 
@@ -56,6 +57,22 @@ function regulatorShort(jurisdiction: string, displayName?: string): string {
 
 export function deriveNextKeyEvent(deal: DealLike): NextEvent | null {
   const today = todayISO();
+
+  // 1. Editorial override (Studio) — wins when both fields are set and the
+  //    date is still in the future. Editors can leave the fields blank to
+  //    fall through to auto-derivation.
+  if (
+    deal.next_key_event_date &&
+    deal.next_key_event_label &&
+    isFuture(deal.next_key_event_date, today)
+  ) {
+    return {
+      date: deal.next_key_event_date,
+      label: deal.next_key_event_label,
+    };
+  }
+
+  // 2. Auto-derive from the earliest pending step.
   const candidates: NextEvent[] = [];
 
   for (const f of deal.filings ?? []) {
@@ -87,17 +104,7 @@ export function deriveNextKeyEvent(deal: DealLike): NextEvent | null {
     return candidates[0];
   }
 
-  if (
-    deal.next_key_event_date &&
-    deal.next_key_event_label &&
-    isFuture(deal.next_key_event_date, today)
-  ) {
-    return {
-      date: deal.next_key_event_date,
-      label: deal.next_key_event_label,
-    };
-  }
-
+  // 3. Closing-target safety net.
   if (isFuture(deal.ctfn_estimated_close, today)) {
     return {
       date: deal.ctfn_estimated_close!,

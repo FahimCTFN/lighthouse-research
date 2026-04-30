@@ -1,14 +1,19 @@
 // Recompute the stored `next_key_event_*` fields on every deal based on
 // current filing/vote step data.
 //
-// The deal page already derives next event at render time, so the snapshot
-// card is always accurate. This script keeps the stored fields fresh for
-// the index/list/calendar views and for sorting (which fetch the stored
-// fields rather than steps to keep queries lean).
+// IMPORTANT: this script treats stored fields as MANUAL OVERRIDES — it
+// only writes to fields that are currently empty. If an editor has set a
+// value in Studio (intentional override), this script leaves it alone.
 //
-// Idempotent — safe to run on a schedule or after data updates.
+// Use case: after bulk imports / migrations / patches that didn't touch
+// next_key_event_*, run this once to populate empty fields. The deal page
+// already derives next event at render time, but list/calendar/sort views
+// still read the stored fields, so this keeps them fresh.
 //
-// Run: node scripts/recompute-next-events.mjs
+// To force-recompute everything (clearing manual overrides too), pass
+// --force.
+//
+// Run: node scripts/recompute-next-events.mjs [--force]
 
 import { createClient } from "@sanity/client";
 import fs from "node:fs";
@@ -131,6 +136,8 @@ function deriveNextKeyEvent(deal) {
 }
 
 async function run() {
+  const force = process.argv.includes("--force");
+
   const deals = await client.fetch(
     `*[_type == "deal" && status in ["pre_event", "ongoing"]]{
       _id, target, acquirer,
@@ -140,33 +147,48 @@ async function run() {
     }`,
   );
 
-  console.log(`Recomputing next_key_event for ${deals.length} active deals…\n`);
+  console.log(
+    `Recomputing next_key_event for ${deals.length} active deals${force ? " (--force: overwriting manual overrides)" : " (skipping deals with manual overrides set)"}…\n`,
+  );
   let updated = 0;
+  let skipped = 0;
   for (const d of deals) {
+    const hasOverride = !!(d.next_key_event_date && d.next_key_event_label);
+    if (hasOverride && !force) {
+      console.log(
+        `· ${d.target}: manual override set (${d.next_key_event_label}, ${d.next_key_event_date}) — skipped`,
+      );
+      skipped++;
+      continue;
+    }
+
     const next = deriveNextKeyEvent(d);
     const sameDate = d.next_key_event_date === (next?.date ?? null);
     const sameLabel = d.next_key_event_label === (next?.label ?? null);
     if (sameDate && sameLabel) {
-      console.log(`· ${d.target}: unchanged (${next?.label ?? "—"})`);
+      console.log(`· ${d.target}: already matches derived (${next?.label ?? "—"})`);
       continue;
     }
-    const patches = next
-      ? { next_key_event_date: next.date, next_key_event_label: next.label }
-      : {};
-    const unsetters = !next ? ["next_key_event_date", "next_key_event_label"] : [];
 
     const op = client.patch(d._id);
-    if (Object.keys(patches).length) op.set(patches);
-    if (unsetters.length) op.unset(unsetters);
+    if (next) {
+      op.set({
+        next_key_event_date: next.date,
+        next_key_event_label: next.label,
+      });
+    } else {
+      op.unset(["next_key_event_date", "next_key_event_label"]);
+    }
     await op.commit();
 
-    const before = `${d.next_key_event_label ?? "—"} (${d.next_key_event_date ?? "—"})`;
     const after = next ? `${next.label} (${next.date})` : "—";
-    console.log(`✓ ${d.target}: ${before}  →  ${after}`);
+    console.log(`✓ ${d.target}: → ${after}`);
     updated++;
   }
 
-  console.log(`\nDone — ${updated} deal(s) updated.`);
+  console.log(
+    `\nDone — ${updated} deal(s) updated, ${skipped} deal(s) skipped (manual override).`,
+  );
 }
 
 run().catch((err) => {
