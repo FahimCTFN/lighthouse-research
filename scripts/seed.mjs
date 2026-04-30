@@ -2301,12 +2301,12 @@ const deals = [
       {
         _key: k(),
         jurisdiction: "EC_Merger",
-        outcome: "pending",
-        outcome_summary: "Notified as a super-simplified review on March 26. Phase I expires May 6 — coincides with the shareholder vote date. Super-simplified cases are routinely cleared well within Phase I.",
+        outcome: "cleared",
+        outcome_summary: "EC cleared the merger on April 22, 2026 under the simplified procedure (case M.12339) — non-opposition decision under Article 6(1)(b) of Council Regulation (EC) No 139/2004. Cleared two weeks ahead of the May 6 Phase I deadline. Decision text now publicly published.",
         case_url: "https://competition-cases.ec.europa.eu/cases/M.12339",
         steps: [
           { _key: k(), label: "EC notification (super-simplified)", actual_date: "2026-03-26" },
-          { _key: k(), label: "Phase I decision (25 working days)", expected_date: "2026-05-06", note: "Coincides with shareholder vote" },
+          { _key: k(), label: "EC clearance", actual_date: "2026-04-22", note: "Non-opposition under Article 6(1)(b), simplified procedure. Decision text published after business-secrets redaction." },
         ],
       },
       {
