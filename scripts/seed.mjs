@@ -973,7 +973,7 @@ const deals = [
     target: "AES Corporation",
     acquirer_ticker: "GIP",
     target_ticker: "AES",
-    status: "pre_event",
+    status: "ongoing",
     sector: "energy",
     target_jurisdiction: "Delaware",
     deck: "AES AGM set for April 29; preliminary proxy filing May 1; primary regulatory filings May 30. Indiana politics and PUCO data center backlash are the key state-level risks.",
