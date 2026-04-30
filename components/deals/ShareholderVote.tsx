@@ -81,12 +81,15 @@ function VoteCard({ vote }: { vote: ShareholderVoteData }) {
         </span>
       </div>
 
-      {vote.committed_pct != null && vote.committed_pct > 0 && (
-        <CommittedMeter
-          pct={vote.committed_pct}
-          notes={vote.committed_notes}
-        />
-      )}
+      {vote.committed_pct != null &&
+        vote.committed_pct > 0 &&
+        outcome !== "approved" &&
+        outcome !== "rejected" && (
+          <CommittedMeter
+            pct={vote.committed_pct}
+            notes={vote.committed_notes}
+          />
+        )}
 
       {steps.length > 0 && (
         <>
