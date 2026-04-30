@@ -866,9 +866,9 @@ const deals = [
         _key: k(),
         jurisdiction: "CMA",
         outcome: "pending",
-        outcome_summary: "Both companies have UK operations. CMA review expected.",
+        outcome_summary: "Both companies have UK operations. No public CMA case opened as of April 30, 2026 — review may be pre-notification, below UK turnover thresholds, or proceeding without a formal Phase 1.",
         steps: [
-          { _key: k(), label: "CMA review", expected_date: "2026-06-30", note: "Phase 1: 40 working days" },
+          { _key: k(), label: "CMA notification (status TBD)", note: "No public case page on gov.uk/cma-cases as of Apr 30, 2026" },
         ],
       },
       {
