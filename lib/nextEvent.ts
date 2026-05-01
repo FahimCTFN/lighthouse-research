@@ -17,6 +17,7 @@ import type { Filing, ShareholderVote } from "@/lib/sanity/types";
 export interface NextEvent {
   date: string;
   label: string;
+  monthOnly?: boolean;
 }
 
 interface DealLike {
@@ -24,6 +25,7 @@ interface DealLike {
   shareholder_votes?: ShareholderVote[];
   next_key_event_date?: string;
   next_key_event_label?: string;
+  next_key_event_month_only?: boolean;
   ctfn_estimated_close?: string;
 }
 
@@ -69,6 +71,7 @@ export function deriveNextKeyEvent(deal: DealLike): NextEvent | null {
     return {
       date: deal.next_key_event_date,
       label: deal.next_key_event_label,
+      monthOnly: !!deal.next_key_event_month_only,
     };
   }
 
@@ -127,6 +130,7 @@ export function nextEventFromStored(deal: DealLike): NextEvent | null {
     return {
       date: deal.next_key_event_date,
       label: deal.next_key_event_label,
+      monthOnly: !!deal.next_key_event_month_only,
     };
   }
   if (isFuture(deal.ctfn_estimated_close, today)) {

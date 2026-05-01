@@ -45,6 +45,23 @@ export function formatDate(value?: string): string {
   );
 }
 
+export function formatMonthYear(value?: string): string {
+  if (!value) return "—";
+  return new Date(value + (value.length === 10 ? "T00:00:00Z" : "")).toLocaleDateString(
+    "en-US",
+    {
+      year: "numeric",
+      month: "long",
+      timeZone: "UTC",
+    },
+  );
+}
+
+/** Format a date with optional month-only precision. */
+export function formatEventDate(value?: string, monthOnly?: boolean): string {
+  return monthOnly ? formatMonthYear(value) : formatDate(value);
+}
+
 export function daysUntil(value?: string): number | null {
   if (!value) return null;
   const ms =

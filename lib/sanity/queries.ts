@@ -19,6 +19,7 @@ export const ACTIVE_DEALS_QUERY = groq`
     announcement_date,
     next_key_event_date,
     next_key_event_label,
+    next_key_event_month_only,
     deck
   }
 `;
@@ -52,6 +53,7 @@ export const PUBLIC_DEAL_QUERY = groq`
     published_date,
     next_key_event_date,
     next_key_event_label,
+    next_key_event_month_only,
     outside_date,
     outside_date_final,
     closing_guidance,
@@ -99,6 +101,7 @@ export const PAID_DEAL_QUERY = groq`
     published_date,
     next_key_event_date,
     next_key_event_label,
+    next_key_event_month_only,
     outside_date,
     outside_date_final,
     closing_guidance,
@@ -182,6 +185,7 @@ export const ARCHIVED_DEALS_QUERY = groq`
     announcement_date,
     next_key_event_date,
     next_key_event_label,
+    next_key_event_month_only,
     deck
   }
 `;
@@ -203,6 +207,7 @@ export const CALENDAR_DEALS_QUERY = groq`
     announcement_date,
     next_key_event_date,
     next_key_event_label,
+    next_key_event_month_only,
     filings[]{
       jurisdiction,
       display_name,

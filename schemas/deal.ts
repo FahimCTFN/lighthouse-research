@@ -224,6 +224,16 @@ export const deal = defineType({
         "OPTIONAL. Required only if you set Next Key Event Date. Leave both blank to auto-derive.",
     }),
     defineField({
+      name: "next_key_event_month_only",
+      title: "Show month only (e.g. \"May 2026\" instead of \"May 1, 2026\")",
+      type: "boolean",
+      group: "ctfn",
+      initialValue: false,
+      description:
+        "Check this when the exact day isn't known — the snapshot card and index will display just the month and year.",
+      hidden: ({ parent }) => !parent?.next_key_event_date,
+    }),
+    defineField({
       name: "outside_date",
       title: "Outside Date (initial)",
       type: "date",

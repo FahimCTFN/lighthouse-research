@@ -8,7 +8,7 @@ import {
 } from "@/lib/clerk/helpers";
 import type { UserMetadata, DealPurchase } from "@/lib/clerk/helpers";
 import { StageBadge, SectorTag } from "@/components/ui/Badge";
-import { formatDate, formatTickers } from "@/lib/format";
+import { formatDate, formatEventDate, formatTickers } from "@/lib/format";
 import { ManageBillingButton } from "./ManageBillingButton";
 import type { DealListItem } from "@/lib/sanity/types";
 
@@ -17,7 +17,7 @@ const WATCHLIST_DEALS_QUERY = groq`
     _id, _updatedAt, acquirer, target, status, sector,
     acquirer_ticker, target_ticker,
     "slug": slug.current,
-    next_key_event_date, next_key_event_label
+    next_key_event_date, next_key_event_label, next_key_event_month_only
   }
 `;
 
@@ -281,7 +281,7 @@ export default async function AccountPage() {
                           {d.next_key_event_label || "Next event"}
                         </div>
                         <div className="text-[12px] tabular-nums text-gray-700">
-                          {formatDate(d.next_key_event_date)}
+                          {formatEventDate(d.next_key_event_date, d.next_key_event_month_only)}
                         </div>
                       </>
                     )}

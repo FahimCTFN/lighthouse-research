@@ -1,4 +1,4 @@
-import { formatDate, daysUntil, STAGE_LABEL } from "@/lib/format";
+import { formatDate, formatEventDate, daysUntil, STAGE_LABEL } from "@/lib/format";
 import { deriveNextKeyEvent } from "@/lib/nextEvent";
 import type { PublicDeal, PaidDeal } from "@/lib/sanity/types";
 
@@ -35,8 +35,8 @@ export function SnapshotCard({
                 {nextEvent.label}
               </div>
               <div className="mt-1 flex items-baseline gap-2 text-[12px] tabular-nums text-gray-600">
-                <span>{formatDate(nextEvent.date)}</span>
-                {days != null && days >= 0 && (
+                <span>{formatEventDate(nextEvent.date, nextEvent.monthOnly)}</span>
+                {!nextEvent.monthOnly && days != null && days >= 0 && (
                   <span className="text-brand-gold-ink">· in {days}d</span>
                 )}
               </div>

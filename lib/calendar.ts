@@ -26,6 +26,7 @@ interface DealWithEvents extends DealListItem {
   announcement_date?: string;
   next_key_event_date?: string;
   next_key_event_label?: string;
+  next_key_event_month_only?: boolean;
 }
 
 export function aggregateEvents(deals: DealWithEvents[]): CalendarEvent[] {
